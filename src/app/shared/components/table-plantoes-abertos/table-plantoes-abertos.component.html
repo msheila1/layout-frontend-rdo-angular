@@ -1,0 +1,14 @@
+<p-table [value]="plantaoAberto" selectionMode="single" [(selection)]="selecionaPlantao" dataKey="plantaoAberto">
+    <ng-template pTemplate="header">
+      <tr [pSelectableRow]="plantaoAberto">
+        <th style="width: 50%; font-weight: bold">Delegado</th>
+        <th style="width: 50%; font-weight: bold">Data/Hora de Abertura</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body">
+      <tr>
+        <td>{{ delegado }}</td>
+        <td>{{ hora }}</td>
+      </tr>
+    </ng-template>
+  </p-table>

@@ -1,0 +1,87 @@
+<p-dialog header="Entorpecentes" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1024" [minWidth]="600" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Pessoa Relacionada<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboPessoaRelacionada" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo de Tóxico<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTipoToxico" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+
+    <div class="col-md-5 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Unidade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboUnidade" disabled="disabled" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-5 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Invólucro<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboInvolucro" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-2">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Qtde encontrada<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtQtdeEncontrada" type="text" pInputText />
+    </div>
+
+    <div class="col-md-4">
+      <h4 class="laranja">Operadora<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboOperadoraEntorpecentes" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">DDD<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtDddEntorpecentes" type="text" pInputText />
+    </div>
+    <div class="col-md-5">
+      <h4 class="laranja">Telefone<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtTelefoneEntorpecentes" type="text" pInputText />
+    </div>
+
+    <div class="col-12 space-10">
+      <h3 class="laranja">Acondicionamento<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4><i class="fa fa-asterisk"></i>Tipo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTipoEntorpecentes"></p-dropdown>
+    </div>
+    <div class="col-md-2">
+      <h4><i class="fa fa-asterisk"></i>Quantidade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtQuantidadeEntorpecentes" type="text" pInputText />
+    </div>
+    <div class="col-md-6"></div>
+
+    <div class="col-md-12 margin-bottom">
+      <h4 class="laranja">Observações<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <textarea id="txtObsEntorpecentes" [rows]="2" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+    </div>
+
+    <div class="col-12 space-10">
+      <h3 class="laranja">IML<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+    </div>
+    <div class="col-md-2">
+      <h4>Número<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNumeroIML" type="text" pInputText />
+    </div>
+    <div class="col-md-2">
+      <h4>Ano<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtAnoIML" type="text" pInputText />
+    </div>
+    <div class="col-md-8 margin-bottom">
+      <h4>Descrição<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtDescricaoIML" type="text" pInputText />
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4>Nome do Perito<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNomePerito" type="text" pInputText />
+    </div>
+    <div class="col-md-6"></div>
+
+    <div class="col-md-12 margin-bottom">
+      <h4>Observações<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <textarea id="txtObservacoesIML" [rows]="2" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarEntorpecentes" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarEntorpecentes" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

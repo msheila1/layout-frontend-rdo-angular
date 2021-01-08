@@ -1,0 +1,53 @@
+
+<div class="row margin-bottom">
+  <div class="col-12">
+    <h2>Cadastro - Boletim de Ocorrência<a class="btn btn-outline-warning btn-lg" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-question-circle fa-2x"></i></a>
+    </h2>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a routerLink="/cadastro" id="lnkCadastro"><i class="pi pi-home"></i>Home</a>
+        </li>
+        <li class="breadcrumb-item active">Cadastro - Boletim de Ocorrência</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="col-12">
+  <p-accordion (onClose)="onCloseTab($event)" (onOpen)="onOpenTab($event)">
+    <p-accordionTab header="1 - Boletim de Ocorrência" [selected]="true">
+      <app-boletimocorrencia></app-boletimocorrencia>
+    </p-accordionTab>
+    <p-accordionTab header="2 - Histórico BO">
+      <app-historico></app-historico>
+    </p-accordionTab>
+  <!--p-accordionTab header="3 - Natureza">
+    <app-natureza></app-natureza>
+  </p-accordionTab-->
+  <!--p-accordionTab header="4 - Pessoas">
+    <app-pessoas></app-pessoas>
+  </p-accordionTab -->
+  <p-accordionTab header="5 - Veículos">
+    <app-veiculos></app-veiculos>
+  </p-accordionTab>
+  <p-accordionTab header="6 - Carga">
+    <app-cargas></app-cargas>
+  </p-accordionTab>
+  <!--p-accordionTab header="6 - Carga">
+    <app-carga></app-carga>
+  </p-accordionTab-->
+  <!--p-accordionTab header="7 - Objetos">
+    <app-objetos></app-objetos>
+  </p-accordionTab-->
+  <!--p-accordionTab header="8 - Armas e Acessórios">
+    <app-armaseacessorios></app-armaseacessorios>
+  </p-accordionTab-->
+  <!--p-accordionTab header="9 - Entorpecentes">
+    <app-entorpecentes></app-entorpecentes>
+  </p-accordionTab-->
+  <!--p-accordionTab header="10 - Pessoa Jurídica">
+    <app-pessoajuridica></app-pessoajuridica>
+  </p-accordionTab-->
+  </p-accordion>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <h4 class="laranja">Contas Bancárias</h4>
+    <p-table [value]="ContaBancariaPessoa" selectionMode="single" dataKey="ContaBancariaPessoa">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="ContaBancariaPessoa">
+          <th style="width: 30%; font-weight: bold">Banco</th>
+          <th style="width: 30%; font-weight: bold">Agência</th>
+          <th style="width: 30%; font-weight: bold">Conta</th>
+          <th class="text-center" style="width: 10%; font-weight: bold">Excluir</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ BancoPessoa }}</td>
+          <td>{{ AgenciaPessoa }}</td>
+          <td>{{ ContaPessoa }}</td>
+          <td class="text-center">
+            <button id="btnExcluirContasBancarias01" pButton icon="fa fa-close"></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+          <button id="btnNovoContasBancarias01" type="button" pButton icon="fa fa-plus" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

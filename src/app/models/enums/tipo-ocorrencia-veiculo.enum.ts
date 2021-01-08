@@ -1,0 +1,43 @@
+export enum TipoOcorrenciaVeiculoEnum {
+    Furtado = 1,
+    Roubado = 2,
+    FurtoPlacas = 3,
+    Acidentado = 4,
+    ApropriacaoIndebita = 5,
+    ObjetoEstelionato = 6,
+    LocalizadoApreendido = 7,
+    Danificado = 8,
+    Desaparecido = 9,
+    Apreendido = 10,
+    Envolvido = 11,
+    LocalizadoEntregue = 12,
+    RouboPlacas = 13,
+    PerdaPlacas = 14,
+    Extorsao = 15,
+    Concussao = 16,
+    Peculato = 17,
+    LocalizadoDepositado = 18,
+    OutraOcorrencia = 19
+}
+
+export const tipoOcorrenciaVeiculoLabel = new Map<TipoOcorrenciaVeiculoEnum, string>([
+    [TipoOcorrenciaVeiculoEnum.Furtado, 'Furtado'],
+    [TipoOcorrenciaVeiculoEnum.Roubado, 'Roubado'],
+    [TipoOcorrenciaVeiculoEnum.FurtoPlacas, 'Furto de Placas'],
+    [TipoOcorrenciaVeiculoEnum.Acidentado, 'Acidentado'],
+    [TipoOcorrenciaVeiculoEnum.ApropriacaoIndebita, 'Apropriação Indébita'],
+    [TipoOcorrenciaVeiculoEnum.ObjetoEstelionato, 'Objeto/Estelionato'],
+    [TipoOcorrenciaVeiculoEnum.LocalizadoApreendido, 'Localizado/Apreendido'],
+    [TipoOcorrenciaVeiculoEnum.Danificado, 'Danificado'],
+    [TipoOcorrenciaVeiculoEnum.Desaparecido, 'Desaparecido'],
+    [TipoOcorrenciaVeiculoEnum.Apreendido, 'Apreendido'],
+    [TipoOcorrenciaVeiculoEnum.Envolvido, 'Envolvido'],
+    [TipoOcorrenciaVeiculoEnum.LocalizadoEntregue, 'Localizado/Entregue'],
+    [TipoOcorrenciaVeiculoEnum.RouboPlacas, 'Roubo de Placas'],
+    [TipoOcorrenciaVeiculoEnum.PerdaPlacas, 'Perda de Placas'],
+    [TipoOcorrenciaVeiculoEnum.Extorsao, 'Extorsão'],
+    [TipoOcorrenciaVeiculoEnum.Concussao, 'Concussão'],
+    [TipoOcorrenciaVeiculoEnum.Peculato, 'Peculato'],
+    [TipoOcorrenciaVeiculoEnum.LocalizadoDepositado, 'Localizado/Depositado'],
+    [TipoOcorrenciaVeiculoEnum.OutraOcorrencia, 'Outros']
+  ]);

@@ -1,0 +1,29 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <p-table [value]="modusoperandi" selectionMode="single" [(selection)]="selecionaModus" dataKey="modus">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="modusoperandi">
+          <th style="width: 46%; font-weight: bold">Local de Acesso</th>
+          <th style="width: 46%; font-weight: bold">Qualificação de Acesso</th>
+          <th class="text-center" style="width: 15%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ local }}</td>
+          <td>{{ qualificacao }}</td>
+          <td class="text-center">
+            <button id="btnExcluirModus01" pButton icon="fa fa-close"></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+          <button id="btnNovoModus01" type="button" pButton icon="fa fa-plus" (click)="displayDialogModus = true;" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+<!--Dialog-->
+<app-dialog-modus-operandi [display]="displayDialogModus" (displayChange)="displayDialogModus = false;"></app-dialog-modus-operandi>

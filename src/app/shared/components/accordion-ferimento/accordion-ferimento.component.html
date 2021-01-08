@@ -1,0 +1,32 @@
+<p-accordionTab header="Ferimento">
+  <div class="row margin-bottom">
+    <div class="col-12">
+      <h3 class="laranja">Ferimento</h3>
+      <p-table [value]="ferimento" selectionMode="single" [(selection)]="selecionaFerimento" dataKey="ferimento">
+        <ng-template pTemplate="header">
+          <tr [pSelectableRow]="ferimento">
+            <th style="width: 25%; font-weight: bold">Ferimento</th>
+            <th style="width: 25%; font-weight: bold">Instrtumento</th>
+            <th class="text-center" style="width: 7%; font-weight: bold">Excluir</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+          <tr>
+            <td>{{ ferimento }}</td>
+            <td>{{ instrumento }}</td>
+            <td class="text-center">
+              <button id="btnExcluirFerimento" pButton icon="fa fa-close"></button>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+          <div style="text-align:left">
+            <button id="btnNovoFerimento" type="button" pButton icon="fa fa-plus"
+              (click)="displayDialogFerimento = true;" label="Novo" style="width: 100px;"></button>&nbsp;&nbsp;
+          </div>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</p-accordionTab>
+<app-dialog-ferimento [display]="displayDialogFerimento" (displayChange)="displayDialogFerimento = false;"></app-dialog-ferimento>

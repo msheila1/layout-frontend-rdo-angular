@@ -1,0 +1,36 @@
+<div class="row mt-5">
+  <div class="col-12 margin-bottom">
+    <p-radioButton name="groupname" value="1" [(ngModel)]="SelectRdo" label="BO's transferidos por outras delegacias">
+    </p-radioButton>
+  </div>
+  <div class="col-4 margin-bottom">
+    <h4 class="laranja">Circunscrição<i class="fa fa-asterisk"></i></h4>
+    <input type="text" pInputText />
+  </div>
+  <div class="col-3 margin-bottom">
+    <h4 class="laranja">Delegacia de Registro do BO <i class="fa fa-asterisk"></i></h4>
+    <input type="text" pInputText />
+  </div>
+  <div class="col-2 margin-bottom">
+    <h4 class="laranja">Data Inicial<i class="fa fa-asterisk"></i></h4>
+    <p-calendar [(ngModel)]="date3" [showIcon]="true"></p-calendar>
+  </div>
+  <div class="col-2 margin-bottom">
+    <h4 class="laranja">Hora Inicial</h4>
+    <p-calendar [(ngModel)]="date8" [timeOnly]="true"></p-calendar>
+  </div>
+  <div class="col-2 margin-bottom">
+    <h4 class="laranja">Data Final<i class="fa fa-asterisk"></i></h4>
+    <p-calendar [(ngModel)]="date3" [showIcon]="true"></p-calendar>
+  </div>
+  <div class="col-2 margin-bottom">
+    <h4 class="laranja">Hora Final</h4>
+    <p-calendar [(ngModel)]="date8" [timeOnly]="true"></p-calendar>
+  </div>
+  <div class="col-12 mt-2">
+    <div class="col-12 p-2 btn-buscar"></div>
+    <div class="btn-buscar">
+      <button id="btnBuscarNumeroRdo" type="button" pButton label="Buscar" class="ui-button-secondary"></button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<form [formGroup]="formGroup" (ngSubmit)="showSuccess()">
+<p-dialog header="Alterar Dados da Delegacia" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="768" [minWidth]="1024" [minY]="90" [maximizable]="true">
+    <div class="row margin-bottom">
+        <div class="col-xl-6 margin-bottom">
+            <h4 class="laranja"><i class="fa fa-asterisk"></i>Nome Fantasia<i class="pi pi-question-circle" pTooltip="Enter your username" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="nomeFantasia" type="text" pInputText formControlName="nomeFantasia" displayErrors/>
+        </div>
+        <div class="col-xl-6 margin-bottom">
+            <h4 class="laranja"><i class="fa fa-asterisk"></i>Nome Delegado</h4>
+            <input id="nomeDelegado" type="text" pInputText formControlName="nomeDelegado" displayErrors/>
+        </div>
+        <div class="col-xl-3 margin-bottom">
+            <h4 class="laranja"><i class="fa fa-asterisk"></i>Telefone</h4>
+            <input id="telefone" type="text" pInputText formControlName="telefone" displayErrors/>
+         </div>
+        <div class="col-xl-3 margin-bottom">
+            <h4 class="laranja"><i class="fa fa-asterisk"></i>Telefone Plantão</h4>
+            <input id="telefonePlantao" type="text" pInputText formControlName="telefonePlantao" displayErrors/>
+        </div>
+        <div class="col-xl-3 margin-bottom">
+            <h4 class="laranja"><i class="fa fa-asterisk"></i>Telefone Titular</h4>
+            <input id="telefoneTitular" type="text" pInputText formControlName="telefoneTitular" displayErrors>
+        </div>
+        <div class="col-xl-3 margin-bottom">
+            <h4 class="laranja"><i class="fa fa-asterisk"></i>Telefone Outros</h4>
+            <input id="telefoneOutros" type="text" pInputText formControlName="telefoneOutros" displayErrors/>
+        </div>
+        <div style="width: 100%">
+            <!-- <app-auto-complete-logradouro></app-auto-complete-logradouro> -->
+        </div>
+    </div>
+    <p-footer>
+        <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+        <button pButton type="submit" label="Salvar" class="btn-salvar mr-3"></button>
+        <button pButton type="button" label="Cancelar" class="btn-cancelar ui-button-secondary" (click)="display = false"></button>
+    </p-footer>
+</p-dialog>
+</form>

@@ -1,0 +1,22 @@
+/* STYLE GERAL */   
+body{font-family: LatoWeb;}
+
+/* STYLE DO CABEÇALHO DO SISTEMA RDO */
+.background{background-color: #000; height: 70px; color: #fff;}
+.titulo{font-family: Arial; font-size: 24px; font-weight: bold; margin-top: 15px; float: left;}
+
+/* STYLE BOOTSTRAP */
+.row {margin-right: 0px!important; margin-left: 0px!important;}
+.ui-slidemenu .ui-slidemenu-content{overflow-y: hidden!important;}
+.ui-slidemenu{border: 0px!important; width: 195px;}
+#accordion-menu .ui-accordion{margin-left: -15px;}
+#accordion-menu .ui-accordion .ui-accordion-content{border: 0px!important;}
+#accordion-menu .ui-accordion .ui-accordion-header a{border: 0px!important;}
+#accordion-menu .ui-accordion .ui-accordion-header:not(.ui-state-disabled).ui-state-active a{border: 0px!important;}
+.sidenav {height: 100%;width: 0;position: fixed;z-index: 1;top: 0;left: 0;background-color: #ccc;overflow-x: hidden;transition: 0.5s;padding-top: 60px;}
+.sidenav a {padding: 4px 4px 4px 25px;text-decoration: none;font-size: 14px;color: #333;display: block;transition: 0.3s;}
+.sidenav a:hover {color: #999;}
+.sidenav .closebtn {position: absolute;top: 0;right: 25px;font-size: 36px;margin-left: 50px;}
+
+@media screen and (max-height: 450px) {.sidenav {padding-top: 15px;} .sidenav a {font-size: 18px;}}
+  

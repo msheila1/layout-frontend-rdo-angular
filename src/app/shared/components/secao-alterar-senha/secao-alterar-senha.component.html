@@ -1,0 +1,30 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+  <p-panel header="Alterar Senha" [toggleable]="true">
+    <div class="row margin-bottom">
+      <div class="col-xl-3 margin-bottom">
+        <h4 class="laranja"><i class="fa fa-asterisk"></i>Senha Atual<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <input id="cboObjeto" type="text" pInputText formControlName="senhaAtual" displayErrors/>
+      </div>
+      <div class="col-xl-3 margin-bottom">
+        <h4 class="laranja"><i class="fa fa-asterisk"></i>Nova Senha<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <input type="password" pInputText formControlName="password" displayErrors/>
+      </div>
+      <div class="col-xl-3 margin-bottom">
+        <h4 class="laranja"><i class="fa fa-asterisk"></i>Confirmar Nova Senha<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4> 
+        <input type="password" pInputText formControlName="confirmPassword" displayErrors/>
+      </div>
+      <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-4">
+          <button pButton type="submit" label="Alterar Senha" class="btn-salvar mr-1"></button>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-4">
+          <button pButton type="button" label="Limpar" class="btn-cancelar ui-button-secondary" (click)="clearForm()"></button>
+        </div>
+      </div>
+    </div>
+  </p-panel>
+</form>

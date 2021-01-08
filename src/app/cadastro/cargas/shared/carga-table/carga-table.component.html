@@ -1,0 +1,31 @@
+<div class="row">
+  <p-panel header="Selecione uma Carga" [toggleable]="true">
+    <p-table [value]="carga" [columns]="colTableHeader" selectionMode="single" [(selection)]="cargaSelecionado">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="carga">
+          <th style="width: 30%; font-weight: bold">Tipo</th>
+          <th style="width: 30%; font-weight: bold">SubTipo</th>
+          <th style="width: 30%; font-weight: bold">Modo</th>
+          <th class="text-center" style="width: 10%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData>
+        <tr [pSelectableRow]="rowData">
+          <td>{{ rowData.tipo }}</td>
+          <td>{{ rowData.subTipo }}</td>
+          <td>{{ rowData.modo }}</td>
+          <td class="text-center">
+            <p-splitButton icon="pi pi-bars" [model]="getButtonActions(rowData.id)" styleClass="ui-button-actions">
+            </p-splitButton>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-panel>
+</div>
+<div class="mt-5"></div>
+<p-panel header="Carga" [toggleable]="true" [hidden]="!showCarga">
+  <div class="row">
+    <app-carga-novo></app-carga-novo>
+  </div>
+</p-panel>

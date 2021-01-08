@@ -1,0 +1,68 @@
+<p-accordionTab header="Modus Operandi">
+    <div class="row margin-bottom">
+      <div class="col-md-12 margin-bottom">
+        <h4 class="laranja">Veículo do Autor</h4>
+      </div>
+
+      <div class="col-2">
+        <h4>Placa</h4>
+        <input id="txtPlaca01" type="text" pInputText />
+      </div>
+      <div class="col-3">
+        <h4>Tipo de Proprietário</h4>
+        <input id="txtTipoProprietario01" type="text" pInputText />
+      </div>
+      <div class="col-7 margin-bottom">
+        <h4>Características</h4>
+        <input id="txtCaracterisitcas02" type="text" pInputText />
+      </div>
+
+      <div class="col-md-12">
+        <h4 class="laranja">Itinerário</h4>
+        <input id="txtItinerario01" type="text" pInputText />
+      </div>
+    </div>
+    <div class="row margin-bottom">
+      <div class="col-md-4 margin-bottom">
+        <h4 class="laranja">Conhecia hábitos da vítima</h4>
+        <p-radioButton id="rdoVitima01" name="vitima" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoVitima02" name="vitima" value="2" label="Não"></p-radioButton
+        >&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoVitima03" name="vitima" value="3" label="Ignorado" [(ngModel)]="SelectButton3"></p-radioButton>
+      </div>
+      <div class="col-md-4 margin-bottom">
+        <h4 class="laranja">Conhecia hábitos da família</h4>
+        <p-radioButton id="rdoFamilia01" name="familia" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoFamilia02" name="familia" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoFamilia03" name="familia" value="3" label="Ignorado" [(ngModel)]="SelectButton3"></p-radioButton>
+      </div>
+      <div class="col-md-4 margin-bottom">
+        <h4 class="laranja">Conhecia hábitos de lazer/trabalho</h4>
+        <p-radioButton id="rdoLazer01" name="lazer" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoLazer02" name="lazer" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoLazer03" name="lazer" value="3" label="Ignorado" [(ngModel)]="SelectButton3"></p-radioButton>
+      </div>
+      <div class="col-md-4 margin-bottom">
+        <h4 class="laranja">Alterou a voz</h4>
+        <p-radioButton id="rdoVoz01" name="voz" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoVoz02" name="voz" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoVoz03" name="voz" value="3" label="Ignorado"></p-radioButton>
+      </div>
+      <div class="col-md-4 margin-bottom">
+        <h4 class="laranja">Alterou Características Psicológicas</h4>
+        <p-radioButton id="rdoPsicologicas01" name="psicologicas" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoPsicologicas02" name="psicologicas" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton id="rdoPsicologicas03" name="psicologicas" value="3" label="Ignorado"></p-radioButton>
+      </div>
+      <div class="col-md-12">
+        <h4 class="laranja">Ameaça Proferida</h4>
+        <input id="txtAmeacaProferida01" type="text" pInputText />
+      </div>
+    </div>
+    <div class="row margin-bottom">
+      <div class="col-12 row alinhar-btn-footer">
+        <p-button id="btnSalvar05" label="Salvar" class="btn-salvar"></p-button>
+        <p-button id="btnCancelar05" label="Cancelar" class="btn-salvar btn-secundario"></p-button>
+      </div>
+    </div>
+  </p-accordionTab>

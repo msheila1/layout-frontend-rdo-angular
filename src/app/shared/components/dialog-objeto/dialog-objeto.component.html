@@ -1,0 +1,135 @@
+<p-dialog header="Objeto" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1024" [minWidth]="600" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-xl-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Subtipo de objeto (lista geral para pesquisa rápida)<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="cboObjeto" type="text" pInputText />
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja">Subtipo de Objeto<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtSubtipoObjeto" type="text" pInputText [disabled]="true" />
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja">Tipo de Objeto<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtTipoObjeto" type="text" pInputText [disabled]="true" />
+    </div>
+
+    <div class="col-xl-4 margin-bottom">
+      <h4 class="laranja">Pessoa Relacionada<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboPessoaRelacionadaObjeto" [options]="select" [(ngModel)]="selected" placeholder="Selecione"></p-dropdown>
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Modo do Objeto<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboModoObjeto" [options]="select" [(ngModel)]="selected" placeholder="Selecione"></p-dropdown>
+    </div>
+
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja">Unidade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboUnidadeObjeto" [options]="select" [(ngModel)]="selected" placeholder="Selecione"></p-dropdown>
+    </div>
+    <div class="col-xl-2 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Quantidade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtQuantidadeObjeto" type="text" pInputText />
+    </div>
+
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja">Marca<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtMarcaObjeto" type="text" pInputText />
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja">Cor Predominante<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboCorPredominante" [options]="select" [(ngModel)]="selected" placeholder="Selecione"></p-dropdown>
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja">Tamanho<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTamanho" [options]="select" [(ngModel)]="selected" placeholder="Selecione"></p-dropdown>
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja">Número ou Número Serial<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNumeroSerial" type="text" pInputText />
+    </div>
+
+    <div class="col-md-12 margin-bottom">
+      <h4 class="laranja">Observação<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <textarea id="txtObservacaoObjeto" [rows]="5" [cols]="30" pInputTextarea></textarea>
+    </div>
+    <div class="col-xl-5 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo de Cadastro<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton name="group1" value="Option 1" label="Bloqueio" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+      <p-radioButton name="group2" value="Option 2" label="Desbloqueio" [(ngModel)]="val2" inputId="opt2" class="ml-3"></p-radioButton>
+      <p-radioButton name="group3" value="Option 3" label="Registro" [(ngModel)]="val3" inputId="opt3" class="ml-3"></p-radioButton>
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja">Motivo Desbloqueio<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboMotivoDesbloqueio" [options]="select" [(ngModel)]="selected" placeholder="Selecione"></p-dropdown>
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Origem<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboOrigem" [options]="select" [(ngModel)]="selected" placeholder="Selecione"></p-dropdown>
+    </div>
+    <div class="col-xl-12 margin-bottom">
+      <h4 class="laranja">Dados do Telefone<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4><i class="fa fa-asterisk"></i>Operadora<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboOperadora" [options]="select" [(ngModel)]="selected" placeholder="Selecione"></p-dropdown>
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4><i class="fa fa-asterisk"></i>DDD/Telefone Celular<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtTelefoneCelular" type="text" pInputText />
+    </div>
+    <div class="col-xl-3 margin-bottom">
+      <h4>Número Imei<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNumeroImei" type="text" pInputText />
+    </div>
+    <div class="col-xl-2 margin-bottom">
+      <h4 class="laranja">Desbloquear?<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton name="group1" value="Option 1" label="Sim" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+      <p-radioButton name="group1" value="Option 1" label="Não" [(ngModel)]="val1" inputId="opt1" class="ml-3"></p-radioButton>
+    </div>
+    <div class="col-xl-4 margin-bottom">
+      <h4><i class="fa fa-asterisk"></i>CPF/CNPJ/Passaporte do Titular da linha<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtCpfCnpj" type="text" pInputText />
+    </div>
+    <div class="col-xl-4 mt-4">
+      <button id="btnDadosPessoaRelacionada" pButton type="button" label="Usar Dados da Pessoa Relacionada"></button>
+    </div>
+  </div>
+  <div class="col-12 mt-2">
+      <div class="col-12 p-2 btn-novo"></div>
+      <div class="btn-novo margin-bottom">
+          <button id="btnNovo" pButton type="button" label="Novo"></button>
+      </div>
+  </div>
+  <div class="col-12">
+    <p-table [value]="objetos" selectionMode="single" [(selection)]="selecionaObjeto" dataKey="objetos">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="objetos">
+          <th style="width: 15%; font-weight: bold">Operadora</th>
+          <th style="width: 15%; font-weight: bold">Telefone Celular</th>
+          <th style="width: 15%; font-weight: bold">IMEI</th>
+          <th style="width: 15%; font-weight: bold">Bloqueio</th>
+          <th style="width: 20%; font-weight: bold">CPF / CNPJ / Passaporte Titular</th>
+          <th class="text-center" style="width: 7%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td>{{ pessoas }}</td>
+          <td>{{ rg }}</td>
+          <td>{{ tipoPessoa }}</td>
+          <td>{{ endereco }}</td>
+          <td>{{ telefone }}</td>
+          <td class="text-center">
+            <button id="btnFotosPessoa01" pButton icon="fa fa-search"></button>
+            <button class="ml-2" id="btnEditarPessoa01" pButton icon="fa fa-edit"></button>
+            <button class="ml-2" id="btnExcluirPessoa01" pButton icon="fa fa-close"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <p-footer>
+    <button id="btnCancelarObjeto" type="button" pButton (click)="display = false" icon="fa fa-times" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarObjeto" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

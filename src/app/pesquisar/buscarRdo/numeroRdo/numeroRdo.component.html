@@ -1,0 +1,35 @@
+<div class="row mt-5">
+  <div class="col-3 margin-bottom" data-step="1" data-intro="Clique na lupa para buscar um plantonista.">
+    <h4 class="laranja">Tipo de Pesquisa</h4>
+    <p-radioButton name="groupname" value="1" [(ngModel)]="SelectRdo" label="Número RDO"></p-radioButton>
+    <p-radioButton class="ml-5" name="groupname" value="val1" label="Número Offline"></p-radioButton>
+  </div>
+  <div class="col-6 margin-bottom" data-step="2" data-intro="Clique na lupa para buscar um plantonista.">
+    <h4 class="laranja">Tipo de Impressão</h4>
+    <p-radioButton name="groupname" value="val1" [(ngModel)]="Selected" label="2ª via"></p-radioButton>
+    <p-radioButton class="ml-5" name="groupname" value="2" label="Completa"></p-radioButton>
+    <p-radioButton class="ml-5" name="groupname" value="3" label="Resumido"></p-radioButton>
+  </div>
+  <div class="col-4 margin-bottom" data-step="3" data-intro="Clique na lupa para buscar um plantonista.">
+    <h4 class="laranja">Delegacia <i class="fa fa-asterisk"></i></h4>
+    <input type="text" pInputText />
+  </div>
+  <div class="col-2 margin-bottom" data-step="4" data-intro="Clique na lupa para buscar um plantonista.">
+    <h4 class="laranja">Ano <i class="fa fa-asterisk"></i></h4>
+    <input type="text" pInputText />
+  </div>
+  <div class="col-2 margin-bottom" data-step="5" data-intro="Clique na lupa para buscar um plantonista.">
+    <h4 class="laranja">Nº Inicial <i class="fa fa-asterisk"></i></h4>
+    <input type="text" pInputText />
+  </div>
+  <div class="col-2 margin-bottom" data-step="6" data-intro="Clique na lupa para buscar um plantonista.">
+    <h4 class="laranja">Nº Final <i class="fa fa-asterisk"></i></h4>
+    <input type="text" pInputText />
+  </div>
+  <div class="col-12 mt-2">
+    <div class="col-12 p-2 btn-buscar"></div>
+    <div class="btn-buscar">
+      <button id="btnBuscarNumeroRdo" type="button" pButton label="Buscar" class="ui-button-secondary"></button>
+    </div>
+  </div>
+</div>

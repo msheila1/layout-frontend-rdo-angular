@@ -1,0 +1,36 @@
+<ng-container [formGroup]="formGroup">
+  <div class="row margin-bottom" data-step="3" data-intro="Lorem Ipsum.">
+    <div class="col-1a numeracao-tracking" title="Localização de onde ocorreu o incidente.">
+      <h1>2</h1>
+    </div>
+    <div class="col-10 row">
+      <div class="col-12 space-10">
+        <h3 class="laranja">Localização</h3>
+      </div>
+      <div class="col-3">
+        <h4><i class="fa fa-asterisk"></i>Tipo do Local<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <p-autoComplete id="autoTipoLocal01" formControlName="tipoLocal" displayErrors [suggestions]="filteredListTipoLocal" (completeMethod)="filterTipoLocal($event)" [minLength]="1" placeholder="Digite ou Selecione" field="descricao" [dropdown]="true" [forceSelection]="true">
+          <ng-template let-tipoLocal pTemplate="item">
+              <div class="ui-helper-clearfix">
+                  <div style="float:left;margin:10px 10px 0 0">{{tipoLocal.descricao}}</div>
+              </div>
+          </ng-template>
+        </p-autoComplete>
+      </div>
+      <div class="col-3 margin-bottom">
+        <h4><i class="fa fa-asterisk"></i>Subtipo do Local<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <p-autoComplete id="autoSubTipoLocal01" formControlName="subTipoLocal" displayErrors [suggestions]="filteredListSubTipoLocal" (completeMethod)="filterSubTipoLocal($event)" [minLength]="1" placeholder="Digite ou Selecione" field="descricao" [dropdown]="true" [forceSelection]="true">
+            <ng-template let-subTipoLocal pTemplate="item">
+                <div class="ui-helper-clearfix">
+                    <div style="float:left;margin:10px 10px 0 0">{{subTipoLocal.descricao}}</div>
+                </div>
+            </ng-template>
+        </p-autoComplete>
+      </div>
+      <div class="col-6"></div>
+      <div style="width: 100%">
+        <app-auto-complete-logradouro [formGroup]="logradouro"></app-auto-complete-logradouro>
+      </div>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,15 @@
+.botao{margin-top: 10px; margin-left: -20px; margin-top: -70px; z-index: 9999; position: fixed; margin-left: -20px; padding: .375rem .75rem; background-color: #252b38;}
+.span-color{color:#fff!important; background-color: #252b38; margin-top: 0px;}
+.titulo{font-size: 20px; float: left; margin-top: 10px;  margin-left: 80px;  margin-left: 120px;}
+.sub-titulo{font-size: 14px; float: left; margin-top: 40px; font-weight: bold; }
+.sub-titulo-color{color: crimson; margin-left: -290px;}
+.background{background-color: #252b38; height: 70px; color: #fff; position: fixed; width: 100%; z-index: 999;}
+.logo{background: url("../dist/assets/images/logo-policia-civil.png") no-repeat; height: 70px; width: 70px; margin-top: 0px; background-size: cover; position: absolute; margin-left: 40px;}
+.ui-card {background-color: #fff; cursor: pointer;}
+.ui-card:hover {background-color: #eaeaea;}
+.dropdown a{font-size: 14px; color: #333;  font-family: 'Lato', sans-serif;;}
+.navbar-nav>li>a, .nav>li>a:hover, .nav>li>a:focus {padding-top: 20px; height: 70px; margin-top: 0px;  color: #fff;}
+.space{width: 190px; float: left; max-width: 190px;}
+.fa {color: #333030; float: initial; font-family: FontAwesome!important;}
+.nav>li>a>img {max-width: none;margin-top: -15px;}
+.dropdown-header{font-size: 13px; color:#333030; font-weight: 400; text-transform: capitalize;}

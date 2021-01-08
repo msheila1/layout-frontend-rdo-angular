@@ -1,0 +1,29 @@
+<p-accordionTab header="Abordagem">
+  <div class="row margin-bottom">
+    <div class="col-md-12 margin-bottom">
+      <h3 class="laranja">Abordagem</h3>
+      <p-table [value]="AbordagemAutor" selectionMode="single" [(selection)]="selecionaAbordagemAutor" dataKey="AbordagemAutor">
+        <ng-template pTemplate="header">
+          <tr [pSelectableRow]="AbordagemAutor">
+            <th style="width: 90%; font-weight: bold">Tipo</th>
+            <th class="text-center" style="width: 10%; font-weight: bold">Excluir</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+          <tr>
+            <td>{{ tipoAbordagem }}</td>
+            <td class="text-center">
+              <button id="btnExcluirAbordagem" pButton icon="fa fa-close"></button>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+          <div style="text-align:left">
+            <button id="btnNovoAbordagem" type="button" pButton icon="fa fa-plus" (click)="displayDialogAbordagem = true" label="Novo" style="width: 100px;"></button>
+          </div>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</p-accordionTab>
+<app-dialog-abordagem [display]="displayDialogAbordagem" (displayChange)="displayDialogAbordagem = false;"></app-dialog-abordagem>

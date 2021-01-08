@@ -1,0 +1,33 @@
+<!--p-dialog header="Escolha a Delegacia" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1150" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000"-->
+    <div class="row margin-bottom">
+        <div class="col-md-4 text-center">
+            <button id="btnDelegaciaPadrao" type="button" pButton label="Delegacia Padrão do Delegado" ></button>
+        </div>
+        <div class="col-md-8 atencao">
+            <i class="fa fa-fw fa-bell"></i>
+            Atenção: você está associado a outras delegacias como substituto. Esta substituição possui um prazo.
+            Ciente disto, marque uma das opções abaixo:
+        </div>
+    </div>
+    <div class="row margin-bottom">
+        <div class="col-md-12">
+            <p-table [value]="delegaciaPlantao" selectionMode="single" [(selection)]="selectedModel" (onRowSelect)="onRowSelect($event)" dataKey="id">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 40%; font-weight: bold">Delegacia</th>
+                        <th style="width: 30%; font-weight: bold">Entrada</th>
+                        <th style="width: 30%; font-weight: bold">Saída</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-model>
+                    <tr  [pSelectableRow]="model">
+                        <td>{{ model.delegacia }}</td>
+                        <td>{{ model.entrada }}</td>
+                        <td>{{ model.saida }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+
+  <!--/p-dialog-->

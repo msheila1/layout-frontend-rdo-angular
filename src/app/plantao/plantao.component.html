@@ -1,0 +1,118 @@
+<form [formGroup]="formGroup" class="form mt-4" (ngSubmit)="update()">
+<div class="row margin-bottom">
+  <div class="col-12">
+      <h3><i class="pi pi-sign-in margem-icon"></i>Plantão<a class="btn btn-outline-warning btn-lg" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-question-circle fa-2x"></i></a>
+      </h3>
+      <!--Breadcrumb-->
+      <nav aria-label="breadcrumb" class="margem-breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/plantao" id="lnkCadastroRapido"><i class="pi pi-home"></i>Início</a>
+          </li>
+          <li class="breadcrumb-item active">Plantão</li>
+        </ol>
+      </nav>
+  </div>
+</div>
+
+<div class="row margin-bottom">
+    <div class="col-12">
+        <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+        <p-panel header="Atuando no Plantão" [toggleable]="true">
+          <app-plantao-atual id="plantao-atual" [plantao] = "plantaoAtual | async" [usuario]="usuario"></app-plantao-atual>
+        </p-panel>
+    </div>
+</div>
+
+<div class="row margin-bottom">
+    <div class="col-12">
+      <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+      <p-panel header="Plantão Anterior" [toggleable]="true">
+          <app-plantao-anterior id="plantao-anterior" [plantonista]="usuariosPlantaoAnterior | async" (rowSelect)="onUserSelect($event)" [plantao]="plantaoAnterior | async"></app-plantao-anterior>
+      </p-panel>
+    </div>
+</div>
+
+<div class="row margin-bottom">
+    <div class="col-12">
+      <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+      <p-panel header="Movimentações do Plantão Atual" [toggleable]="true">
+          <app-movimentacao-atual id="movimentacao-atual" [plantonista]="plantonistasPlantaoAtual | async" (rowSelect)="onUserSelect($event)" [plantao]="movimentacaoPlantaoAtual | async"></app-movimentacao-atual>
+      </p-panel>
+    </div>
+</div>
+
+<div class="row margin-bottom">
+    <div class="col-12">
+      <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+      <p-panel header="Plantonistas" [toggleable]="true">
+          <p-pickList [source]="usersPlantonistas" [target]="usersPlantonistasTarget" sourceHeader="Usuários Disponíveis" targetHeader="Usuários Ativos no Plantão Atual" [responsive]="true" filterBy="brand"
+            dragdrop="true" sourceFilterPlaceholder="Buscar usuários" targetFilterPlaceholder="Buscar usuários" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}">
+                <ng-template let-user pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                        <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{ user.plantonista }}</div>
+                    </div>
+                </ng-template>
+            </p-pickList>
+      </p-panel>
+    </div>
+</div>
+
+<div class="row margin-bottom">
+      <div class="col-12">
+        <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+        <p-panel header="Intercorrência do Plantão" [toggleable]="true">
+          <textarea [rows]="5" [cols]="30" style="width: 100%!important;" id="textareaIntercorrencia" formControlName="intercorrencia" pInputTextarea displayErrors autoResize="autoResize"></textarea>            
+        </p-panel>
+      </div>
+</div>
+
+<div class="row margin-bottom" *ngIf="showDelegacia">
+    <div class="col-12">
+      <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+      <p-panel header="Dados da Delegacia" [toggleable]="true">
+        <app-modal-delegacia [delegaciaPlantao]="delegaciaPlantao | async" (rowSelect)="onUserSelect($event)"></app-modal-delegacia>
+        <div class="row margin-bottom">
+            <div class="col-md-12 text-center">
+                <button id="btnCancelarDelegacia1" (click)="showDelegacia = false;" style="width: 150px" type="button" pButton label="Cancelar" class="ui-button-secondary" (click)="onClose()"></button>
+                <span class="espaco"></span>
+                <button id="btnConfirmarDelegacia1" (click)="showDelegacia = false;" style="width: 150px" type="button" pButton icon="fa fa-check" label="Confirmar"></button>
+            </div>
+        </div>
+      </p-panel>
+    </div>
+</div>
+
+<div class="row margin-bottom" *ngIf="showPlantao">
+    <div class="col-12">
+      <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+      <p-panel header="Outros Plantões em Aberto" [toggleable]="true">
+        <app-modal-plantao [userPlantao]="userPlantao | async" (rowSelect)="onUserSelect($event)"></app-modal-plantao>
+        <div class="row margin-bottom">
+            <div class="col-md-12 text-right">
+                <button id="btnFecharPlantao" (click)="showPlantao = false;" style="width: 150px" type="button" pButton icon="fa fa-close" label="Fechar"></button>
+            </div>
+        </div>
+      </p-panel>
+    </div>
+</div>
+
+<p-footer>
+  <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+  <div class="col-12 text-right">
+    <button pButton type="button" label="Cancelar" class="btn-cancelar ui-button-secondary" (click)="clearForm()"></button>
+    <button id="btnPlantao" type="button" pButton class="ui-button-secondary" icon="fa fa-id-card" (click)="showDelegacia = true;" label="Selecionar Delegacia" style="width: 200px;  margin-left: 10px;" title="Fechar Plantão"></button>
+    <button id="btnAbrirFecharPlantao" type="button" class="ui-button-secondary" pButton icon="fa fa-user" label="Abrir Plantão" style="width: 150px; margin-left: 10px;" title="Abrir Plantão"></button>
+    <button id="btnPlantaoAbertos" type="button" pButton class="ui-button-secondary" icon="fa fa-search" (click)="showPlantao = true;" label="Plantão Abertos" style="width: 160px; margin-left: 10px;" title="Visualizar outros plantões em aberto"></button>
+    <button id="btnSalvar" type="submit" pButton  icon="fa fa-save" label="Salvar" style="width: 100px; margin-top: 20px; margin-right: 5px; margin-left: 10px;" title="Salva a intercorrência"></button>    
+  </div>
+</p-footer>
+
+</form>
+
+<!-- Dialog -->
+<!--app-dialog-delegacia [display]="displayDelegacia" [delegaciaPlantao]="delegaciaPlantao | async" (rowSelect)="onUserSelect($event)" (displayChange)="display = false;"></app-dialog-delegacia-->
+<!--app-dialog-plantao [display]="displayPlantao" [userPlantao]="userPlantao | async" (rowSelect)="onUserSelect($event)" (displayChange)="display = false;"></app-dialog-plantao-->
+
+
+

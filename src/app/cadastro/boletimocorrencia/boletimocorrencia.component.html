@@ -1,0 +1,85 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="row margin-bottom" data-step="2" data-intro="Lorem Ipsum.">
+    <div class="col-1a numeracao-tracking" title="Dados importantes como data, hora e comunicação da ocorrência.">
+      <h1>1</h1>
+    </div>
+    <div class="col-10 row">
+      <app-identificao-rdo [formGroup]="identificaoRdo" (onTipoBoChange)="handleTipoBoChange($event)" [listPeriodo]="listPeriodo" ></app-identificao-rdo>
+    </div>
+  </div>
+
+  <div class="row margin-bottom" data-step="3" data-intro="Lorem Ipsum.">
+    <div class="col-1a numeracao-tracking" title="Localização de onde ocorreu o incidente.">
+      <h1>2</h1>
+    </div>
+    <div class="col-10 row">
+        <div style="width: 100%">
+          <app-tipo-local [formGroup]="tipoLocal" [listTipoLocal]="listTipoLocal" ></app-tipo-local>
+        </div>
+
+        <div style="width: 100%">
+          <app-endereco-auto-complete [formGroup]="enderecoAutoComplete" (emitterCircunscricao)="handleCircunscricaoChange($event)" [listUf]="listUf" ></app-endereco-auto-complete>
+        </div>
+    </div>
+  </div>
+
+  <div class="row margin-bottom" data-step="4" data-intro="Lorem Ipsum.">
+    <div class="numeracao-tracking" title="Mais informações importantes para o B.O.">
+      <h1>3</h1>
+    </div>
+    <div class="col-10 row">
+      <div style="width: 100%">
+        <app-flagrante-autoria [formGroup]="flagranteAutoria" [tipoBo]="tipoBo" ></app-flagrante-autoria>
+      </div>
+
+      <div style="width: 100%">
+        <app-apresentacao-ocorrencia [formGroup]="apresentacaoOcorrencia" [listApresentacaoOcorrencia]="listApresentacaoOcorrencia" ></app-apresentacao-ocorrencia>
+      </div>
+
+      <div style="width: 100%">
+        <app-esteve-outro-lugar [formGroup]="esteveOutroLugar" ></app-esteve-outro-lugar>
+      </div>
+  
+      <div style="width: 100%">
+        <app-tratase-intolerancia [formGroup]="trataseIntolerancia" ></app-tratase-intolerancia>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-bottom" data-step="5" data-intro="Lorem Ipsum.">
+    <div class="col-1a numeracao-tracking" title="Mais detalhes para ajudar na investigação">
+      <h1>4</h1>
+    </div>
+    <div class="col-10 row">
+      <div style="width: 100%">
+        <app-solucao [formGroup]="solucao" [inputCircunscricao]="circunscricao" [listSolucao]="listSolucao" ></app-solucao>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row margin-bottom">
+    <div class="col-1a"></div>
+    <div class="col-11 row space-10 align-left alinhar-btn-left">
+      <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+      
+      <p-toast position="center" key="maior30dias" (onClose)="onReject()" [modal]="true" [baseZIndex]="5000" [style]="{ width: '600px' }">
+          <ng-template let-message pTemplate="message">
+              <div style="text-align: center">
+                  <p>{{message.detail}}</p>
+              </div>
+              <div class="ui-g ui-fluid">
+                  <div class="ui-g-6">
+                      <button type="button" pButton (click)="onConfirm()" label="Sim" class="ui-button-success"></button>
+                  </div>
+                  <div class="ui-g-6">
+                      <button type="button" pButton (click)="onReject()" label="Não" class="ui-button-secondary"></button>
+                  </div>
+              </div>
+          </ng-template>
+      </p-toast>
+
+      <button pButton type="submit" label="Salvar" class="btn-salvar mr-1" ></button>
+      <button pButton type="button" label="Cancelar" class="btn-cancelar ui-button-secondary"></button>
+    </div>
+  </div>
+</form>

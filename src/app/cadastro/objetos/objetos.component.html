@@ -1,0 +1,69 @@
+<!--Objetos-->
+<div class="row margin-div">
+  <div class="col-12">
+    <i class="fa fa-fw fa-table position-icon-table"></i>
+    <p-panel header="Objeto" [toggleable]="true">
+    <p-table [value]="objeto" selectionMode="single" [(selection)]="selecionaObjeto" dataKey="objeto">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="objeto">
+          <th style="width: 10%; font-weight: bold">Nº</th>
+          <th style="width: 25%; font-weight: bold">Subtipo</th>
+          <th style="width: 25%; font-weight: bold">Modo</th>
+          <th class="text-center" style="width: 15%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ numeroObjeto }}</td>
+          <td>{{ subtipoObjeto }}</td>
+          <td>{{ modoObjeto }}</td>
+          <td class="text-center">
+            <p-splitButton id="acoesObjeto" icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:right">
+          <button id="btnNovoObjetos" type="button" pButton icon="fa fa-plus" (click)="displayDialogObjeto = true;" label="Novo" style="width: 100px;"></button>&nbsp;&nbsp;
+        </div>
+      </ng-template>
+    </p-table>
+    </p-panel>
+  </div>
+</div>
+<!--Arquivos-->
+<div class="row margin-div">
+  <div class="col-12">
+    <i class="fa fa-fw fa-table position-icon-table"></i>
+    <p-panel header="Arquivos" [toggleable]="true">
+    <p-table [value]="objeto" selectionMode="single" [(selection)]="selecionaObjeto" dataKey="objeto">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="objeto">
+          <th style="width: 10%; font-weight: bold">Arquivo</th>
+          <th style="width: 25%; font-weight: bold">Subtipo</th>
+          <th style="width: 25%; font-weight: bold">Modo</th>
+          <th class="text-center" style="width: 15%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ numeroObjeto }}</td>
+          <td>{{ subtipoObjeto }}</td>
+          <td>{{ modoObjeto }}</td>
+          <td class="text-center">
+            <p-splitButton id="acoesArquivo" icon="pi pi-bars" [model]="arquivos" styleClass="ui-button-actions"></p-splitButton>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:right">
+          <button id="btnNovoObjetos01" type="button" pButton icon="fa fa-plus" (click)="displayDialogObjetoImportacao = true;" label="Novo" style="width: 100px;"></button>&nbsp;&nbsp;
+        </div>
+      </ng-template>
+    </p-table>
+  </p-panel>
+  </div>
+</div>
+<!--Dialog-->
+<app-dialog-objeto [display]="displayDialogObjeto" (displayChange)="displayDialogObjeto = false;"></app-dialog-objeto>
+<app-dialog-objeto-importacao [display]="displayDialogObjetoImportacao" (displayChange)="displayDialogObjetoImportacao = false;"></app-dialog-objeto-importacao>

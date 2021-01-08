@@ -1,0 +1,10 @@
+<p-dialog header="Outros Plantões em Aberto" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="750" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000">    
+    <div class="row margin-bottom">      
+        <div class="col-md-12">
+            <app-table-plantoes-abertos></app-table-plantoes-abertos>
+        </div>
+    </div>
+    <p-footer>
+      <button id="btnFecharPlantao" type="button" pButton (click)="displayPlantao = false" icon="fa fa-close" (click)="display = false" label="Fechar"></button>
+    </p-footer>
+  </p-dialog>

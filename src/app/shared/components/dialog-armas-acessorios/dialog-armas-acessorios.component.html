@@ -1,0 +1,64 @@
+<p-dialog header="Arma e Acessorios" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1024" [minWidth]="600" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Pessoa Relacionada<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboPessoaArma" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-2 margin-bottom">
+      <h4 class="laranja">Número<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNumeroArma" type="text" pInputText />
+    </div>
+    <div class="col-1a no-label">
+      <button type="button" (click)="displayDialogBuscarArmas = true;" pButton icon="pi pi-search"></button>
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Modo do Objeto<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboModoObjetoArma" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Tipo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTipoArma" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-2 margin-bottom">
+      <h4 class="laranja">Marca<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input type="text" pInputText />
+    </div>
+    <div class="col-md-2 margin-bottom">
+      <h4 class="laranja">Calibre<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input type="text" pInputText />
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Proprietário<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input type="text" pInputText />
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Uso<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton name="groupname" value="val1" label="Restrito" [(ngModel)]="selectedValue"></p-radioButton>
+      <p-radioButton name="groupname" value="val2" label="Permitido" [(ngModel)]="selectedValue"></p-radioButton>
+    </div>
+    <div class="col-12 space-10">
+      <h3 class="laranja">Quantidade de cartuchos<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+    </div>
+    <div class="col-md-4">
+      <h4>Íntegros<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNumeroIML" type="text" pInputText />
+    </div>
+    <div class="col-md-4">
+      <h4>Picotados<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtAnoIML" type="text" pInputText />
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4>Deflagrados<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtDescricaoIML" type="text" pInputText />
+    </div>
+    <div class="col-md-12 margin-bottom">
+      <h4 class="laranja">Estado da arma<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <textarea id="txtObservacaoArma" [rows]="3" [cols]="30" pInputTextarea></textarea>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarArma" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarArma" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>
+<app-dialog-buscar-armas [display]="displayDialogBuscarArmas" (displayChange)="displayDialogBuscarArmas = false;"></app-dialog-buscar-armas>

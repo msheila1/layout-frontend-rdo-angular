@@ -1,0 +1,27 @@
+<form [formGroup]="formGroup" (ngSubmit)="insert()">
+  <div class="row margin-div">
+    <div class="col-12 space-10">
+      <h3 class="laranja"><i class="fa fa-asterisk"></i>Histórico do B.O.</h3>
+    </div>
+    <div class="col-12">
+      <p-editor id="historico" formControlName="historico" [style]="{'height':'320px'}" (keyup)="counter()" [(ngModel)]="valEditor">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold" aria-label="Bold"></button>
+            <button class="ql-italic" aria-label="Italic"></button>
+            <button class="ql-underline" aria-label="Underline"></button>
+          </span>
+        </p-header>
+      </p-editor>
+      <p>{{countLetters}} caracteres restantes.</p>
+    </div>
+  </div>
+  <div class="row margin-bottom">
+    <div class="col-12 row alinhar-btn-footer">
+      <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+      <button pButton type="button" label="Salvar" class="btn-salvar mr-1" (click)="saveForm()"></button>
+      <button pButton type="button" label="Cancelar" class="btn-cancelar ui-button-secondary" (click)="confirm()"></button>
+      <p-confirmDialog></p-confirmDialog>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,60 @@
+<p-accordionTab header="Telefone">
+  <div class="row margin-bottom">
+    <div class="col-md-12 margin-bottom">
+      <h3 class="laranja">Telefone</h3>
+      <p-table [value]="TelefoneAutor" selectionMode="single" [(selection)]="selecionaTelefoneAutor" dataKey="TelefoneAutor">
+        <ng-template pTemplate="header">
+          <tr [pSelectableRow]="TelefoneAutor">
+            <th style="width: 30%; font-weight: bold">Tipo</th>
+            <th style="width: 10%; font-weight: bold">DDD</th>
+            <th style="width: 50%; font-weight: bold">Número</th>
+            <th class="text-center" style="width: 10%; font-weight: bold">Excluir</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+          <tr>
+            <td>{{ tipoAutor }}</td>
+            <td>{{ dddAutor }}</td>
+            <td>{{ numeroAutor }}</td>
+            <td class="text-center">
+              <button id="btnExcluirTelefone02" pButton icon="fa fa-close"></button>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+          <div style="text-align:left">
+            <button id="btnNovoTelefone02" type="button" pButton icon="fa fa-plus" (click)="displayDialogTelefoneAutor = true" label="Novo" style="width: 100px;"></button>
+          </div>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+  <div class="row margin-bottom">
+    <div class="col-md-12 margin-bottom">
+      <h3 class="laranja">Ruídos</h3>
+      <p-table [value]="RuidosAutor" selectionMode="single" [(selection)]="selecionaRuidoAutor" dataKey="RuidosAutor">
+        <ng-template pTemplate="header">
+          <tr [pSelectableRow]="RuidosAutor">
+            <th style="width: 90%; font-weight: bold">Tipo</th>
+            <th class="text-center" style="width: 10%; font-weight: bold">Excluir</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+          <tr>
+            <td>{{ tipoRuido }}</td>
+            <td class="text-center">
+              <button id="btnExcluirRuidos" pButton icon="fa fa-close"></button>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+          <div style="text-align:left">
+            <button id="btnNovoRuidos" type="button" pButton icon="fa fa-plus" (click)="displayDialogRuido = true" label="Novo" style="width: 100px;"></button>
+          </div>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</p-accordionTab>
+<app-dialog-telefone-autor [display]="displayDialogTelefoneAutor" (displayChange)="displayDialogTelefoneAutor = false;"></app-dialog-telefone-autor>
+<app-dialog-ruido [display]="displayDialogRuido" (displayChange)="displayDialogRuido = false;"></app-dialog-ruido>

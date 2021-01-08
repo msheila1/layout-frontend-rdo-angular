@@ -1,0 +1,109 @@
+<div class="col-5">
+  <h2>Buscar RDO<a class="btn btn-outline-warning btn-lg ml-2" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-question-circle fa-2x"></i></a>
+  </h2>
+  <!--Breadcrumb-->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/cadastro-bo-rapido" id="lnkCadastroRapido"><i class="pi pi-home"></i>Home</a>
+      </li>
+      <li class="breadcrumb-item active">Buscar RDO</li>
+    </ol>
+  </nav>
+</div>
+<div class="col-12">
+  <p-tabView>
+    <p-tabPanel header="Número RDO"> 
+      <app-numeroRdo></app-numeroRdo>
+    </p-tabPanel>
+    <p-tabPanel header="Nome da Pessoa">
+      <app-nomePessoa></app-nomePessoa>
+    </p-tabPanel>
+    <p-tabPanel header="RG da Pessoa">
+      <app-rgPessoa></app-rgPessoa>
+    </p-tabPanel>
+    <p-tabPanel header="CPF da Pessoa">
+      <app-cpfPessoa></app-cpfPessoa>
+    </p-tabPanel>
+    <p-tabPanel header="Veículo">
+      <app-veiculoRdo></app-veiculoRdo>
+    </p-tabPanel>
+    <p-tabPanel header="Data/Hora">
+      <app-dataHora></app-dataHora>
+    </p-tabPanel>
+    <p-tabPanel header="Circunscrição">
+     <app-circunscricao></app-circunscricao>
+    </p-tabPanel>
+    <p-tabPanel header="Empresa">
+      <app-empresa></app-empresa>
+    </p-tabPanel>
+    <p-tabPanel header="Objeto">
+      <app-objeto></app-objeto>
+    </p-tabPanel>
+    <p-tabPanel header="Número da Arma">
+      <app-numeroArma></app-numeroArma>
+    </p-tabPanel>
+  </p-tabView>
+  <div class="col-4"></div>
+  <br />
+  <!-- Resultado de Pesquisar-->
+  <div class="margin-bottom">
+    <div class="card-header header-elements-inline">
+      <h6 class="card-title">Resultado da Pesquisa</h6>
+    </div>
+    <p-table [value]="buscarRdo" selectionMode="single" [(selection)]="selecionaBuscaRdo" dataKey="listBuscarRdo">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="buscarRdo">
+          <th style="width: 7%; font-weight: bold">Situação</th>
+          <th style="width: 10%; font-weight: bold">Nome Delegacia</th>
+          <th style="width: 5%; font-weight: bold">Ano</th>
+          <th style="width: 5%; font-weight: bold">Nº RDO</th>
+          <th style="width: 10%; font-weight: bold">Circunscrição</th>
+          <th style="width: 12%; font-weight: bold">Comunicação</th>
+          <th class="text-center" style="width: 8%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ situacao }}</td>
+          <td>{{ delegacia }}</td>
+          <td>{{ 2019 }}</td>
+          <td>{{ rdo }}</td>
+          <td>{{ circunscricao }}</td>
+          <td>{{ comunicacao }}</td>
+          <td class="text-center">
+            <button id="btnConsultarHistorico" pButton icon="fa fa-search" pTooltip="Visualizar RDO" tooltipPosition="top" placeholder="Top"></button>
+            <a routerLink="/cadastro"><button class="ml-2" id="btnEditarRdo" pButton icon="fa fa-edit" pTooltip="Editar RDO" tooltipPosition="top" placeholder="Top"></button></a>
+            <button class="ml-2" id="btnVisualizarRdo" pButton icon="fa fa-file" pTooltip="Consultar Histórico" tooltipPosition="top" placeholder="Top" (click)="showDialogConsultaHistorico()"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<!-- Dialog Consultar Histórico-->
+<p-dialog header="Histórico de Versão" [(visible)]="displayConsultaHistorico" [modal]="true" [responsive]="true" [width]="1000" [minWidth]="900" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <div class="row margin-bottom">
+    <p-table [value]="consultaRdo" selectionMode="single" [(selection)]="ConsultaHistoricoRdo" dataKey="listConsultaHistorico">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="consultaRdo">
+          <th style="width: 15%; font-weight: bold">Usuário</th>
+          <th style="width: 5%; font-weight: bold">Data</th>
+          <th style="width: 5%; font-weight: bold">Nº Versão</th>
+          <th class="text-center" style="width: 8%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ usuario }}</td>
+          <td>{{ data }}</td>
+          <td>{{ versao }}</td>
+          <td class="text-center">
+            <p-button icon="pi pi-search" label="Visualizar PDF" styleClass="ui-button-warning"></p-button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</p-dialog>

@@ -1,0 +1,21 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+<div class="row">
+    <app-carga-table [carga]="carga$ | async"></app-carga-table>
+    <div class="col-12 text-right">
+        <button id="btnPlantao" type="button" pButton icon="fa fa-plus" (click)="showCarga = true;" label="Novo" style="width: 100px; margin-bottom: 25px;"></button>
+    </div>
+       
+<p-panel header="Carga" [toggleable]="true" [hidden]="!showCarga">
+<div class="row">
+    <app-carga-novo [formGroup]="cargaNovo"></app-carga-novo>
+<!---app-carga-form [modoCarga]="modoCarga$ | async" [tipoCarga]="tipoCarga$ | async" [unidadeCarga]="unidadeCarga$ | async"></app-carga-form-->
+</div>
+    <div class="col-12 text-right mt-5">
+        <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+        <button pButton type="submit" label="Salvar" icon="fa fa-save" class="btn-salvar mr-1"></button>
+        <button pButton type="button" label="Cancelar" class="btn-cancelar ui-button-secondary"(click)="clearForm()"></button>
+    </div>
+</p-panel>
+</div>
+</form>
+

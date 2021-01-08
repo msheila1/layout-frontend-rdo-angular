@@ -1,0 +1,19 @@
+<div class="row mt-5">
+  <div class="col-3 margin-bottom">
+    <h4 class="laranja">Buscar Por:</h4>
+    <p-radioButton name="groupname" value="1" [(ngModel)]="SelectRdo" label="Nome Completo"></p-radioButton>
+    <p-radioButton class="ml-5" name="groupname" value="val1" label="Nome Iniciado por"></p-radioButton>
+  </div>
+  <div class="col-4 margin-bottom">
+    <h4 class="laranja">
+      Nome Completo da Pessoa <i class="fa fa-asterisk"></i>
+    </h4>
+    <input type="text" pInputText />
+  </div>
+  <div class="col-12 mt-2">
+    <div class="col-12 p-2 btn-buscar"></div>
+    <div class="btn-buscar">
+      <button id="btnBuscarNumeroRdo" type="button" pButton label="Buscar" class="ui-button-secondary"></button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<p-dialog header="Carga" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1024" [minWidth]="600" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo de Carga<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTipoCarga" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Subtipo de Carga<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboSubtipoCarga" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Modo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboModoCarga" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Unidade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboUnidadeCarga" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Detalhe da Carga<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtDetalheCarga" type="text" pInputText />
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Valor da Carga (R$)<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtValorCarga" type="text" pInputText />
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Destino<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtDestinoCarga" type="text" pInputText />
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Notas Fiscais/Invoices<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNotasFiscais" type="text" pInputText />
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Nome do Embarcador<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNomeEmbarcador" type="text" pInputText />
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Local de Embarque<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtLocalEmbarque" type="text" pInputText />
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Origem<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton id="rdoOrigemCarga1" name="origemCarga" value="1" [(ngModel)]="SelecionaSim" label="Nacional">
+      </p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoOrigemCarga2" name="origemCarga" value="2" label="Importada"></p-radioButton>
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Estava segurada<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton id="rdoEstavaSegurada1" name="segurada" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoEstavaSegurada2" name="segurada" value="2" [(ngModel)]="SelecionaNao" label="Não">
+      </p-radioButton>
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Série<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtSerieCarga" type="text" pInputText />
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Marca<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtMarcaCarga" type="text" pInputText />
+    </div>
+
+    <div class="col-12 space-10">
+      <h3 class="laranja">Recuperação da Carga<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+    </div>
+    <div class="col-md-3">
+      <h4>Recuperada<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton id="rdoRecuperada1" name="recuperada" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoRecuperada2" name="recuperada" value="2" [(ngModel)]="SelecionaNao" label="Não">
+      </p-radioButton>
+    </div>
+    <div class="col-md-3">
+      <h4>Valor Estimado (R$)<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtValorEstimadoCarga" type="text" pInputText />
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4>Data<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-calendar id="calDataCarga" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+    <div class="col-1a"></div>
+    <div class="col-md-2 margin-bottom">
+      <h4>Hora<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-calendar id="timHoraCarga" [timeOnly]="true" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+    <div class="col-md-12">
+      <h4>Local da Recuperação<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtLocalRecuperacao" type="text" pInputText />
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarCarga" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirnarCarga" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

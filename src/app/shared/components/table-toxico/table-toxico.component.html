@@ -1,0 +1,26 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <h4 class="laranja">Tóxico</h4>
+    <p-table [value]="Toxico" selectionMode="single" dataKey="Toxico">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="Toxico">
+          <th style="width: 90%; font-weight: bold">Tipo de Tóxico</th>
+          <th class="text-center" style="width: 10%; font-weight: bold">Excluir</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ TipoToxico }}</td>
+          <td class="text-center">
+            <button id="btnToxico01" pButton icon="fa fa-close"></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+          <button id="btnNovoToxico01" type="button" pButton icon="fa fa-plus" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

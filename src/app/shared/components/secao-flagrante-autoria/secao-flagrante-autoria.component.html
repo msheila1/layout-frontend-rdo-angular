@@ -1,0 +1,51 @@
+<ng-container [formGroup]="formGroup">
+  <div class="row">
+    <div class="col-xl-3 col-md-4 margin-bottom">
+      <h3 class="laranja altura-bottom"><i class="fa fa-asterisk"></i>Flagrante?</h3>
+      <p-radioButton name="groupFlagrante" formControlName="flagrante" value="true" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton name="groupFlagrante" formControlName="flagrante" value="false" label="Não" displayErrors></p-radioButton>
+    </div>
+    <div class="col-xl-8 col-md-12 margin-bottom">
+      <h3 class="laranja altura-bottom">Autoria</h3>
+      <p-radioButton name="groupAutoria" formControlName="autoria" value="S" label="Conhecida"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton name="groupAutoria" formControlName="autoria" value="N" label="Desconhecida"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton name="groupAutoria" formControlName="autoria" value="X" label="Sem autoria" displayErrors></p-radioButton>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xl-4 col-md-6 row margin-bottom" [hidden]="!displayQuantidadeIdentificada">
+      <input type="number" formControlName="quantidadeIdentificada" min="0" class="width-60"/>
+      <h4 class="ml-3">Quantidade identificada<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <control-errors [controlName]="formGroup.controls['quantidadeIdentificada']"></control-errors>
+    </div>
+    <div class="col-xl-6 col-md-6 margin-bottom" [hidden]="!displayQuantidadeIdentificada">
+      <p-checkbox name="groupname" binary="true" label="Reconhecimento ignorado" formControlName="reconhecimentoIgnorado"></p-checkbox>          
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 row margin-bottom" [hidden]="!displayQuantidadeIdentificada || !displayAutores">
+      <p-table [value]="autores" [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+          <tr>
+            <th style="width: 25%; font-weight: bold">Sexo</th>
+            <th style="width: 25%; font-weight: bold">Idade aproximada</th>
+            <th style="width: 25%; font-weight: bold">Altura</th>
+            <th style="width: 25%; font-weight: bold">Compleição<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></th>
+            <th style="width: 25%; font-weight: bold">Cor da cutis<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-autor>
+          <tr>
+            <td><p-dropdown [options]="dropdownSexo" placeholder="Selecione" showClear="true" [(ngModel)]="autor.sexo" [ngModelOptions]="{standalone: true}"></p-dropdown></td>
+            <td><input type="number" class="width-60" [(ngModel)]="autor.idade" [ngModelOptions]="{standalone: true}" min="0"/></td>
+            <td><input type="number" step="0.01" class="width-60" [(ngModel)]="autor.altura" [ngModelOptions]="{standalone: true}" min="0" max="3.00"/></td>
+            <td><p-dropdown [options]="dropdownCompleicao" placeholder="Selecione" showClear="true" [(ngModel)]="autor.compleicao" [ngModelOptions]="{standalone: true}" ></p-dropdown></td>
+            <td><p-dropdown [options]="dropdownCorCutis" placeholder="Selecione" showClear="true" [(ngModel)]="autor.corCutis" [ngModelOptions]="{standalone: true}"></p-dropdown></td>
+          </tr> 
+        </ng-template>
+      </p-table>      
+    </div>
+  </div>
+</ng-container>

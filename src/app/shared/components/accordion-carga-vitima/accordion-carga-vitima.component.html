@@ -1,0 +1,46 @@
+<p-accordionTab header="Carga">
+  <div class="row margin-bottom">
+    <div class="col-md-4 margin-bottom">
+      <h3 class="laranja">Sequestro</h3>
+      <p-radioButton id="rdoSequestro1" name="sequestro" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoSequestro2" name="sequestro" value="2" [(ngModel)]="SelectButton2" label="Não"></p-radioButton>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h3 class="laranja">Cárcere</h3>
+      <p-radioButton id="rdoCarcere1" name="carcere" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoCarcere2" name="carcere" value="2" [(ngModel)]="SelectButton2" label="Não"></p-radioButton>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h3 class="laranja">Já foi vítima antes</h3>
+      <p-radioButton id="rdoVitimaAntes1" name="vitimaAntes" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoVitimaAntes2" name="vitimaAntes" value="2" [(ngModel)]="SelectButton2" label="Não">
+      </p-radioButton>
+    </div>
+
+    <div class="col-md-4 margin-bottom">
+      <h3 class="laranja">Circunscrição</h3>
+      <input id="txtCircunscricao" type="text" pInputText />
+    </div>
+    <div class="col-md-8 margin-bottom">
+      <h3 class="laranja">Local</h3>
+      <input id="txtLocalCarga" type="text" pInputText />
+    </div>
+
+    <div class="col-md-2">
+      <h3 class="laranja">Data</h3>
+      <p-calendar id="calDataCarga01" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+    <div class="col-1a"></div>
+    <div class="col-md-4">
+      <h3 class="laranja">Tipo de Carga</h3>
+      <p-dropdown id="cboTipoCarga01" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+  <div class="row margin-bottom">
+    <div class="col-12 row alinhar-btn-footer">
+      <p-button id="btnSalvarCarga" label="Salvar" class="btn-salvar"></p-button>
+      <p-button id="btnCancelarCarga" label="Cancelar" class="btn-salvar btn-secundario"></p-button>
+    </div>
+  </div>
+</p-accordionTab>

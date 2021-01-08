@@ -1,0 +1,20 @@
+<p-table [value]="plantaoAtual" selectionMode="single" [(selection)]="selecionaPlantaoAtual" dataKey="plantaoAtual">
+    <ng-template pTemplate="header">
+      <tr [pSelectableRow]="plantaoAtual">
+        <th style="width: 25%; font-weight: bold">Usuário</th>
+        <th style="width: 15%; font-weight: bold">RG</th>
+        <th style="width: 20%; font-weight: bold">Entrada</th>
+        <th style="width: 20%; font-weight: bold">Saída</th>
+        <th style="width: 10%; font-weight: bold">Em Uso</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body">
+      <tr>
+        <td>{{ usuario }}</td>
+        <td>{{ rg }}</td>
+        <td>{{ entrada }}</td>
+        <td>{{ saida }}</td>
+        <td>{{ emUso }}</td>
+      </tr>
+    </ng-template>
+  </p-table>

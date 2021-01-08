@@ -1,0 +1,34 @@
+{
+    "type": "array",
+    "items": {
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "check-space",
+            "check-lowercase",
+            "check-uppercase",
+            "allow-trailing-lowercase"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "ignore-words": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "ignore-pattern": {
+              "type": "string"
+            }
+          },
+          "minProperties": 1,
+          "maxProperties": 1
+        }
+      ]
+    },
+    "minLength": 1,
+    "maxLength": 5
+  }

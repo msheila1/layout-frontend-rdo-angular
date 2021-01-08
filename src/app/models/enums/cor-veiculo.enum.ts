@@ -1,0 +1,37 @@
+export enum CorVeiculoEnum {
+    Amarelo = 1,
+    Azul = 2,
+    Bege = 3,
+    Branco = 4,
+    Cinza = 5,
+    Dourada = 6,
+    Grena = 7,
+    Laranja = 8,
+    Marrom = 9,
+    Prata = 10,
+    Preta = 11,
+    Rosa = 12,
+    Roxa = 13,
+    Verde = 14,
+    Vermelho = 15,
+    Fantasia = 16
+}
+
+export const corVeiculoEnumLabel = new Map<CorVeiculoEnum, string>([
+    [CorVeiculoEnum.Amarelo, 'Amarelo'],
+    [CorVeiculoEnum.Azul, 'Azul'],
+    [CorVeiculoEnum.Bege, 'Bege'],
+    [CorVeiculoEnum.Branco, 'Branco'],
+    [CorVeiculoEnum.Cinza, 'Cinza'],
+    [CorVeiculoEnum.Dourada, 'Dourada'],
+    [CorVeiculoEnum.Grena, 'Grena'],
+    [CorVeiculoEnum.Laranja, 'Laranja'],
+    [CorVeiculoEnum.Marrom, 'Marrom'],
+    [CorVeiculoEnum.Prata, 'Prata'],
+    [CorVeiculoEnum.Preta, 'Preta'],
+    [CorVeiculoEnum.Rosa, 'Rosa'],
+    [CorVeiculoEnum.Roxa, 'Roxa'],
+    [CorVeiculoEnum.Verde, 'Verde'],
+    [CorVeiculoEnum.Vermelho, 'Vermelho'],
+    [CorVeiculoEnum.Fantasia, 'Fantasia'],
+]);

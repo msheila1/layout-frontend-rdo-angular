@@ -1,0 +1,57 @@
+<p-accordionTab header="Gerais">
+    <div class="row margin-bottom">
+        <div class="col-md-4 margin-bottom">
+            <h4 class="laranja">Antecedentes Criminais</h4>
+            <p-radioButton id="rdoAntecedentes01" name="antecedentes" value="1" label="Sim"></p-radioButton>
+            &nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoAntecedentes02" name="antecedentes" value="2" label="Não"></p-radioButton>
+            &nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoAntecedentes03" name="antecedentes" value="3" label="Ignorado"
+                [(ngModel)]="SelectButton3"></p-radioButton>
+        </div>
+        <div class="col-md-4 margin-bottom">
+            <h4 class="laranja">Bebida Alcoólica</h4>
+            <p-radioButton id="rdoBebida01" name="bebida" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoBebida02" name="bebida" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoBebida03" name="bebida" value="3" label="Ignorado" [(ngModel)]="SelectButton3">
+            </p-radioButton>
+        </div>
+        <div class="col-md-4 margin-bottom">
+            <h4 class="laranja">Possui Dívida</h4>
+            <p-radioButton id="rdoDivida01" name="divida" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoDivida02" name="divida" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoDivida03" name="divida" value="3" label="Ignorado" [(ngModel)]="SelectButton3">
+            </p-radioButton>
+        </div>
+    </div>
+    <div class="row margin-bottom">
+        <div class="col-md-4 margin-bottom">
+            <h4 class="laranja">Religião</h4>
+            <p-dropdown id="cboReligiao01" [options]="select" [(ngModel)]="selected"></p-dropdown>
+        </div>
+        <div class="col-md-3 margin-bottom">
+            <h4 class="laranja">Tipo Sanguíneo</h4>
+            <p-dropdown id="cboTipoSanguineo" [options]="select" [(ngModel)]="selected"></p-dropdown>
+        </div>
+        <div class="col-md-5">
+            <h4 class="laranja">Parentesco com a vítima</h4>
+            <input id="txtParentesco01" type="text" pInputText />
+        </div>
+
+        <div class="col-md-6 margin-bottom">
+            <h4 class="laranja">Relacionamento com a família</h4>
+            <input id="txtRElacionamentoFamilia01" type="text" pInputText />
+        </div>
+
+        <div class="col-md-6">
+            <h4 class="laranja">Motivo Prisão Anterior</h4>
+            <input id="txtMotivoPrisaoAnterior01" type="text" pInputText />
+        </div>
+    </div>
+    <div class="row margin-bottom">
+        <div class="col-12 row alinhar-btn-footer">
+            <p-button id="btnSalvar04" label="Salvar" class="btn-salvar"></p-button>
+            <p-button id="btnCancelar04" label="Cancelar" class="btn-salvar btn-secundario"></p-button>
+        </div>
+    </div>
+</p-accordionTab>

@@ -1,0 +1,30 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <h4 class="laranja">Cartão de Crédito</h4>
+    <p-table [value]="CartaoCreditoPessoa" selectionMode="single" dataKey="CartaoCreditoPessoa">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="CartaoCreditoPessoa">
+          <th style="width: 30%; font-weight: bold">Nome</th>
+          <th style="width: 30%; font-weight: bold">Número</th>
+          <th style="width: 30%; font-weight: bold">Validade</th>
+          <th class="text-center" style="width: 10%; font-weight: bold">Excluir</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ NomePessoaCartao }}</td>
+          <td>{{ NumeroPessoa }}</td>
+          <td>{{ ValidadePessoa }}</td>
+          <td class="text-center">
+            <button id="btnExcluirCartaoCredito01" pButton icon="fa fa-close"></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+          <button id="btnNovoCartaoCredito01" type="button" pButton icon="fa fa-plus" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<p-dialog header="Pastologia" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="500" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="1000">
+  <div class="row margin-bottom">
+    <div class="col-12 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo</h4>
+      <p-dropdown id="cboTipoPatologia" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarPatologia" type="button" pButton (click)="displayPatologiaPessoa = false" label="Cancelar" class="ui-button-secondary" (click)="display = false"></button>
+    <button id="btnConfirmarPatologia" type="button" pButton (click)="displayPatologiaPessoa = false" icon="fa fa-check" (click)="display = false" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

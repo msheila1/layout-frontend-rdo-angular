@@ -1,0 +1,34 @@
+<div class="row margin-div">
+  <div class="col-12">
+    <i class="fa fa-fw fa-table position-icon-table"></i>
+    <p-panel header="Selecione uma Carga" [toggleable]="true">
+    <p-table [value]="carga" selectionMode="single" [(selection)]="selecionaCarga" dataKey="carga">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="instrumentosVeiculo">
+          <th style="width: 30%; font-weight: bold">Tipo</th>
+          <th style="width: 30%; font-weight: bold">Subtipo</th>
+          <th style="width: 30%; font-weight: bold">Modo</th>
+          <th class="text-center" style="width: 10%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ tipoCarga }}</td>
+          <td>{{ subtipoCarga }}</td>
+          <td>{{ modoCarga }}</td>
+          <td class="text-center">
+              <p-splitButton icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:right">
+          <button id="btnCarga" type="button" pButton icon="fa fa-plus" (click)="displayDialogCarga = true;" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+    </p-panel>
+  </div>
+</div>
+<!--Dialog-->
+<app-dialog-carga [display]="displayDialogCarga" (displayChange)="displayDialogCarga = false;"></app-dialog-carga>

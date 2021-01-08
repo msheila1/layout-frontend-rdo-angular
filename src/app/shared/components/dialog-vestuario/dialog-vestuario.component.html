@@ -1,0 +1,16 @@
+<p-dialog header="Vestuário" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="500" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="9999">
+  <div class="row margin-bottom">
+    <div class="col-12 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo<i class="pi pi-question-circle" pTooltip="Enter your username" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTipoVestuario" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-12">
+      <h4 class="laranja">Descrição<i class="pi pi-question-circle" pTooltip="Enter your username" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtDescricaoVestuario" type="text" pInputText />
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarVestuario" type="button" pButton (click)="display = false"  label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarVestuario" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

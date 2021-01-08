@@ -1,0 +1,45 @@
+<p-dialog header="Buscar Logradouro" [(visible)]="display" (onShow)="ngOnInit()" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1200" [minWidth]="600" [minY]="70" [maximizable]="true"[baseZIndex]="10000">
+  <form>
+    <div class="row margin-bottom">
+      <div class="col-12 space-10">
+        <h3 class="laranja">Busca por Logradouro</h3>
+      </div>
+      <div class="col-2">
+        <h4>Tipo</h4>
+        <p-dropdown [options]="dropdownTipoLogradouro" optionLabel="nome" name="tipo" [(ngModel)]="logradouro.tipo" placeholder="Selecione"></p-dropdown>
+      </div>
+      <div class="col-0"></div>
+      <div class="col-3">
+        <h4>Logradouro</h4>
+        <input type="text" pInputText name="lograrouro" [(ngModel)]="logradouro.logradouro" />
+      </div>
+      <div class="col-0"></div>
+      <div class="col-1">
+        <h4>Número</h4>
+        <input type="number" pInputText name="logradouroNumero" [(ngModel)]="logradouro.numero" />
+      </div>
+      <div class="col-0"></div>
+      <div class="col-1 no-label"><p-button label="Buscar" (onClick)="onClickBuscaLogradouro()"></p-button></div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row margin-bottom">
+      <div class="col-12 space-10"><h3 class="laranja">Busca por CEP</h3></div>
+      <div class="col-2">
+        <h4>CEP</h4>
+        <input type="text" pInputText name="cep" [(ngModel)]="cep.cep" />
+      </div>
+      <div class="col-0"></div>
+      <div class="col-1">
+        <h4>Número</h4>
+        <input type="number" pInputText name="cepNumero" [(ngModel)]="cep.numero" />
+      </div>
+      <div class="col-0"></div>
+      <div class="col-1 no-label"><p-button label="Buscar" (onClick)="onClickBuscaCep()" ></p-button></div>
+      <div class="col-3"></div>
+    </div>
+  </form>
+  <p-footer>
+    <button type="button" pButton (click)="onClickLimpaBusca()" label="Limpar Busca" class="ui-button-secondary"></button>
+    <button type="button" pButton icon="fa fa-check" (click)="onClose()" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

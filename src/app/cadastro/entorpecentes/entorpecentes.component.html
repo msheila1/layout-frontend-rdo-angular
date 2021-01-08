@@ -1,0 +1,30 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <i class="fa fa-fw fa-table position-icon-table"></i>
+    <p-panel header="Entorpecentes" [toggleable]="true">
+    <p-table [value]="entorpecentes" selectionMode="single" [(selection)]="selecionaEntorpecente" dataKey="tipo">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="entorpecentes">
+          <th style="width: 93%; font-weight: bold">Tipo</th>
+          <th class="text-center" style="width: 15%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ tipoEntorpecente }}</td>
+          <td class="text-center">
+          <p-splitButton id="ExcluirEntorpecentes" icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:right">
+          <button id="btnNovoEntorpecentes01" type="button" pButton icon="fa fa-plus" (click)="displayDialogEntorpecentes = true;" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+    </p-panel>
+  </div>
+</div>
+<!--Dialog-->
+<app-dialog-entorpecentes [display]="displayDialogEntorpecentes" (displayChange)="displayDialogEntorpecentes = false;"></app-dialog-entorpecentes>

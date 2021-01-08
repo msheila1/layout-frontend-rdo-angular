@@ -1,0 +1,27 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+    <p-panel header="Delegacia" [toggleable]="true">
+      <div class="row">
+        <div class="col-3 mt-2">Seccional: <b>{{ seccional }}</b></div>
+        <div class="col-3 mt-2">Código DP: <b>{{ codDp }}</b></div>
+        <div class="col-3 mt-2">Nome DP: <b>{{ nomeDp }}</b></div>
+        <div class="col-3 mt-2">Tipo DP: <b>{{ tipoDp }}</b></div>
+        <div class="col-3 mt-2">Delegado Tit.: <b>{{ delegaciaTit }}</b></div>
+        <div class="col-3 mt-2">Delegado de Plantão: <b>{{ delegadoPlantao }}</b></div>
+        <div class="col-3 mt-2">Inquéritos: <b>{{ inqueritos }}</b></div>
+        <div class="col-3 mt-2">Bloqueia RG: <b>{{ bloqueioRg }}</b></div>
+        <div class="col-3 mt-2">Bloqueia Veículo: <b>{{ bloqueioVeiculo }}</b></div>
+        <div class="col-3 mt-2">Bloqueia Desap.: <b>{{ bloqueioDesap }}</b></div>
+        <div class="col-3 mt-2">Envia Defensoria:<b>{{ enviaDefensoria }}</b></div>
+        <div class="col-3 mt-2">Envia Infocrim: <b>{{ enviaInfocrim }}</b></div>
+        <div class="col-3 mt-2">Edição de Doc's: <b>{{ edicaoDoc }}</b></div>
+      </div>
+      <hr>
+      <div style="text-align:right">
+        <button id="btnAlterar" type="button" pButton icon="fa fa-plus" label="Alterar" style="width: 100px;" (click)="displayDialogDelegacia = true;"></button>
+      </div>
+    </p-panel>
+  </div>
+</div>
+<app-dialog-delegacia [display]="displayDialogDelegacia" (displayChange)="displayDialogDelegacia = false;"></app-dialog-delegacia>

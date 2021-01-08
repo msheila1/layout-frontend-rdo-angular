@@ -1,0 +1,26 @@
+<p-dialog header="Conta Bancária" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1200" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <div class="row margin-bottom">
+    <div class="col-3 margin-bottom">
+      <h4 class="laranja">Tipo de Conta</h4>
+      <p-dropdown id="cboTipoConta" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-6"></div>
+
+    <div class="col-6">
+      <h4 class="laranja">Banco <i class="fa fa-asterisk"></i></h4>
+      <input id="txtBanco" type="text" pInputText />
+    </div>
+    <div class="col-3">
+      <h4 class="laranja">Agência <i class="fa fa-asterisk"></i></h4>
+      <input id="txtAgencia" type="text" pInputText />
+    </div>
+    <div class="col-3">
+      <h4 class="laranja">Conta <i class="fa fa-asterisk"></i></h4>
+      <input id="txtConta" type="text" pInputText />
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarConta" type="button" pButton (click)="displayContaBancariaPessoa = false" label="Cancelar" class="ui-button-secondary" (click)="display = false"></button>
+    <button id="btnConfirmarConta" type="button" pButton (click)="displayContaBancariaPessoa = false" icon="fa fa-check" (click)="display = false" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

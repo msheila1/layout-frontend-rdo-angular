@@ -1,0 +1,31 @@
+<p-accordionTab header="Grau de Relacionamento">
+    <div class="row margin-bottom">
+      <div class="col-12">
+        <h3 class="laranja">Relacionamento</h3>
+        <p-table [value]="relacionamento" selectionMode="single" [(selection)]="selecionaRelacionamento" dataKey="relacionamento">
+          <ng-template pTemplate="header">
+            <tr [pSelectableRow]="relacionamento">
+              <th style="width: 25%; font-weight: bold">Autores</th>
+              <th style="width: 25%; font-weight: bold">Grau de Relacionamento com Autor</th>
+              <th class="text-center" style="width: 7%; font-weight: bold">Excluir</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body">
+            <tr>
+              <td>{{ autoresVitima }}</td>
+              <td>{{ grauVitima }}</td>
+              <td class="text-center">
+                <button id="btnExcluirRelacionamento" pButton icon="fa fa-close"></button>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="summary" let-rowData>
+            <div style="text-align:left">
+              <button id="btnNovoRelacionamento" type="button" pButton icon="fa fa-plus" (click)="displayDialogRelacionamento = true;" label="Novo" style="width: 100px;"></button>&nbsp;&nbsp;
+            </div>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </p-accordionTab>
+  <app-dialog-relacionamento [display]="displayDialogRelacionamento" (displayChange)="displayDialogRelacionamento = false;"></app-dialog-relacionamento>

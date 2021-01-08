@@ -1,0 +1,27 @@
+<p-table [value]="enderecoPessoa" selectionMode="single" [(selection)]="selecionaEnderecoPessoa" dataKey="enderecoPessoa">
+  <ng-template pTemplate="header">
+    <tr [pSelectableRow]="enderecoPessoa">
+      <th style="width: 15%; font-weight: bold">Tipo</th>
+      <th style="width: 50%; font-weight: bold">Logradouro</th>
+      <th style="width: 10%; font-weight: bold">Nº</th>
+      <th class="text-center" style="width: 7%; font-weight: bold">Excluir</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body">
+    <tr>
+      <td>{{ tipoEnd }}</td>
+      <td>{{ logradouroEnd }}</td>
+      <td>{{ numeroEnd }}</td>
+      <td class="text-center">
+        <button id="btnExcluirEndereco01" pButton icon="fa fa-close"></button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary" let-rowData>
+    <div style="text-align:right">
+      <button id="btnEndereco" type="button" pButton icon="fa fa-plus" label="Novo" style="width: 100px;" (click)="displayDialogEndereco = true;"></button>
+    </div>
+  </ng-template>
+</p-table>
+<!--Dialog-->
+<!--app-dialog-endereco [display]="displayDialogEndereco" (displayChange)="displayDialogEndereco = false;"></app-dialog-endereco-->

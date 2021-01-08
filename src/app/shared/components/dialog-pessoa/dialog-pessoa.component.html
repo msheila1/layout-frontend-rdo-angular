@@ -1,0 +1,295 @@
+<p-dialog header="João Paulo Ferreira da Silva" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="768" [minWidth]="1024" [minY]="90" [maximizable]="true" [baseZIndex]="00000">
+  <p-tabView>
+    <p-tabPanel header="Pessoa">
+      <div class="row margin-bottom">
+        <div class="col-10 row">
+          <div class="col-4 margin-bottom">
+            <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo de Pessoa<i class="pi pi-question-circle" pTooltip="Enter your username" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-dropdown id="cboTipoPessoa" [options]="select" [(ngModel)]="selected"></p-dropdown>
+          </div>
+          <div class="col-md-8"></div>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-10 row">
+          <div class="col-xl-4 margin-bottom">
+            <h4 class="laranja"><i class="fa fa-asterisk"></i>Exibiu o RG Original?<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-radioButton id="rdoRgOriginal1" name="rgOriginal" value="1" label="Sim"></p-radioButton>
+            <p-radioButton id="rdoRgOriginal2" class="ml-3" name="rgOriginal" value="2" label="Não"></p-radioButton>
+          </div>
+          <div class="col-xl-4 margin-bottom">
+            <h4 class="laranja"><i class="fa fa-asterisk"></i>Veio ao plantão?<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-radioButton id="rdoPlantao1" name="plantao" value="1" label="Sim"></p-radioButton>
+            <p-radioButton id="rdoPlantao2" class="ml-3" name="plantao" value="2" label="Não"></p-radioButton>
+          </div>
+          <div class="col-xl-4 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Advogado presente ao plantão?<i class="pi pi-question-circle" pTooltip="ELorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-radioButton id="rdoAdvogado1" name="advogadoPresente" value="1" label="Sim"></p-radioButton>
+            <p-radioButton id="rdoAdvogado2" class="ml-3" name="advogadoPresente" value="2" [(ngModel)]="SelectButton2" label="Não"></p-radioButton>
+          </div>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-10 row">
+          <div class="col-4 margin-bottom">
+            <h4 class="laranja">RG<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtRgPessoa" type="text" pInputText class="input-search-4" />
+            <button type="button" pButton icon="pi pi-search" (click)="displayDialogBuscarPessoa = true;" style="float: right; margin-top: -33px;"></button>
+          </div>
+          <div class="col-md-4 margin-bottom">
+            <h4 class="laranja">UF<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-dropdown id="cboUfPessoa" [options]="select" [(ngModel)]="selected"></p-dropdown>
+          </div>
+          <div class="col-md-3 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Emissão<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtEmissaoPessoa" type="text" pInputText />
+          </div>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-10 row">
+          <div class="col-md-6 margin-bottom">
+            <h4 class="laranja">Nome<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtNomePessoa" type="text" pInputText class="green" />
+          </div>
+          <div class="col-md-6 margin-bottom">
+            <h4 class="laranja">Sexo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <div class="ui-g-4">
+              <p-radioButton name="group1" value="Option 1" label="Masculino" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+            </div>
+            <div class="ui-g-4">
+              <p-radioButton name="group1" value="Option 2" label="Feminino" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+            </div>
+            <div class="ui-g-4">
+              <p-radioButton name="group1" value="Option 3" label="Ignorado" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+            </div>
+          </div>
+          <div class="col-md-6 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Nome Social<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtNomeSocialPessoa" type="text" pInputText class="blue" />
+          </div>
+          <div class="col-md-4 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Vulgo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtVulgoPessoa" type="text" pInputText />
+          </div>
+
+          <div class="col-md-4 margin-bottom">
+            <h4 class="laranja">Data Nascimento<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-calendar id="calDataNascimento" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+          </div>
+          <div class="col-md-4 margin-bottom">
+            <h4 class="laranja">Idade (Baseado Data Ocorrência)<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtIdadePessoa" type="text" pInputText />
+          </div>
+
+          <div class="col-md-6 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Nome do Pai<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtNomePaiPessoa" type="text" pInputText class="blue" />
+          </div>
+          <div class="col-md-6 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Nome da Mãe<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtNomeMaePessoa" type="text" pInputText class="blue" />
+          </div>
+
+          <div class="col-md-6 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Naturalidade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtNaturalidadePessoa" type="text" pInputText class="blue" />
+          </div>
+          <div class="col-md-6 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Nacionalidade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtNacionalidadePessoa" type="text" pInputText />
+          </div>
+          <div class="col-md-4 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Estado Civil<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-dropdown id="cboEstadoCivilPessoa"></p-dropdown>
+          </div>
+          <div class="col-md-3 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Nº OAB<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input type="text" pInputText />
+          </div>
+
+          <div class="col-md-3 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Grau de Instrução<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-dropdown id="cboGrauInstrucaoPessoa" [options]="select" [(ngModel)]="selected"></p-dropdown>
+          </div>
+          <div class="col-md-2 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Profissão<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-dropdown id="cboProfissaoPessoa" [options]="select" [(ngModel)]="selected"></p-dropdown>
+          </div>
+
+          <div class="col-md-6 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">E-mail<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtEmailPessoa" type="text" pInputText class="green" />
+          </div>
+          <div class="col-md-6 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h3 class="laranja altura-bottom">Deseja receber o BO por e-mail?<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+            <p-checkbox id="chkEmailPessoa"></p-checkbox> Sim
+          </div>
+
+          <div class="col-md-6 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Nº Título de Eleitor<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtTituloEleitorPessoa" type="text" pInputText />
+          </div>
+          <div class="col-md-2 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Zona<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtZonaPessoa" type="text" pInputText />
+          </div>
+          <div class="col-md-2 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Seção<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtSecaoPessoa" type="text" pInputText />
+          </div>
+
+          <div class="col-md-6 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">CNH<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtCnhPessoa" type="text" pInputText />
+          </div>
+          <div class="col-md-3 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Data de Validade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-calendar id="calDataValidadePessoa" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+          </div>
+          <div class="col-md-3 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Categoria<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-dropdown id="cboCategoriaPessoa" [options]="select" [(ngModel)]="selected"></p-dropdown>
+          </div>
+
+          <div class="col-md-4 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Nº Carteira Profissional<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtNumeroCarteira" type="text" pInputText />
+          </div>
+          <div class="col-md-3 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Série<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtSeriePessoa" type="text" pInputText />
+          </div>
+          <div class="col-md-2 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">UF<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-dropdown id="cboUfPessoa01" [options]="select" [(ngModel)]="selected"></p-dropdown>
+          </div>
+          <div class="col-2"></div>
+
+          <div class="col-md-4 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">CPF<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtCpfPessoa" type="text" pInputText class="green" />
+          </div>
+          <div class="col-md-4 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Passaporte<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtPassaporte" type="text" pInputText />
+          </div>
+          <div class="col-md-4 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja">Outros Documentos<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <input id="txtOutrosDocumentos" type="text" pInputText />
+          </div>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-10 row">
+          <div class="col-md-12 margin-bottom">
+            <h4 class="laranja">Pessoa protegida nos termos do Provimento CG nº32/2000?<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-radioButton id="rdoProvimento1" name="provimento" value="1" label="Sim"></p-radioButton>
+            <p-radioButton id="rdoProvimento2" class="ml-3" name="provimento" value="2" [(ngModel)]="SelectButton2" label="Não"></p-radioButton>
+          </div>
+
+          <div class="col-md-6 margin-bottom">
+            <h4 class="laranja">Tem deficiência?<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-radioButton id="rdoDeficiencia1" name="deficiencia" value="1" label="Sim"></p-radioButton>
+            <p-radioButton id="rdoDeficiencia2" class="ml-3" name="deficiencia" value="2" label="Não"></p-radioButton>
+          </div>
+          <div class="col-md-6 margin-bottom">
+            <h4 class="laranja">Tipo de Deficiência?<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-checkbox id="rdoDeficiencia1" name="deficiencia" value="1" label="Fisica"></p-checkbox>
+            <p-checkbox class="ml-3" id="rdoDeficiencia2" name="deficiencia" value="2" label="Visual"></p-checkbox>
+            <p-checkbox class="ml-3" id="rdoDeficiencia3" name="deficiencia" value="3" label="Auditiva"></p-checkbox>
+            <p-checkbox class="ml-3" id="rdoDeficiencia4" name="deficiencia" value="4" label="Intelectual"></p-checkbox>
+          </div>
+          <div class="col-md-6 margin-bottom">
+            <h4 class="laranja">Tem Transtorno Mental?<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-radioButton id="rdoTranstorno1" name="transtorno" value="1" label="Sim"></p-radioButton>
+            <p-radioButton id="rdoTranstorno2" class="ml-3" name="transtorno" value="2" label="Não"></p-radioButton>
+          </div>
+          <div class="col-md-2 margin-bottom" [hidden]="!isCampoNaoObrigatorio">
+            <h4 class="laranja" type="text">Inclui Foto<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUpload($event)"></p-fileUpload>
+          </div>
+
+          <div class="col-md-12 margin-bottom">
+            <h4 class="laranja">Utilização de algemas?<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-radioButton id="rdoAlgemas1" name="deficiencia" value="1" label="Sim"></p-radioButton>
+            <p-radioButton id="rdoAlgemas2" class="ml-3" name="deficiencia" value="2" label="Não"></p-radioButton>
+          </div>
+          <div class="col-md-12 margin-bottom">
+            <h4>Foram Utilizadas algemas em razão de:<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+            <p-checkbox id="rdoAlgemas1" name="deficiencia" value="1" label="Resistência do preso"></p-checkbox>
+            <p-checkbox class="ml-3" id="rdoAlgemas2" name="deficiencia" value="2" label="Fundado receio de fuga do preso"></p-checkbox>
+            <p-checkbox class="ml-3" id="rdoAlgemas3" name="deficiencia" value="3" label="Fundado receio de perigo a integridade física própria ou alheia"></p-checkbox>
+          </div>
+        </div>
+      </div>
+    </p-tabPanel>
+        <p-tabPanel header="Endereço">
+            <p-table [value]="enderecoPessoa" selectionMode="single" [(selection)]="selecionaEnderecoPessoa" dataKey="enderecoPessoa">
+                <ng-template pTemplate="header">
+                  <tr [pSelectableRow]="enderecoPessoa">
+                    <th style="width: 15%; font-weight: bold">Tipo</th>
+                    <th style="width: 50%; font-weight: bold">Logradouro</th>
+                    <th style="width: 10%; font-weight: bold">Nº</th>
+                    <th class="text-center" style="width: 7%; font-weight: bold">Excluir</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body">
+                  <tr>
+                    <td>{{ tipoEnd }}</td>
+                    <td>{{ logradouroEnd }}</td>
+                    <td>{{ numeroEnd }}</td>
+                    <td class="text-center">
+                        <p-splitButton id="acoesEnderecoPessoa" icon="pi pi-bars" [model]="items2" styleClass="ui-button-actions"></p-splitButton>
+                    </td>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="summary" let-rowData>
+                  <div style="text-align:right">
+                    <button id="btnEndereco" type="button" pButton icon="fa fa-plus" label="Novo" style="width: 100px;" (click)="displayDialogEndereco = true;"></button>
+                  </div>
+                </ng-template>
+              </p-table>
+        </p-tabPanel>
+        <p-tabPanel header="Telefone">
+            <p-table [value]="telefonePessoa" selectionMode="single" [(selection)]="selecionaTelefonePessoa" dataKey="telefonePessoa">
+                <ng-template pTemplate="header">
+                  <tr [pSelectableRow]="telefonePessoa">
+                    <th style="width: 15%; font-weight: bold">Operadora</th>
+                    <th style="width: 50%; font-weight: bold">Logradouro</th>
+                    <th style="width: 15%; font-weight: bold">Nº</th>
+                    <th style="width: 10%; font-weight: bold">Ramal</th>
+                    <th class="text-center" style="width: 7%; font-weight: bold">Ações</th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body">
+                  <tr>
+                    <td>{{ operadoraTel }}</td>
+                    <td>{{ dddTel }}</td>
+                    <td>{{ numeroTel }}</td>
+                    <td>{{ ramalTel }}</td>
+                    <td class="text-center">
+                        <p-splitButton id="acoesTelefonePessoa" icon="pi pi-bars" [model]="items2" styleClass="ui-button-actions"></p-splitButton>
+                    </td>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="summary" let-rowData>
+                  <div style="text-align:right">
+                    <button id="btnNovoTelefone01" type="button" pButton icon="fa fa-plus" (click)="displayDialogTelefone = true;" label="Novo" style="width: 100px;"></button>
+                  </div>
+                </ng-template>
+              </p-table>
+        </p-tabPanel>
+        <p-tabPanel header="Características Físicas">
+          <app-table-caracteristica-fisica></app-table-caracteristica-fisica>
+        </p-tabPanel>
+      </p-tabView>
+  <p-footer>
+    <button id="btnCancelarPessoa01" type="button" pButton  label="Cancelar" class="ui-button-secondary" (click)="display = false"></button>
+    <button id="btnConfirmarPessoa01" type="button" pButton icon="fa fa-check" (click)="display = false" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>
+<!-- Dialog -->
+<app-dialog-buscar-pessoa [display]="displayDialogBuscarPessoa" (displayChange)="displayDialogBuscarPessoa = false;"></app-dialog-buscar-pessoa>
+<app-dialog-endereco [display]="displayDialogEndereco" (displayChange)="displayDialogEndereco = false;"></app-dialog-endereco>
+<app-dialog-telefone-pessoa [display]="displayDialogTelefone" (displayChange)="displayDialogTelefone = false;"></app-dialog-telefone-pessoa>

@@ -1,0 +1,33 @@
+<form [formGroup]="formGroup" class="form mt-4" (ngSubmit)="update()">
+  <div class="row">
+    <div class="col-4 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Nome Fantasia</h4>
+      <input id="nomeFantasia" type="text" pInputText formControlName="nomefantasia" displayErrors />
+    </div>
+    <div class="col-4 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Nome Delegado</h4>
+      <input id="nomeDelegado" type="text" pInputText formControlName="nomeDelegado" displayErrors />
+    </div>
+    <div class="col-2 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Telefone Plantão</h4>
+      <input class="ui-md-12" id="telefonePlantao" type="text" pInputText formControlName="telefonePlantao" displayErrors />
+    </div>
+    <div class="col-2 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Telefone Titular</h4> 
+      <input class="ui-md-12" id="telefoneTitular" type="text" pInputText formControlName="telefoneTitular" displayErrors />
+    </div>
+  </div>
+  <div class="ui-g">
+    <div style="width: 100%">
+      <!--app-auto-complete-logradouro></app-auto-complete-logradouro-->
+    </div>
+  </div>
+  <hr>
+  <p-footer>
+    <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+    <div class="col-12 text-right">
+      <button pButton type="submit" label="Salvar" class="btn-salvar mr-3" pButton icon="fa fa-save"></button>
+      <button pButton type="button" label="Cancelar" class="btn-cancelar ui-button-secondary" (click)="clearForm()"></button>
+    </div>
+  </p-footer>
+</form>

@@ -1,0 +1,13 @@
+
+<p-dialog header="Abordagem" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="500" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <div class="row margin-bottom">
+    <div class="col-12 margin-bottom">
+      <h4 class="laranja">Tipo de Abordagem <i class="fa fa-asterisk"></i></h4>
+      <p-dropdown id="cboTipoAbordagem" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarAbordagem" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarAbordagem" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

@@ -1,0 +1,120 @@
+<!--HEADER DO SISTEMA-->
+
+<!--BODY DO SISTEMA-->
+<div id="wrapper" class="img-fundo">
+  <div class="col-md-12 background">
+    <div class="col-md-4">
+      <div class="logo"></div>
+      <p class="titulo">Registro Digital de Ocorrência</p>
+      <p class="sub-titulo">
+        <span class="sub-titulo-color">Polícia Civil</span> do Estado de São Paulo
+      </p>
+    </div>
+    <div class="col-md-1 ajuste-width-menu">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#" routerLink="/cadastro" class="lnk-menu-header">
+                <p class="link-menu-top">Criar RDO</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div class="col-md-1 ajuste-width-menu">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown" icon="fa fa-search">
+            <a href="#" data-toggle="dropdown" class="lnk-menu-header">
+              <i class="fa fa-file-alt"></i>
+              <p>Pesquisar<b class="caret"></b></p>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#" routerLink="/pesquisar/buscarRdo">RDO</a></li>
+              <li><a href="#" routerLink="/pesquisar/buscarpessoas">Pessoas</a></li>
+              <li><a href="#" routerLink="/pesquisar/buscarVeiculos">Veículos</a></li>
+              <li><a href="#" routerLink="/pesquisar/buscarArmas">Armas</a></li>
+              <li><a href="#">Bloqueios</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-1 ajuste-width-menu">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="lnk-menu-header"><i class="fa fa-file-alt"></i><p>Documentos<b class="caret"></b></p></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Documentos BO</a></li>
+              <li><a href="#">Anexos BO</a></li>
+              <li><a href="#">Folha de Antecedentes</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-1 ajuste-width-menu">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="lnk-menu-header"><i class="fa fa-file-alt"></i><p>Laudos<b class="caret"></b></p></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Requisitar Exame Perícia</a></li>
+              <li><a href="#">Listar Laudos</a></li>
+              <li><a href="#">Consultar Laudos</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-2 align-center">
+        <input id="txtBuscaRdos" placeholder="Pesquisar RDOs" class="margin-campo-busca" type="text" pInputText />
+    </div>
+    <div class="col-md-1">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2" style="margin-left: 160px;">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" data-toggle="dropdown" style="width: 200px;">
+              <img src="../../assets/img/avatar-user.png" style="float: left; margin-top: 15px" class="rounded-circle mr-2" height="25px"  alt=""/>
+              <p class="user-perfil">Maria Sheila<b class="caret"></b></p>
+            </a>
+            <div class="dropdown-menu">
+              <h6 class="dropdown-header">02º D.P. Mongagua<br />Terça-feira, 08/01/2019 - 08:26</h6>
+              <li></li>
+              <div class="dropdown-divider"></div>
+              <li>
+                <a routerLink="/perfil" id="lnkPerfil"><i class="fa fa-user m-3"></i> Meu Perfil</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-key m-3"></i> Alterar Senha</a>
+              </li>
+              <li>
+                <a routerLink="/login"><i class="fa fa-sign-in m-3"></i> Sair</a>
+              </li>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+  </div>
+  <div id="sidebar-wrapper">
+    <app-panelmenudemo></app-panelmenudemo>
+  </div>
+
+  <!-- Page Content -->
+  
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <a href="javascript: MenuToggle()" class="btn botao menu-principal" id="#menu-principal"><span class="span-color fa fa-bars fa-2x"></span></a>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  
+
+</div>
+
+
+
+

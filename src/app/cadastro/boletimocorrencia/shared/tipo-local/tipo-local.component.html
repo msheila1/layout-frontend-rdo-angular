@@ -1,0 +1,27 @@
+<ng-container [formGroup]="formGroup">
+  <div class="col-12 space-10">
+    <h3 class="laranja">Localização</h3>
+  </div>
+  <div class="row">
+    <div class="col-xl-3 col-md-6 margin-bottom">
+      <h3 class="laranja space-10"><i class="fa fa-asterisk"></i>Tipo do Local</h3>
+      <p-autoComplete id="autoTipoLocal01" formControlName="tipoLocal" displayErrors [suggestions]="filteredListTipoLocal" (completeMethod)="filterTipoLocal($event)" [minLength]="1" placeholder="Digite ou Selecione" field="descricao" [dropdown]="true" [forceSelection]="true">
+        <ng-template let-tipoLocal pTemplate="item">
+            <div class="ui-helper-clearfix">
+                <div style="float:left;margin:10px 10px 0 0">{{tipoLocal.descricao}}</div>
+            </div>
+        </ng-template>
+      </p-autoComplete>
+    </div>
+    <div class="col-xl-3 col-md-6 margin-bottom">
+      <h3 class="laranja"><i class="fa fa-asterisk"></i>Subtipo do Local</h3>
+      <p-autoComplete id="autoSubTipoLocal01" formControlName="subTipoLocal" displayErrors [suggestions]="filteredListSubTipoLocal" (completeMethod)="filterSubTipoLocal($event)" [minLength]="1" placeholder="Digite ou Selecione" field="descricao" [dropdown]="true" [forceSelection]="true">
+        <ng-template let-subTipoLocal pTemplate="item">
+            <div class="ui-helper-clearfix">
+                <div style="float:left;margin:10px 10px 0 0">{{subTipoLocal.descricao}}</div>
+            </div>
+        </ng-template>
+      </p-autoComplete>
+    </div>
+  </div>
+</ng-container>

@@ -1,0 +1,77 @@
+<p-dialog header="Objeto Importação" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1024" [minWidth]="600" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-12">
+      <p-table [value]="objeto" selectionMode="single" [(selection)]="selecionaObjeto" dataKey="objeto">
+        <ng-template pTemplate="header">
+          <tr [pSelectableRow]="objeto">
+            <th style="width: 25%; font-weight: bold">Linha</th>
+            <th style="width: 25%; font-weight: bold">IMEI</th>
+            <th style="width: 25%; font-weight: bold">Fabricante</th>
+            <th style="width: 25%; font-weight: bold">Modelo</th>
+            <th class="text-center" style="width: 40%; font-weight: bold">Mensagem Erro</th>
+            <th style="width: 25%;"></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+          <tr>
+            <td>{{ numeroObjeto }}</td>
+            <td>{{ subtipoObjeto }}</td>
+            <td>{{ modoObjeto }}</td>
+            <td>{{ modoObjeto }}</td>
+            <td>{{ modoObjeto }}</td>
+            <td></td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <br />
+      <div class="row margin-bottom">
+        <div class="col-md-6 margin-bottom">
+          <h4 class="laranja"><i class="fa fa-asterisk"></i>Subtipo de objeto (lista geral para pesquisa rápida)<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <p-dropdown id="cboSubtipoObjeto" [options]="select" [(ngModel)]="selected"></p-dropdown>
+        </div>
+        <div class="col-xl-2 margin-bottom">
+          <h4 class="laranja"><i class="fa fa-asterisk"></i>Arquivo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUpload($event)" chooseLabel="Arquivos"></p-fileUpload>
+        </div>
+        <div class="col-md-6 margin-bottom">
+          <h4 class="laranja">Subtipo de objeto<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <input id="input" type="text" size="30" pInputText [(ngModel)]="text" disabled="disabled" />
+        </div>
+        <div class="col-md-6 margin-bottom">
+          <h4 class="laranja">Tipo de Objeto<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <input id="input" type="text" size="30" pInputText [(ngModel)]="text" disabled="disabled" />
+        </div>
+        <div class="col-md-6 margin-bottom">
+          <h4 class="laranja"><i class="fa fa-asterisk"></i>Pessoa relacionada<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <p-dropdown id="cboPessoaRelacionada" [options]="select" [(ngModel)]="selected"></p-dropdown>
+        </div>
+        <div class="col-md-6 margin-bottom">
+          <h4 class="laranja"><i class="fa fa-asterisk"></i>Modo do Objeto<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <p-dropdown id="cboModoObjeto" [options]="select" [(ngModel)]="selected"></p-dropdown>
+        </div>
+        <div class="col-md-4 margin-bottom">
+          <h4 class="laranja"><i class="fa fa-asterisk"></i>Origem<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <p-dropdown id="cboOrigem" [options]="select" [(ngModel)]="selected"></p-dropdown>
+        </div>
+        <div class="col-md-4 margin-bottom">
+          <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo de Registro<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <p-radioButton name="groupname" value="val1" label="Bloqueio" [(ngModel)]="selectedValue"></p-radioButton>
+          <p-radioButton name="groupname" value="val2" label="Desbloqueio" [(ngModel)]="selectedValue" class="p-3"></p-radioButton>
+        </div>
+        <div class="col-md-4 margin-bottom">
+          <h4 class="laranja"><i class="fa fa-asterisk"></i>Motivo Desbloqueio<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <p-dropdown id="cboMotivoDesbloqueio" [options]="select" [(ngModel)]="selected" disabled="disabled">
+          </p-dropdown>
+        </div>
+        <div class="col-md-12 margin-bottom">
+          <h4 class="laranja">Observação<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+          <textarea rows="5" cols="30" pInputTextarea></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarObjeto" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarObjeto" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

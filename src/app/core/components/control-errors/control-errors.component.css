@@ -1,0 +1,6 @@
+.msg-panel { margin-bottom: 10px !important; border: none !important}
+.help {font-size: 12px !important} 
+.is-error {font-weight: bold; color: #FF0000 !important}
+.is-warn {font-weight: bold; color: #FFDF00 !important}
+.is-info {font-weight: bold; color: #0000FF !important}
+.is-success {font-weight: bold; color: #00FF00 !important}

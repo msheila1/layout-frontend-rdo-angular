@@ -1,0 +1,45 @@
+<div class="row margin-bottom">
+    <div class="col-12 margin-bottom">
+        <i class="fa fa-fw fa-table position-icon-table"></i>
+        <p-panel header="Selecione um Veículo" [toggleable]="true">
+        <p-table [value]="Veiculos" selectionMode="single" [(selection)]="selecionaVeiculo" dataKey="Veiculos">
+            <ng-template pTemplate="header">
+                <tr [pSelectableRow]="Veiculos">
+                    <th style="width: 25%; font-weight: bold">Placa</th>
+                    <th style="width: 25%; font-weight: bold">Chassis</th>
+                    <th style="width: 25%; font-weight: bold">Ocorrência</th>
+                    <th class="text-center" style="width: 20%; font-weight: bold">Ações</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr [pSelectableRow]="rowData">
+                    <td>{{ PlacaVeiculo }}</td>
+                    <td>{{ ChassisVeiculo }}</td>
+                    <td>{{ OcorrenciaVeiculo }}</td>
+                    <td class="text-center">
+                    <p-splitButton icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="summary" let-rowData>
+                <div style="text-align:right">
+                    <button id="btnNovoVeiculos" type="button" pButton icon="fa fa-plus" label="Novo" (click)="displayDialogVeiculo = true;" style="width: 100px;"></button>&nbsp;&nbsp;
+                </div>
+            </ng-template>
+        </p-table>
+    </p-panel>
+    </div>
+    <!--Accordion Detalhes do Veículo-->
+    <!--div class="col-md-12">
+        <h3 class="laranja">Detalhes do Veículo</h3>
+        <p-accordion>
+            <app-accordion-carga></app-accordion-carga>
+            <app-accordion-seguranca></app-accordion-seguranca>
+            <app-accordion-acesso></app-accordion-acesso>
+            <app-accordion-acionamento></app-accordion-acionamento>
+            <app-accordion-instrumento></app-accordion-instrumento>
+        </p-accordion>
+    </div-->
+</div>
+<!--Dialog Veículo-->
+<app-dialog-veiculo [display]="displayDialogVeiculo" (displayChange)="displayDialogVeiculo = false;"></app-dialog-veiculo>

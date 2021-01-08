@@ -1,0 +1,43 @@
+<p-dialog header="Telefone" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1200" [minWidth]="600" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-md-12 margin-bottom">
+      <h4 class="laranja">Tipo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton id="rdoTelefoneAutor1" name="telefoneAutor" value="1" label="Celular"></p-radioButton>
+      <p-radioButton id="rdoTelefoneAutor2" class="ml-4" name="telefoneAutor" value="2" label="Comercial">
+      </p-radioButton>
+      <p-radioButton id="rdoTelefoneAutor3" class="ml-4" name="telefoneAutor" value="3" label="Residencial" [(ngModel)]="SelectButton3"></p-radioButton>
+      <p-radioButton id="rdoTelefoneAutor4" class="ml-4" name="telefoneAutor" value="4" label="Recado"></p-radioButton>
+    </div>
+
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Operadora<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboOperadoraTelefone01" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-2 margin-bottom">
+      <h4 class="laranja">DDD<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtDddTelefone01" type="text" pInputText />
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Número<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNumeroTelefone01" type="text" pInputText />
+    </div>
+    <div class="col-md-2 margin-bottom">
+      <h4 class="laranja">Ramal<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNumeroTelefone01" type="text" pInputText [disabled]="true" />
+    </div>
+    <div class="col-md-2"></div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Recado<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtRecado" type="text" pInputText />
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Observação<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtObservacao" type="text" pInputText />
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarTelefone01" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarTelefone01" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

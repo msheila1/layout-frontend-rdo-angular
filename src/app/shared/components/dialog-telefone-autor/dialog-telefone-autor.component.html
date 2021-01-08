@@ -1,0 +1,51 @@
+<p-dialog header="Telefone Autor" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1200" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <div class="row margin-bottom">
+    <div class="col-md-12 margin-bottom">
+      <h4 class="laranja">Tipo</h4>
+      <p-radioButton id="rdoTelefoneAutor1" name="telefoneAutor" value="1" label="Celular"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoTelefoneAutor2" name="telefoneAutor" value="2" label="Comercial"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoTelefoneAutor3" name="telefoneAutor" value="3" label="Residencial"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoTelefoneAutor4" name="telefoneAutor" value="4" label="Público"></p-radioButton>
+    </div>
+
+    <div class="col-md-5 margin-bottom">
+      <h4 class="laranja">Operadora</h4>
+      <p-dropdown id="cboOperadoraTelefone01" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-2 margin-bottom">
+      <h4 class="laranja">DDD</h4>
+      <input id="txtDddTelefone01" type="text" pInputText />
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Número</h4>
+      <input id="txtNumeroTelefone01" type="text" pInputText />
+    </div>
+    <div class="col-md-2"></div>
+
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Data</h4>
+      <p-calendar id="calDataTelefone01" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+    <div class="col-1a"></div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Hora</h4>
+      <p-calendar id="timHoraTelefone01" [timeOnly]="true" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Sexo ligação</h4>
+      <p-radioButton id="rdoLigacao1" name="ligacao" value="1" label="Masculino"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoLigacao2" name="ligacao" value="2" label="Feminino"></p-radioButton>
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Fala no bocal</h4>
+      <p-radioButton id="rdoFala1" name="fala" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoFala2" name="fala" value="2" label="Não"></p-radioButton>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarTelefone01" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarTelefone01" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

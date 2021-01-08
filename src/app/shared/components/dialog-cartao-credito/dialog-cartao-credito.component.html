@@ -1,0 +1,26 @@
+<p-dialog header="Cartão de Crédito" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1024" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <div class="row margin-bottom">
+    <div class="col-3 margin-bottom">
+      <h4 class="laranja">Bandeira do Cartão <i class="fa fa-asterisk"></i></h4>
+      <p-dropdown id="cboBandeiraCartao" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-6"></div>
+
+    <div class="col-6">
+      <h4 class="laranja">Nome <i class="fa fa-asterisk"></i></h4>
+      <input id="txtNomeCartao" type="text" pInputText />
+    </div>
+    <div class="col-3">
+      <h4 class="laranja">Número <i class="fa fa-asterisk"></i></h4>
+      <input id="txtNumeroCartao" type="text" pInputText />
+    </div>
+    <div class="col-3">
+      <h4 class="laranja">Validade</h4>
+      <input id="txtValidadeCartao" type="text" pInputText />
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarCartao" type="button" pButton (click)="displayCartaoCreditoPessoa = false" label="Cancelar" class="ui-button-secondary" (click)="display = false"></button>
+    <button id="btnConfirmarCartao" type="button" pButton (click)="displayCartaoCreditoPessoa = false" icon="fa fa-check" (click)="display = false" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

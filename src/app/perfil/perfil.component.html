@@ -1,0 +1,55 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <h3>
+      <i class="pi pi-user margem-icon"></i>Meu Perfil<a class="btn btn-outline-warning btn-lg" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-question-circle fa-2x"></i></a>
+    </h3>
+    <!--Breadcrumb-->
+    <nav aria-label="breadcrumb" class="margem-breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a routerLink="/plantao" id="lnkCadastroRapido"><i class="pi pi-home"></i>Início</a>
+        </li>
+        <li class="breadcrumb-item active">Perfil</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="row margin-bottom">
+  <div class="col-12">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>      
+    <p-panel header="Dados do Usuário" [toggleable]="true">     
+      <app-perfil-panel id="pnl-perfil" [value]="(listPerfil | async)"></app-perfil-panel>
+    </p-panel>
+  </div>
+</div>
+
+<div class="row margin-bottom">
+  <div class="col-12">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>      
+    <p-panel header="Alterar Senha" [toggleable]="true">     
+      <app-alterar-senha-panel id="pnl-senha"></app-alterar-senha-panel>  
+    </p-panel>
+  </div>
+</div>
+
+<div class="row margin-bottom">
+    <div class="col-12">
+      <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>      
+      <p-panel header="Dados da Delegacia" [toggleable]="true">     
+        <app-delegacia-panel id="pnl-delegacia" [value]="(listDelegacia | async)"></app-delegacia-panel>   
+        <div class="col-12 text-right">
+          <button id="btnPlantao" type="button" pButton icon="fa fa-save" (click)="showDelegacia = true;" label="Alterar" style="width: 100px;" title="Alterar Dados da Delegacia"></button>
+        </div>
+      </p-panel>
+    </div>
+</div>
+
+<div class="row margin-bottom" *ngIf="showDelegacia">
+  <div class="col-12">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+    <p-panel header="Alterar Dados da Delegacia" [toggleable]="true">
+      <app-editar-delegacia-panel id="pnl-alterar-delegacia"></app-editar-delegacia-panel>
+    </p-panel>
+  </div>
+</div>

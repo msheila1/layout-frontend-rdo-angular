@@ -1,0 +1,47 @@
+import { Delegacia } from './../shared/models/delegacia.model';
+import { AbstractModel } from '../shared/models/abstract.model';
+import { TipoBoEnum } from './enums/tipo-bo.enum';
+import { PeriodoEnum } from './enums/periodo.enum';
+import { AutoriaEnum } from './enums/autoria.enum';
+import { TipoIntoleranciaEnum } from './enums/tipo-intolerancia.enum';
+import { ApresentacaoOcorrencia } from './apresentacaoOcorrencia.model';
+import { FormaApresentacaoEnum } from './enums/forma-apresentacao.enum';
+import { AutorIdentificadoDesconhecido } from './autor-identificado-desconhecido';
+import { BoLocalizacao } from './bo-localizacao.model';
+import { Periodo } from './periodo.model';
+
+export class Bo extends AbstractModel<number>{
+    delegacia: Delegacia;
+    anoBo: number;
+    numeroBo: number;
+    tipoBo: TipoBoEnum;
+    dataOcorrencia: Date;
+    dataInicialOcorrencia: Date;
+    dataFinalOcorrencia: Date;
+    horaOcorrencia: string;
+    periodoOcorrencia: PeriodoEnum;
+    dataComunicacao: Date;
+    horaComunicacao: string;
+    localizacao: BoLocalizacao;
+    flagranteAutoriaEnum;
+    autoria: AutoriaEnum;
+    autoresIdentificadosDesconhecidos: AutorIdentificadoDesconhecido[];
+    representacao: boolean;
+    intolerancia: boolean;
+    tipoIntolerancia: TipoIntoleranciaEnum;
+    intoleranciaOutros: string;
+    apresentacaoOcorrencia: ApresentacaoOcorrencia;
+    outroLugarApresentacao: boolean;
+    formaApresentacao: FormaApresentacaoEnum;
+    localApresentacaoAntes: string;
+    tempoPermanenciaApresentacao: string;
+    circunscricao: number;
+    solucao: number;
+    rgUsuario: string;
+    rgDelegado: string;
+    rgDigitador: string;
+    historico: string;
+    historicoResumido: string;
+    rdoFinalizado: string;
+    versao: number;
+}

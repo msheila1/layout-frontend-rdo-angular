@@ -1,0 +1,29 @@
+<app-carga-form [formGroup]="cargaForm" [modoCarga]="modoCarga$ | async" [tipoCarga]="tipoCarga$ | async" [unidadeCarga]="unidadeCarga$ | async"></app-carga-form>
+<div class="row">
+  <div class="col-12 mt-5">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+    <p-panel header="Informe o Destino" [toggleable]="true">
+      <div class="col">
+        <app-carga-destino></app-carga-destino>
+      </div>
+    </p-panel>
+  </div>
+
+  <div class="col-12 mt-5">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+    <p-panel header="Informe a Origem" [toggleable]="true">
+      <div class="col">
+        <app-carga-origem></app-carga-origem>
+      </div>
+    </p-panel>
+  </div>
+
+  <div class="col-12 mt-5">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+    <p-panel header="Informe o local de Recuperação" [toggleable]="true">
+      <div class="col">
+        <app-carga-local-recuperacao></app-carga-local-recuperacao>
+      </div>
+    </p-panel>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<p-dialog header="Local que frequenta" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1200" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <div class="row margin-bottom">
+    <div class="col-5">
+      <h4 class="laranja">Nome do Local <i class="fa fa-asterisk"></i></h4>
+      <input id="txtNomeLocal" type="text" pInputText />
+    </div>
+    <div class="col-3">
+      <h4 class="laranja">Período que frequenta</h4>
+      <input id="txtPeriodoFrequenta" type="text" pInputText />
+    </div>
+    <div class="col-4 margin-bottom">
+      <h4 class="laranja">Tipo de Local <i class="fa fa-asterisk"></i></h4>
+      <p-dropdown id="cboTipoLocal02" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+
+    <div class="col-6">
+      <h4 class="laranja">Logradouro</h4>
+      <input id="txtLogradouroLocal" type="text" pInputText />
+    </div>
+    <div class="col-3">
+      <h4 class="laranja">Número</h4>
+      <input id="txtNumeroLocal" type="text" pInputText />
+    </div>
+    <div class="col-3 margin-bottom">
+      <h4 class="laranja">Complemento</h4>
+      <input id="txtComplementoLocal" type="text" pInputText />
+    </div>
+
+    <div class="col-6">
+      <h4 class="laranja">Bairro</h4>
+      <input id="txtBairroLocal" type="text" pInputText />
+    </div>
+    <div class="col-3 margin-bottom">
+      <h4 class="laranja">CEP</h4>
+      <input id="txtCepLocal" type="text" pInputText />
+    </div>
+    <div class="col-3"></div>
+
+    <div class="col-5">
+      <h4 class="laranja">Estado</h4>
+      <p-dropdown id="cboEstadoLocal" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-5">
+      <h4 class="laranja">Cidade</h4>
+      <p-dropdown id="cboCidadeLocal" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarLocal" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarLocal" type="button" pButton (click)="display = false" icon="fa fa-check"  label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

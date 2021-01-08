@@ -1,0 +1,27 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <p-table [value]="observacoes" selectionMode="single" (click)="showDialogObs()" [(selection)]="selecionaObs" dataKey="observacao">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="observacoes">
+          <th style="width: 93%; font-weight: bold">Observações</th>
+          <th class="text-center" style="width: 15%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ observacao }}</td>
+          <td class="text-center">
+            <button id="btnExcluirObs01" pButton icon="fa fa-close"></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+          <button id="btnNovoObs01" type="button" pButton icon="fa fa-plus" (click)="displayDialogObs = true;" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+<!--Dialog-->
+<app-dialog-observacoes [display]="displayDialogObs" (displayChange)="displayDialogObs = false;"></app-dialog-observacoes>

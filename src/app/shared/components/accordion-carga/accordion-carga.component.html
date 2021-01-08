@@ -1,0 +1,47 @@
+<p-accordionTab header="Carga">
+  <div class="row margin-bottom">
+    <div class="col-xl-3 col-md-3 altura-top margin-bottom">
+      <h3 class="laranja">Tipo de Veículo <i class="fa fa-asterisk"></i></h3>
+      <p-dropdown id="cboTipoVeiculo01" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-xl-3 col-md-6 altura-top margin-bottom">
+      <h3 class="laranja">Escolta</h3>
+      <p-radioButton id="rdoEscolta01" name="escolta" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoEscolta01" name="escolta" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoEscolta01" name="escolta" value="3" label="Ignorado" [(ngModel)]="SelecionaIgnorado"></p-radioButton>
+    </div>
+    <div class="col-md-5 margin-bottom">
+      <h3 class="laranja">Características</h3>
+      <input id="txtCaracteristicas01" type="text" pInputText />
+    </div>
+    <div class="col-md-6"></div>
+
+    <div class="col-12 space-10">
+      <h3 class="laranja">Recuperação do Veículo</h3>
+    </div>
+
+    <div class="col-md-3 margin-bottom">
+      <h4>Recuperado</h4>
+      <p-radioButton id="rdoRecuperado01" name="recuperado" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoRecuperado01" name="recuperado" value="2" [(ngModel)]="SelecionaNao" label="Não">
+      </p-radioButton>
+    </div>
+    <div class="col-xl-2 col-md-4 margin-bottom">
+      <h4>Data</h4>
+      <p-calendar id="calDataVeiculo01" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+    <div class="col-1a"></div>
+    <div class="col-xl-2 col-md-3 margin-bottom">
+      <h4>Hora</h4>
+      <p-calendar id="timVeiculo01" [timeOnly]="true" dateFormat="dd/mm/yy"></p-calendar>
+    </div>
+    <div class="col-md-3"></div>
+
+  </div>
+  <div class="row margin-bottom">
+    <div class="col-12 row alinhar-btn-footer">
+      <p-button id="btnSalvarVeiculo01" label="Salvar" class="btn-salvar"></p-button>
+      <p-button id="btnCancelarVeiculo01" label="Cancelar" class="btn-salvar btn-secundario"></p-button>
+    </div>
+  </div>
+</p-accordionTab>

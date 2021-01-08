@@ -1,0 +1,9 @@
+<p-pickList [source]="plantonistas" [target]="plantonistasSelecionados" sourceHeader="Usuários Disponíveis" targetHeader="Usuários Ativos no Plantão Atual" [responsive]="true" filterBy="brand" 
+dragdrop="true" sourceFilterPlaceholder="Buscar usuários" targetFilterPlaceholder="Buscar usuários" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}">
+    <ng-template let-user pTemplate="item">
+        <div class="ui-helper-clearfix">
+            <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{ user.plantonista }}</div>
+        </div>
+    </ng-template>
+</p-pickList>
+

@@ -1,0 +1,140 @@
+<p-dialog header="Veículo" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1024" [minWidth]="600" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Placa <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtPlacaVeiculo" type="text" pInputText class="input-search-3" />
+      <button type="button" pButton icon="pi pi-search" (click)="displayDialogBuscarVeiculo = true;"></button>
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>UF<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboUfVeiculo" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Placa antiga / Outros Países? <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-checkbox id="cboPlacaAntiga"></p-checkbox> Sim
+    </div>
+
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Cidade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboCidadeVeiculo" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Ano Fabricação <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtAnoFabricacao" type="text" pInputText />
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Ano Modelo <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtAnoModelo" type="text" pInputText />
+    </div>
+
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Marca/Modelo </h4>
+      <input id="txtMarcaModelo" type="text" pInputText class="input-search-4" /><button id="btnSearchMarcaModelo" type="button" pButton icon="pi pi-search" (click)="displayDialogBuscarMarca = true;"></button>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Combustível <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboCombustivel" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Cor<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboCorVeiculo" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo de Veículo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTipoVeiculo02" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Chassi Remarcado<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton id="rdoChassi1" name="chassi" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoChassi2" name="chassi" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoChassi3" name="chassi" value="3" label="Ignorado">
+      </p-radioButton>
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Renavan <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtRenavan" type="text" pInputText />
+    </div>
+    <div class="col-md-2 margin-bottom">
+      <h4 class="laranja">Chassi <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtChassi" type="text" pInputText />
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Pessoa Relacionada<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboPessoaRelacionadaVeiculo" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Nome Proprietário <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtNomeProprietarioVeiculo" type="text" pInputText />
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Ocorrência<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboOcorrenciaVeiculo" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo Local<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTipoLocalVeiculo" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Estava Segurado<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton id="rdoSegurado1" name="segurado" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoSegurado2" name="segurado" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoSegurado3" name="segurado" value="3" label="Ignorado">
+      </p-radioButton>
+    </div>
+    <div class="col-md-2 margin-bottom">
+      <h4 class="laranja">Seguradora <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtSeguradora" type="text" pInputText />
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Apólice <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtApolice" type="text" pInputText />
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Escolta<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton id="rdoEscolta1" name="escolta" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoEscolta2" name="escolta" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoEscolta3" name="escolta" value="3" label="Ignorado">
+      </p-radioButton>
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Logotipo <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtLogotipo" type="text" pInputText />
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Tempo de Abandono <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtTempoAbandono" type="text" pInputText />
+    </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-md-12 margin-bottom">
+      <h4 class="laranja">Documentos Levados <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtDocumentoLevados" type="text" pInputText />
+    </div>
+
+    <div class="col-md-12 margin-bottom">
+      <h4 class="laranja">Observações <i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtObservacoesVeiculo" type="text" pInputText />
+    </div>
+
+  </div>
+  <p-footer>
+    <button id="btnCancelarVeiculo" type="button" pButton (click)="display=false" label="Cancelar"
+      class="ui-button-secondary"></button>
+    <button id="btnConfirmarVeiculo" type="button" pButton (click)="display=false" icon="fa fa-check"
+      label="Confirmar"></button>
+  </p-footer>
+</p-dialog>
+
+<!--Dialog Veiculo-->
+<app-dialog-buscar-veiculo [display]="displayDialogBuscarVeiculo" (displayChange)="displayDialogBuscarVeiculo = false;"></app-dialog-buscar-veiculo>
+<app-dialog-buscar-marca [display]="displayDialogBuscarMarca" (displayChange)="displayDialogBuscarMarca = false;"></app-dialog-buscar-marca>

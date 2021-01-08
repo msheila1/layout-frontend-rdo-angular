@@ -1,0 +1,21 @@
+<p-dialog header="Endereço" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1024" [minWidth]="600" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-12 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton id="rdoTipoEndereco1" name="tipoEnd" value="1" label="Comercial"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoTipoEndereco2" name="tipoEnd" value="2" [(ngModel)]="SelectButton2" label="Residencial"></p-radioButton>
+    </div>
+    <div style="width: 100%">
+      <!-- <app-auto-complete-logradouro [formGroup]="logradouroAutoComplete"></app-auto-complete-logradouro> -->
+    </div>
+    <div class="col-12">
+      <h4 class="laranja">Ponto de Referência<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtPontoReferencia" type="text" pInputText />
+    </div>
+    <hr>
+  </div>
+  <p-footer>
+    <button id="btnCancelarTelefone01" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarTelefone01" type="button" pButton (click)="display = false" icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

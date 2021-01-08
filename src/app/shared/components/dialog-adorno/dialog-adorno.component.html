@@ -1,0 +1,20 @@
+<p-dialog header="Adornos" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="500" [minWidth]="600" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-6 margin-bottom">
+      <h4 class="laranja">Tipo</h4>
+      <p-dropdown id="cboTipoAdorno" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-6 margin-bottom none">
+      <h4 class="laranja">Local do Corpo</h4>
+      <p-dropdown id="cboLocalCorpo"></p-dropdown>
+    </div>
+    <div class="col-12">
+      <h4 class="laranja">Descrição</h4>
+      <input id="txtDescricaoAdorno" type="text" pInputText />
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarAdorno" type="button" pButton (click)="display = false"  label="Cancelar" class="ui-button-secondary" (click)="display = false"></button>
+    <button id="btnConfirmarAdorno" type="button" pButton (click)="display = false"  icon="fa fa-check" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

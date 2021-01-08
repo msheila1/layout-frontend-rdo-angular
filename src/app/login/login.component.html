@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+    <div style="background-color: #fff; width: 500px; margin-top: 150px; text-align: center;">
+      <div class="col-12 align-content-center" style="padding: 50px;">
+        <div class="login-form">
+          <div class="main-div">
+            <div class="panel">
+              <h1>Login de Acesso</h1>
+              <p>Por favor entre com seu e-mail e senha</p>
+            </div>
+            <form [formGroup]="loginForm" class="form mt-4" (ngSubmit)="onSubmit(loginForm.value)">
+              <div class="form-group">
+                <input pInputText formControlName="email" id="inputEmail" placeholder="Email"/>
+                <!--p-message severity="error" text="Firstname is required" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].dirty"></p-message-->
+                <vmessage text="E-mail inválido." *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].dirty"></vmessage>
+              </div>
+              <div class="form-group">
+                <input pInputText formControlName="password" type="password" id="inputPassword" placeholder="Senha"/>
+                <vmessage severity="error" [text]="loginForm.controls['password'].errors['required'] ? 'Password is required': userform.controls['password'].errors['minlength'] ? 'Must be longer than 6 characters': ''"
+                  *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].dirty"></vmessage>
+              </div>
+              <div class="forgot"></div>
+              <button pButton type="submit" label="Entrar" [disabled]="!loginForm.valid" class="login2" href="javascript:void(0);" onclick="javascript:enjoyhint_instance();"></button>
+
+              <div style="text-align:center;margin-top:20px" *ngIf="submitted">
+                Form Submitted <br />
+                {{ diagnostic }}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-4"></div>
+</div>

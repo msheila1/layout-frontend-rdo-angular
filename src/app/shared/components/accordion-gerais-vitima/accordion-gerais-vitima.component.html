@@ -1,0 +1,119 @@
+<p-accordionTab header="Gerais">
+        <div class="row margin-bottom">
+          <div class="col-md-3">
+            <h3 class="laranja">Vítima Fatal</h3>
+            <p-radioButton id="rdoVitimaFatal1" name="familia" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoVitimaFatal2" name="vitimaFatal" value="2" [(ngModel)]="SelectButton2" label="Não"></p-radioButton>
+          </div>
+          <div class="col-md-2 margin-bottom">
+            <h3 class="laranja">Tempo Provável da Morte</h3>
+            <input id="txtTempoProvavel" type="text" pInputText />
+          </div>
+          <div class="col-md-7 margin-bottom"></div>
+
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Antecedentes Criminais</h3>
+            <p-radioButton id="rdoAntecendetesCriminais1" name="antecedentesCriminais" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoAntecendetesCriminais2" name="antecedentesCriminais" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoAntecendetesCriminais3" name="antecedentesCriminais" value="3" [(ngModel)]="SelectButton3" label="Ignorado"></p-radioButton>
+          </div>
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Posição do Cadáver</h3>
+            <p-dropdown id="rdoPosicaoCadaver" [options]="select" [(ngModel)]="selected"></p-dropdown>
+          </div>
+
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Religião</h3>
+            <p-dropdown
+              id="cboReligiao"
+              [options]="select"
+              [(ngModel)]="selected"
+            ></p-dropdown>
+          </div>
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Tipo Sanguíneo</h3>
+            <p-dropdown id="cboTipoSanguineoVitima" [options]="select" [(ngModel)]="selected"></p-dropdown>
+          </div>
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Bebida Alcoólica</h3>
+            <p-radioButton id="rdoAlcoolica1" name="alcoolica" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoAlcoolica2" name="alcoolica" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoAlcoolica3" name="alcoolica" value="3" [(ngModel)]="SelectButton3" label="Ignorado"></p-radioButton>
+          </div>
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Possui Dívida</h3>
+            <p-radioButton id="rdoPossuiDivida1" name="possuiDivida" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoPossuiDivida2" name="possuiDivida" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoPossuiDivida3" name="possuiDivida" value="3" [(ngModel)]="SelectButton3" label="Ignorado"></p-radioButton>
+          </div>
+
+          <div class="col-md-2 margin-bottom">
+            <h3 class="laranja">Socorrido</h3>
+            <p-radioButton id="rdoSocorrido1" name="socorrido" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoSocorrido2" name="socorrido" value="2" [(ngModel)]="SelectButton2" label="Não"></p-radioButton>
+          </div>
+          <div class="col-md-4 margin-bottom">
+            <h3 class="laranja">Local Socorrido</h3>
+            <input id="txtLocalSocorrido" type="text" pInputText />
+          </div>
+
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Transportada</h3>
+            <p-radioButton id="rdoTransportada1" name="transportada" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoTransportada2" name="transportada" value="2" [(ngModel)]="SelectButton2" label="Não"></p-radioButton>
+          </div>
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Estava em Serviço</h3>
+            <p-radioButton id="rdoEstavaServico1" name="estavaServico" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoEstavaServico2" name="estavaServico" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoEstavaServico3" name="estavaServico" value="3" [(ngModel)]="SelectButton3" label="Ignorado"></p-radioButton>
+          </div>
+          <div class="col-md-6 margin-bottom"></div>
+
+          <div class="col-md-6 margin-bottom">
+            <h3 class="laranja">Local de Cativeiro</h3>
+            <input id="txtLocalCativeiro" type="text" pInputText />
+          </div>
+          <div class="col-md-6 margin-bottom">
+            <h3 class="laranja">Local de Abandono</h3>
+            <input id="txtLocalAbandono" type="text" pInputText />
+          </div>
+
+          <div class="col-md-2 margin-bottom">
+            <h3 class="laranja">Data da Liberação</h3>
+            <p-calendar id="calDataLiberacao" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+          </div>
+          <div class="col-1a"></div>
+          <div class="col-md-2 margin-bottom">
+            <h3 class="laranja">Hora da Liberação</h3>
+            <p-calendar id="calHoraLiberacao" [timeOnly]="true" dateFormat="dd/mm/yy"></p-calendar>
+          </div>
+          <div class="col-md-7 margin-bottom">
+            <h3 class="laranja">Relacionamento Família</h3>
+            <input id="txtRelacionamentoFamilia02" type="text" pInputText />
+          </div>
+
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Seguro de Vida</h3>
+            <p-radioButton id="rdoSeguroVida1" name="seguroVida" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoSeguroVida2" name="seguroVida" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoSeguroVida3" name="seguroVida" value="3" [(ngModel)]="SelectButton3" label="Ignorado"></p-radioButton>
+          </div>
+          <div class="col-md-3 margin-bottom">
+            <h3 class="laranja">Desaparecimento Anterior</h3>
+            <p-radioButton id="rdoDesaparecimento1" name="desaparecimento" value="1" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoDesaparecimento2" name="desaparecimento" value="2" label="Não"></p-radioButton>&nbsp;&nbsp;&nbsp;
+            <p-radioButton id="rdoDesaparecimento3" name="desaparecimento" value="3" [(ngModel)]="SelectButton3" label="Ignorado"></p-radioButton>
+          </div>
+          <div class="col-md-5 margin-bottom">
+            <h3 class="laranja">Beneficiários</h3>
+            <input id="txtBeneficiarios" type="text" pInputText />
+          </div>
+        </div>
+        <div class="row margin-bottom">
+          <div class="col-12 row alinhar-btn-footer">
+            <p-button id="btnSalvarDadosVitima" label="Salvar" class="btn-salvar"></p-button>
+            <p-button id="btnCancelarDadosVitima" label="Cancelar" class="btn-salvar btn-secundario"></p-button>
+          </div>
+        </div>
+      </p-accordionTab>

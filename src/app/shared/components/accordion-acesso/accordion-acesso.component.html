@@ -1,0 +1,30 @@
+<p-accordionTab header="Acesso">
+    <div class="row margin-bottom">
+        <div class="col-12">
+            <h3 class="laranja">Acesso</h3>
+            <p-table [value]="acesso" selectionMode="single" [(selection)]="selecionaAcesso" dataKey="acesso">
+                <ng-template pTemplate="header">
+                    <tr [pSelectableRow]="acesso">
+                        <th style="width: 90%; font-weight: bold">Acesso</th>
+                        <th class="text-center" style="width: 15%; font-weight: bold">Excluir</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body">
+                    <tr>
+                        <td>{{ acesso }}</td>
+                        <td class="text-center"><button id="btnExcluirAcesso01" pButton icon="fa fa-close"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary" let-rowData>
+                    <div style="text-align:left">
+                        <button id="btnNovoAcesso01" type="button" pButton icon="fa fa-plus" (click)="displayDialogAcesso = true;" label="Novo" style="width: 100px;"></button>&nbsp;&nbsp;
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</p-accordionTab>
+
+<!--Dialog Acesso-->
+<app-dialog-acesso [display]="displayDialogAcesso" (displayChange)="displayDialogAcesso = false;"></app-dialog-acesso>

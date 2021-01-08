@@ -1,0 +1,256 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+  <i class="fa fa-fw fa-table position-icon-table"></i>
+  <p-panel header="Natureza" [toggleable]="true">
+    <p-table [value]="natureza" selectionMode="single" [(selection)]="selecionaNatureza" dataKey="ocorrencia">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="natureza">
+          <th style="width: 25%; font-weight: bold">Ocorrência</th>
+          <th style="width: 25%; font-weight: bold">Espécie</th>
+          <th style="width: 30%; font-weight: bold">Natureza</th>
+          <th class="text-center" style="width: 8%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ ocorrencia }}</td>
+          <td>{{ especie }}</td>
+          <td>{{ natureza }}</td>
+          <td class="text-center">
+          <p-splitButton id="acoesNatureza" icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+          </td>
+        </tr>
+        <tr>
+            <td>{{ ocorrencia }}</td>
+            <td>{{ especie }}</td>
+            <td>{{ natureza }}</td>
+            <td class="text-center">
+            <p-splitButton id="acoesNatureza" icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+            </td>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:right">
+          <button id="btnNovoNatureza01" type="button" pButton icon="fa fa-plus" (click)="showDialogNatureza()" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+  </p-panel>
+  </div>
+</div>
+<div class="row margin-bottom">
+  <div class="col-12">
+  <i class="fa fa-fw fa-table position-icon-table"></i>
+  <p-panel header="Natureza da incidência" [toggleable]="true" >
+    <p-table [value]="incidencia" selectionMode="single" [(selection)]="selecionaIncidencia" dataKey="incidencia">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="incidencia">
+          <th style="width: 15%; font-weight: bold">Pessoa</th>
+          <th style="width: 15%; font-weight: bold">Tipo de Vínculo</th>
+          <th style="width: 15%; font-weight: bold">Natureza</th>
+          <th style="width: 15%; font-weight: bold">Espécie</th>
+          <th style="width: 15%; font-weight: bold">Conduta</th>
+          <th style="width: 15%; font-weight: bold">Desdobramento</th>
+          <th style="width: 15%; font-weight: bold">Modalidade</th>
+          <th style="width: 15%; font-weight: bold">Circunstância</th>
+          <th style="width: 15%; font-weight: bold">Crime</th>
+          <th class="text-center" style="width: 10%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ pessoa }}</td>
+          <td>{{ tipoVinc }}</td>
+          <td>{{ natureza }}</td>
+          <td>{{ especieInc }}</td>
+          <td>{{ conduta }}</td>
+          <td>{{ desdobramentoInc }}</td>
+          <td>{{ modalidade }}</td>
+          <td>{{ circunstanciaInc }}</td>
+          <td>{{ crime }}</td>
+          <td class="text-center">
+          <p-splitButton id="acoesNaturezaIncidencia" icon="pi pi-bars" [model]="items2" styleClass="ui-button-actions"></p-splitButton>
+         </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:right">
+          <button id="btnVincularNatureza01" type="button" pButton icon="fa fa-share" (click)="showDialogIncidencia()" label="Vincular"style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+  </p-panel>
+  </div>
+</div>
+
+<!-- Dialog Natureza -->
+<p-dialog header="Natureza" [(visible)]="displayNatureza" [modal]="true" [responsive]="true" [width]="768" [minWidth]="1000" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-12 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Crime<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-radioButton id="rdoCrimeNatureza1" name="crime" value="1" label="Tentado"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton id="rdoCrimeNatureza2" name="crime" value="2" label="Consumado"></p-radioButton>
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"> <i class="fa fa-asterisk"></i>Ocorrência<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboOcorrenciaNatureza" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Espécie<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboEspecieNatureza" disabled="disabled" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Subespécie<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboSubespecieNatureza" disabled="disabled" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-5 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Natureza<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboNaturezaNatureza" disabled="disabled" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-0 no-label">
+      <button type="button" disabled="disabled" pButton icon="pi pi-search"></button>
+    </div>
+
+    <div class="col-md-11 margin-bottom">
+      <h4 class="laranja">Objeto Material da Conduta Criminosa / Caracteristica do Preconceito<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboObjetoNatureza" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-0 no-label">
+      <button id="btnSearchObejto" type="button" disabled="disabled" pButton icon="pi pi-search"></button>
+    </div>
+
+    <!--Desdobramento-->
+    <div class="col-md-12 margin-bottom">
+      <i class="fa fa-fw fa-table position-icon"></i>
+      <p-panel header="Desdobramento" [toggleable]="true" >
+      <p-table [value]="desdobramento" selectionMode="single" [(selection)]="selecionaDesdobramento" dataKey="desdobramento">
+        <ng-template pTemplate="header">
+          <tr [pSelectableRow]="desdobramento2">
+            <th style="width: 80%; font-weight: bold">Desdobramento</th>
+            <th style="width: 13%; font-weight: bold">Modalidades</th>
+            <th style="width: 15%; font-weight: bold; text-align: center">Ações</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+          <tr>
+            <td>{{ desdobramento }}</td>
+            <td>{{ modalidades }}</td>
+            <td class="text-center">
+            <p-splitButton id="AcaoDesdobramento" icon="pi pi-bars" [model]="items2" styleClass="ui-button-actions"></p-splitButton>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+          <div style="text-align:right">
+            <button id="btnNovoDesdobramento" type="button" pButton icon="fa fa-plus" (click)="showDialogDesdobramento()" label="Novo" style="width: 100px;"></button>
+          </div>
+        </ng-template>
+      </p-table>
+    </p-panel>
+    </div>
+
+    <!--Circunstância-->
+    <div class="col-md-12 margin-bottom">
+      <i class="fa fa-fw fa-table position-icon"></i>
+      <p-panel header="Circunstancia" [toggleable]="true">
+      <p-table [value]="circunstancia" selectionMode="single" [(selection)]="selecionaCircunstancia" dataKey="circunstancia">
+        <ng-template pTemplate="header">
+          <tr [pSelectableRow]="circunstancia">
+            <th style="width: 70%; font-weight: bold">Circunstâncias</th>
+            <th style="width: 15%; font-weight: bold; text-align: center">Ações</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+          <tr>
+            <td>{{ circunstancia }}</td>
+            <td class="text-center">
+              <p-splitButton id="AcaoCircunstancia" icon="pi pi-bars" [model]="items2" styleClass="ui-button-actions"></p-splitButton>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="summary" let-rowData>
+          <div style="text-align:right">
+            <button id="btnNovoCircunstancia" type="button" pButton icon="fa fa-plus" (click)="showDialogCircunstancia()" label="Novo" style="width: 100px;"></button>
+          </div>
+        </ng-template>
+      </p-table>
+    </p-panel>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarCircunstancia" type="button" pButton (click)="displayNatureza = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarCircunstancia" type="button" pButton (click)="displayNatureza = false" icon="fa fa-check" (click)="display = false" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>
+
+<!-- Dialog Desdobramento -->
+<p-dialog header="Desdobramento" [(visible)]="displayDesdobramento" [modal]="true" [responsive]="true" [width]="600" [minWidth]="300" [minY]="70" [maximizable]="true">
+  <div class="col-12 margin-bottom">
+    <div class="row">
+      <div class="col-xl-10 margin-bottom">
+        <h4 class="laranja"><i class="fa fa-asterisk"></i>Desdobramento<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <p-dropdown id="cboDesdobramento01" [options]="select" [(ngModel)]="selected"></p-dropdown>
+      </div>
+      <div class="col-1 margin-bottom">
+        <div class="col-0 no-label">
+          <button type="button" disabled="disabled" pButton icon="pi pi-search"></button>
+        </div>
+      </div>
+      <div class="col-1 margin-bottom">
+        <div class="col-0 no-label">
+          <button type="button" disabled="disabled" pButton icon="pi pi-plus"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarDesdobramento" type="button" pButton (click)="displayDesdobramento = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarDesdobramento" type="button" pButton (click)="displayDesdobramento = false" icon="fa fa-check" (click)="display = false" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>
+
+<!-- Dialog Circunstância -->
+<p-dialog header="Circunstância" [(visible)]="displayCircunstancia" [modal]="true" [responsive]="true" [width]="600" [minWidth]="300" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-10 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Circunstância<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboCircunstancia" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-2 margin-bottom">
+      <div class="col-0 no-label">
+        <button type="button" disabled="disabled" pButton icon="pi pi-plus"></button>
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarCircunstancia01" type="button" pButton (click)="displayCircunstancia = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarCircunstancia01" type="button" pButton (click)="displayCircunstancia = false" icon="fa fa-check" (click)="display = false" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>
+
+<!-- Dialog Incidência -->
+<p-dialog header="Vincular natureza a uma pessoa" [(visible)]="displayIncidencia" [modal]="true" [responsive]="true" [width]="600" [minWidth]="300" [minY]="70" [maximizable]="true">
+  <div class="row margin-bottom">
+    <div class="col-12 margin-bottom">
+      <h4 class="laranja">
+          <i class="fa fa-asterisk"></i>Selecione a natureza<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i>
+      </h4>
+      <p-dropdown id="cboSelecioneNatureza" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <hr style="width: 100%; margin-bottom: 20px;" />
+    <div class="col-12 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Vincular a pessoa<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboVincularPessoa" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-12 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo de Vínculo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTipoVinculo" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarIncidencia" type="button" pButton (click)="displayIncidencia = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarIncidencia" type="button" pButton (click)="displayIncidencia = false" icon="fa fa-check" (click)="display = false" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

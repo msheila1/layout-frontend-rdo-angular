@@ -1,0 +1,26 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <h4 class="laranja">Jogos</h4>
+    <p-table [value]="Jogo" selectionMode="single" dataKey="Jogo">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="Jogo">
+          <th style="width: 90%; font-weight: bold">Tipo de Jogo</th>
+          <th class="text-center" style="width: 10%; font-weight: bold">Excluir</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ TipoJogo }}</td>
+          <td class="text-center">
+            <button id="btnExcluirJogos01" pButton icon="fa fa-close"></button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+          <button id="btnNovoJogos01" type="button" pButton icon="fa fa-plus" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

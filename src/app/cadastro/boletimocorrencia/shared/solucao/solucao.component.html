@@ -1,0 +1,12 @@
+<ng-container [formGroup]="formGroup">
+  <div class="row">
+    <div class="col-4">
+      <h4 class="laranja">Circunscrição</h4>
+      <input type="text" formControlName="circunscricao" pInputText disabled="disabled" />
+    </div>      
+    <div class="col-4">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Solução</h4>
+      <p-dropdown id="tipoSolucao" [options]="listSolucao" formControlName="tipoSolucao" placeholder="Selecione" displayErrors></p-dropdown>
+    </div>
+  </div>
+</ng-container>

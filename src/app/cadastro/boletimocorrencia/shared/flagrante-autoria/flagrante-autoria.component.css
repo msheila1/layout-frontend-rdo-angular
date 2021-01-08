@@ -1,0 +1,4 @@
+.width-60{width: 60px;}
+/**Responsivo 1366**/
+@media (width: 1366px){.col-3 {flex: 1 0 25%; max-width: 30%;}}
+@media (width: 1024px){.width-60 {width: 37px; height: 28px;}}

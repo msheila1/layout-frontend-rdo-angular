@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-2">
+    <h4 class="laranja"><i class="fa fa-asterisk"></i>Recuperada</h4>
+    <p-radioButton id="caragaRecuperada1" name="cargaRecuperada" value="1" label="Sim"></p-radioButton>
+    <p-radioButton id="caragaRecuperada2" name="cargaRecuperada" value="2" label="Não" class="ml-3"></p-radioButton>
+  </div>
+  <div class="col-md-2">
+    <h4>Data</h4>
+    <p-calendar id="data" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+  </div>
+  <div class="col-md-2">
+    <h4>Hora</h4>
+    <p-calendar id="timHora" [timeOnly]="true"></p-calendar>
+  </div>
+  <div class="col-md-3">
+    <h4 class="laranja">Valor da Carga (R$)</h4>
+    <input id="txtValorCarga" type="text" pInputText />
+  </div>
+  <div class="col-md-12 mt-3">
+    <h4 class="laranja">Local da Recuperação<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+    <input id="txtLocalRecuperacao" type="text" pInputText />
+  </div>
+  <!--API Gooogle-->
+  <div style="width: 100%" class="mt-5">
+    <app-endereco-auto-complete></app-endereco-auto-complete>
+  </div>
+</div>

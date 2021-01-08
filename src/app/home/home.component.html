@@ -1,0 +1,53 @@
+<div class="col-xl-12 align-right">
+        <a class="btn btn-outline-warning btn-lg" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-question-circle fa-2x"></i></a>
+      </div>
+      <br />
+      <div class="row margin-bottom bg-color-cadastro">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-12 margin-bottom">
+                    <h2>Ocorrências Criminais <b>Por Tipo</b></h2>
+                </div>
+            </div>
+            <app-home-grafico id="grafico-tipo-ocorrencia" [data]="graficoTipoOcorrencia | async"></app-home-grafico>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-12 margin-bottom">
+              <h2>Criar <b>RDO</b></h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 altura-top">
+              <h3>Novo Cadastro</h3>
+              <br />
+              <p>Cadastre o boletim de maneira rápida, a nova plataforma facilita no registro das ocorrências, o que melhora o trabalho da polícia no combate à criminalidade.</p>
+              <br /><br />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <button pButton class="btn-cadastrar" label="Novo Cadastro" routerLink="/cadastro-rapido" permissionControl permission="cadastro-novo" ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Panel que contabiliza o total de RDOs (aberto, outros, geo e apreciação) -->
+      <div class="row margin-bottom">
+        <app-home-card id="pnl-card" (click)="onStatusChange('aberto')" titulo="RDOs em Aberto" permissionControl permission="view-rdo-aberto" [value]="(counterRdosAbertos | async)?.total" class="pnl-card"></app-home-card>
+        <app-home-card id="pnl-outros" (click)="onStatusChange('outros')" titulo="RDOs de Outros DPs" permissionControl permission="view-rdo-outros-dps" [value]="(counterRdosOutros | async)?.total" class="pnl-card"></app-home-card>
+        <app-home-card id="pnl-geo" (click)="onStatusChange('geo')" titulo="RDOs para Geoprocessar" permissionControl permission="view-rdo-geo" [value]="(counterRdosGeo | async)?.total" class="pnl-card"></app-home-card>
+        <app-home-card id="pnl-apreciacao" (click)="onStatusChange('apreciacao')" permissionControl permission="view-rdo-apreciacao" titulo="RDOs para Apreciação" [value]="(counterRdosApreciacao | async)?.total" class="pnl-card"></app-home-card>
+      </div>
+
+      <!-- Table de registros de RDOs (aberto, outros, geo e apreciação) -->
+      <app-home-table id="rdos-abertos" [value]="rdosAbertos | async" (rowSelect)="onRdoAbertoSelect($event)" icone="icon-seta-abertos" [seta]="status === 'aberto'" [show]="status === 'aberto'"></app-home-table>
+      <app-home-table id="rdos-outros" [value]="rdosOutros | async" (rowSelect)="onRdoOutroSelect($event)" icone="icon-seta-outros" [seta]="status === 'outros'" [show]="status === 'outros'"></app-home-table>
+      <app-home-table id="rdos-geo" [value]="rdosGeo | async" (rowSelect)="onRdoGeoSelect($event)" icone="icon-seta-geo" [seta]="status === 'geo'" [show]="status === 'geo'"></app-home-table>
+      <app-home-table id="rdos-apreciacao" [value]="rdosApreciacao | async" (rowSelect)="onRdoApreciacaoSelect($event)" icone="icon-seta-apreciacao" [seta]="status === 'apreciacao'" [show]="status === 'apreciacao'"></app-home-table>
+
+      <app-footer></app-footer>
+      
+      
+      

@@ -1,0 +1,95 @@
+<p-dialog header="Pessoa Jurídica" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="1024" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <div class="row margin-bottom">
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">
+          <i class="fa fa-asterisk"></i>Tipo de Pessoa Jurídica
+      </h4>
+      <p-dropdown id="cboTipoPJ" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-7">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Razão Social</h4>
+      <input id="txtRazaoSocialPJ" type="text" pInputText />
+    </div>
+    <div class="col-0 no-label">
+      <button type="button" pButton icon="pi pi-search"></button>
+    </div>
+
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>CNPJ</h4>
+      <input id="txtCnpjPJ" type="text" pInputText />
+    </div>
+    <div class="col-md-8">
+      <h4 class="laranja">Nome Fantasia</h4>
+      <input id="txtNomeFantasiaPJ" type="text" pInputText />
+    </div>
+
+    <div class="col-md-4">
+      <h4 class="laranja">Operadora</h4>
+      <p-dropdown id="cboOperadoraPJ" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">DDD</h4>
+      <input id="txtDddPJ" type="text" pInputText />
+    </div>
+    <div class="col-md-5">
+      <h4 class="laranja">Telefone</h4>
+      <input id="txtTelefonePJ" type="text" pInputText />
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja">Inscrição Municipal</h4>
+      <input id="txtInscricaoMunicipalPJ" type="text" pInputText />
+    </div>
+    <div class="col-md-6">
+      <h4 class="laranja">Inscrição Estadual</h4>
+      <input id="txtInscricaoEstadualPJ" type="text" pInputText />
+    </div>
+
+    <div class="col-md-6 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Estado</h4>
+      <p-dropdown id="cboEstadoPJ" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-6">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Cidade</h4>
+      <p-dropdown id="cboCidadePJ" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+
+    <div class="col-md-9 margin-bottom">
+      <h4 class="laranja">Logradouro</h4>
+      <input id="txtLogradouroPJ" type="text" pInputText />
+    </div>
+    <div class="col-md-3">
+      <h4 class="laranja">Número</h4>
+      <input id="txtNumeroPJ" type="text" pInputText />
+    </div>
+
+    <div class="col-md-5 margin-bottom">
+      <h4 class="laranja">Bairro</h4>
+      <p-dropdown id="cboBairroPJ"></p-dropdown>
+    </div>
+    <div class="col-md-3">
+      <h4 class="laranja">CEP</h4>
+      <input id="CepPJ" type="text" pInputText />
+    </div>
+    <div class="col-1a no-label">
+      <button type="button" pButton icon="pi pi-search"></button>
+    </div>
+    <div class="col-md-3 margin-bottom">
+      <h4 class="laranja">Complemento</h4>
+      <input id="txtComplementoPJ" type="text" pInputText />
+    </div>
+
+    <div class="col-md-5">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Representante</h4>
+      <p-dropdown id="cboRepresentantePJ" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-7 margin-bottom">
+      <h4 class="laranja"><i class="fa fa-asterisk"></i>Cargo</h4>
+      <input id="txtCargoPJ" type="text" pInputText />
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarPJ01" type="button" pButton (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+    <button id="btnConfirmarPJ01" type="button" pButton (click)="display = false" icon="fa fa-check"  label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

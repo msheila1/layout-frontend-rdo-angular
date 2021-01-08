@@ -1,0 +1,198 @@
+<div class="row margin-bottom">
+  <div class="col-5">
+    <h2>Cadastro Completo - Boletim de Ocorrência<a class="btn btn-outline-warning btn-lg" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-question-circle fa-2x"></i></a>
+    </h2>
+    <!--Breadcrumb-->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a routerLink="/cadastro-bo-rapido" id="lnkCadastroRapido"><i class="pi pi-home"></i>Home</a>
+        </li>
+        <li class="breadcrumb-item active">Cadastro Completo - Boletim de Ocorrência</li>
+      </ol>
+    </nav>
+  </div>
+
+  <!--Botões-->
+  <div class="col-3">
+    <p-toolbar>
+      <div class="ui-toolbar-group-center">
+        <p-dialog header="Chegar" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{ width: '350px', minWidth: '200px' }" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+          <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+          <p-footer><button type="button" pButton icon="fa fa-times" (click)="display = false" label="Não"></button>
+          </p-footer>
+        </p-dialog>
+        <button pButton type="button" icon="pi pi-check" class="ui-button-chegar" pTooltip="Chegar documento" tooltipPosition="top" (click)="showChegar()"></button>
+
+        <p-dialog header="Tipo de Documentos" [(visible)]="displayTipoDocumentos" [modal]="true" [responsive]="true" [style]="{ width: '350px', minWidth: '200px' }" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+          <span>
+            <h3 class="first">Selecione a opção:</h3>
+            <div class="ui-g" style="width:250px;margin-bottom:10px">
+              <div class="ui-g-12">
+                <p-radioButton name="group1" value="Option 1" label="Documentos BO" [(ngModel)]="val1" inputId="opt1">
+                </p-radioButton>
+              </div>
+              <div class="ui-g-12">
+                <p-radioButton name="group1" value="Option 2" label="Anexos BO" [(ngModel)]="val1" inputId="opt2">
+                </p-radioButton>
+              </div>
+            </div>
+          </span>
+        </p-dialog>
+        <button pButton type="button" icon="pi pi-pencil" class="ui-button-edit ml-2" pTooltip="Editar Documento" tooltipPosition="top" (click)="showTipoDocumentos()"></button>
+
+        <p-dialog header="Exames Pericial" [(visible)]="displayExamePericia" [modal]="true" [responsive]="true" [style]="{ width: '350px', minWidth: '200px' }" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+          <span>
+            <h3 class="first">Solicitar Exame Pericial:</h3>
+            <div class="ui-g" style="width:400px;margin-bottom:10px">
+              <div class="ui-g-6">
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 1" label="Pessoas" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+                </div>
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 3" label="Veículos" [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+                </div>
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 4" label="Objetos" [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+                </div>
+              </div>
+              <div class="ui-g-6">
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 5" label="Armas" [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+                </div>
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 6" label="Entorpecentes" [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+                </div>
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 7" label="Local de Ocorrência" [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+                </div>
+              </div>
+            </div>
+          </span>
+          <p-footer>
+            <button type="button" pButton icon="fa fa-check" (click)="display = false" label="Avançar"></button>
+            <button type="button" pButton icon="fa fa-times" (click)="display = false" label="Cancelar" class="ui-button-secondary"></button>
+          </p-footer>
+        </p-dialog>
+        <button type="button" pButton icon="fa fa-flask" class="ui-button-pericia ml-2" pTooltip="Exame Perícia" tooltipPosition="top" (click)="showExamePericia()"></button>
+
+        <p-dialog header="Impressão RDO" [(visible)]="displayImprimir" [modal]="true" [responsive]="true" [style]="{ width: '350px', minWidth: '200px' }" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+          <span>
+            <div class="ui-g" style="width:600px;margin-bottom:10px">
+              <div class="ui-g-6">
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 1" label="Impressão para simples conferência" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+                </div>
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 2" label="Impressão com cabeçalho" [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+                </div>
+              </div>
+              <div class="ui-g-6">
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 4" label="Impressão definitiva do RDO" [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+                </div>
+                <div class="ui-g-12">
+                  <p-radioButton name="group1" value="Option 5" label="Impressão sem cabeçalho" [(ngModel)]="val1" inputId="opt2"></p-radioButton>
+                </div>
+              </div>
+            </div>
+          </span>
+          <p-footer>
+            <button type="button" pButton icon="fa fa-check" (click)="display = false" label="Sim"></button>
+            <button type="button" pButton icon="fa fa-times" (click)="display = false" label="Não" class="ui-button-secondary"></button>
+          </p-footer>
+        </p-dialog>
+        <button type="button" pButton icon="fa fa-print" class="ui-button-print ml-2" pTooltip="Exame Perícia" tooltipPosition="top" (click)="showImprimir()"></button>
+      </div>
+    </p-toolbar>
+  </div>
+
+  <!--Dados do BO-->
+  <p-card class="col-4 align-left">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          Tipo: <strong>{{ tipo }}</strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Ano: <strong>{{ ano }}</strong>
+        </div>
+        <div class="col">
+          Número: <strong>{{ numero }}</strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          Digitador: <strong>{{ digitador }}</strong>
+        </div>
+        <div class="col">
+          Escrivão: <strong>{{ escrivao }}</strong>
+        </div>
+      </div>
+    </div>
+  </p-card>
+  </div>
+
+  <!--Protocolo-->
+  <!--div class="row margin-bottom">
+    <div class="row">
+      <div class="laranja-protocolo mt-2">Protocolo Pré-Registro</div>
+    </div>
+    <div class="ml-3"><input id="input" type="text" size="30" pInputText [(ngModel)]="text"> </div>
+    <div><button id="disabled-btn" type="button" (click)="showConfirm()" pButton label="Importar" class="ml-3"></button></div>
+  </div-->
+
+  <!--Importar Protocolo-->
+  <p-toast position="center" key="c" (onClose)="onReject()" [modal]="true" [baseZIndex]="5000">
+    <ng-template let-message pTemplate="message">
+      <div style="text-align: center">
+        <i class="pi pi-exclamation-triangle" style="font-size: 3em"></i>
+        <h3>{{message.summary}}</h3>
+        <p class="message">{{message.detail}}</p>
+      </div>
+      <div class="ui-g ui-fluid">
+        <div class="ui-g-6">
+          <button type="button" pButton (click)="onConfirm()" label="Sim" class="ui-button-success"></button>
+        </div>
+        <div class="ui-g-6">
+          <button type="button" pButton (click)="onReject()" label="Não" class="ui-button-secondary"></button>
+        </div>
+      </div>
+    </ng-template>
+  </p-toast>
+
+<!--Accordion-->
+<p-accordion>
+  <p-accordionTab header="1 - Boletim de Ocorrência" [selected]="true">
+    <app-boletimocorrencia></app-boletimocorrencia>
+  </p-accordionTab>
+  <p-accordionTab header="2 - Histórico BO">
+    <app-historicobo></app-historicobo>
+  </p-accordionTab>
+  <p-accordionTab header="3 - Natureza">
+    <app-natureza></app-natureza>
+  </p-accordionTab>
+  <p-accordionTab header="4 - Pessoas">
+    <app-pessoas></app-pessoas>
+  </p-accordionTab>
+  <p-accordionTab header="5 - Veículos">
+    <app-veiculos></app-veiculos>
+  </p-accordionTab>
+  <p-accordionTab header="6 - Carga">
+    <app-carga></app-carga>
+  </p-accordionTab>
+  <p-accordionTab header="7 - Objetos">
+    <app-objetos></app-objetos>
+  </p-accordionTab>
+  <p-accordionTab header="8 - Armas e Acessórios">
+    <app-armaseacessorios></app-armaseacessorios>
+  </p-accordionTab>
+  <p-accordionTab header="9 - Entorpecentes">
+    <app-entorpecentes></app-entorpecentes>
+  </p-accordionTab>
+  <!--p-accordionTab header="10 - Pessoa Jurídica">
+    <app-pessoajuridica></app-pessoajuridica>
+  </p-accordionTab-->
+</p-accordion>

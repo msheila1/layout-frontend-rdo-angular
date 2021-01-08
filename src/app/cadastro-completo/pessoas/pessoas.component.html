@@ -1,0 +1,35 @@
+<div class="row margin-bottom">
+  <div class="col-12">
+    <i class="fa fa-fw fa-table position-icon-table"></i>
+    <p-panel header="Selecione uma Pessoa" [toggleable]="true">
+    <p-table [value]="pessoas" selectionMode="single" [(selection)]="selecionaPessoas" dataKey="pessoas">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="pessoas">
+          <th style="width: 25%; font-weight: bold">Pessoa</th>
+          <th style="width: 15%; font-weight: bold">RG</th>
+          <th style="width: 15%; font-weight: bold">Tipo</th>
+          <th class="text-center" style="width: 18%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+          <td>{{ pessoas }}</td>
+          <td>{{ rg }}</td>
+          <td>{{ tipoPessoa }}</td>
+          <td class="text-center">
+            <p-splitButton icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+         </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:right">
+          <button id="btnNovoPessoa" type="button" pButton icon="fa fa-plus" (click)="displayDialogPessoa = true;" label="Novo" style="width: 100px;"></button>&nbsp;&nbsp;
+        </div>
+      </ng-template>
+    </p-table>
+  </p-panel>
+  </div>
+</div>
+
+<!--Dialog-->
+<app-dialog-pessoa [display]="displayDialogPessoa" [isCampoNaoObrigatorio]="isCampoNaoObrigatorio" (displayChange)="displayDialogPessoa = false;"></app-dialog-pessoa>

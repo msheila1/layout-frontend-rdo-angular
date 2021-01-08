@@ -1,0 +1,28 @@
+<div class="row margin-bottom">
+    <div class="col-md-12">
+      <p-table [value]="rdosApreciacao" selectionMode="single" [(selection)]="delegacia" dataKey="rdosApreciacao">
+        <ng-template pTemplate="header">
+          <tr [pSelectableRow]="rdosApreciacao">
+            <th style="width: 33%; font-weight: bold">Delegacia</th>
+            <th style="width: 7%; font-weight: bold">Ano</th>
+            <th style="width: 10%; font-weight: bold">Número</th>
+            <th style="width: 20%; font-weight: bold">RG Delegado</th>
+            <th style="width: 20%; font-weight: bold">RG Escrivão</th>
+            <th style="width: 10%; font-weight: bold; text-align: center;">Visualizar</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+          <tr>
+            <td>{{ delegacia }}</td>
+            <td>{{ ano }}</td>
+            <td>{{ numero }}</td>
+            <td>{{ delegado }}</td>
+            <td>{{ escrivao }}</td>
+            <td class="text-center">
+                <button id="btnVisualizar" pButton icon="fa fa-search"></button>
+              </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>        
+  </div>

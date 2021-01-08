@@ -1,0 +1,51 @@
+<form [formGroup]="formGroup">
+    <div class="row">
+      <div class="col-md-2 mt-5">
+        <h4 class="laranja">Origem</h4>
+        <p-radioButton inputId="origemCarga1" name="origemCarga" value="1" label="Nacional" formControlName="origemCarga"></p-radioButton>
+        <p-radioButton inputId="origemCarga2" name="origemCarga" value="2" label="Importada" formControlName="origemCarga" class="ml-3"></p-radioButton>
+      </div>
+      <div class="col-md-2 mt-5">
+        <h4 class="laranja">Estava segurada</h4>
+        <p-radioButton id="rdoEstavaSegurada1" name="segurada" value="1" label="Sim" formControlName="segurada"></p-radioButton>
+        <p-radioButton id="rdoEstavaSegurada2" name="segurada" value="2" label="Não" class="ml-3" formControlName="segurada"></p-radioButton>
+      </div>
+      <div class="col-md-3 mt-5">
+        <h4 class="laranja"><i class="fa fa-asterisk"></i>Tipo de Carga</h4>
+        <p-dropdown id="tipoCarga"  formControlName="tipoCarga" [options]="tipoCarga" optionLabel="descricao" placeholder="Selecione" displayErrors></p-dropdown>
+      </div>
+      <div class="col-md-2 mt-5">
+        <h4 class="laranja"><i class="fa fa-asterisk"></i>Subtipo de Carga</h4>
+        <p-dropdown id="subtipoCarga" placeholder="Selecione" formControlName="subtipoCarga"></p-dropdown>
+      </div>
+      <div class="col-md-3 mt-5">
+        <h4 class="laranja"><i class="fa fa-asterisk"></i>Modo</h4>
+        <p-dropdown id="modoCarga" formControlName="modoCarga" [options]="modoCarga" optionLabel="descricao" placeholder="Selecione" displayErrors></p-dropdown>
+      </div>
+      <div class="col-md-2 mt-5">
+        <h4 class="laranja">Notas Fiscais/Invoices</h4>
+        <input id="notasFiscais"  formControlName="notasFiscais" type="text" pInputText />
+      </div>
+    
+      <div class="col-md-2 mt-5">
+        <h4 class="laranja">Unidade</h4>
+        <p-dropdown id="unidadeCarga" formControlName="unidadeCarga" [options]="unidadeCarga" optionLabel="descricao" placeholder="Selecione"></p-dropdown>
+      </div>
+      <div class="col-md-2 mt-5">
+        <h4 class="laranja">Valor da Carga (R$)</h4>
+        <input id="valorCarga" type="text" pInputText formControlName="valorCarga"/>
+      </div>
+      <div class="col-md-3 mt-5">
+        <h4 class="laranja">Série</h4>
+        <input id="serieCarga" type="text" pInputText formControlName="serie"/>
+      </div>
+      <div class="col-md-3 mt-5">
+        <h4 class="laranja">Marca</h4>
+        <input id="marcaCarga" type="text" pInputText formControlName="marca"/>
+      </div>
+      <div class="col-md-10 mt-5">
+        <h4 class="laranja">Detalhe da Carga<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <input id="detalheCarga" type="text" pInputText formControlName="detalheCarga"/>
+      </div>
+    </div>
+    </form>

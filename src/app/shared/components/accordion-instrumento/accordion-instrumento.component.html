@@ -1,0 +1,30 @@
+<p-accordionTab header="Instrumentos">
+    <div class="row margin-bottom">
+        <div class="col-12">
+            <h3 class="laranja">Intrumentos</h3>
+            <p-table [value]="instrumentosVeiculo" selectionMode="single" [(selection)]="selecionaInstrumentosVeiculo" dataKey="intrumentosVeiculo">
+                <ng-template pTemplate="header">
+                    <tr [pSelectableRow]="instrumentosVeiculo">
+                        <th style="width: 45%; font-weight: bold">Instrumentos</th>
+                        <th style="width: 45%; font-weight: bold">Características</th>
+                        <th class="text-center" style="width: 15%; font-weight: bold">Excluir</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body">
+                    <tr>
+                        <td>{{ tipoInstrumentoVeiculo }}</td>
+                        <td>{{ caractInstrumentoVeiculo }}</td>
+                        <td class="text-center"><button id="btnExcluirInstrumentos01" pButton
+                                icon="fa fa-close"></button></td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary" let-rowData>
+                    <div style="text-align:left">
+                        <button id="btnNovoInstrumentos01" type="button" pButton icon="fa fa-plus" (click)="displayDialogInstrumentoVeiculo = true;" label="Novo" style="width: 100px;"></button>&nbsp;&nbsp;
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</p-accordionTab>
+<app-dialog-instrumento-veiculo [display]="displayDialogInstrumentoVeiculo" (displayChange)="displayDialogInstrumentoVeiculo = false;"></app-dialog-instrumento-veiculo>

@@ -1,0 +1,14 @@
+<form [formGroup]="formGroup" (ngSubmit)="showSuccess()">
+  <app-secao-identificacao-rdo [formGroup]="identificacaoRdo" (onTipoBoChange)="handleTipoBoChange($event)" [isCadastroCompleto]="isCadastroCompleto"></app-secao-identificacao-rdo>
+  <app-secao-localizacao [formGroup]="localizacao"></app-secao-localizacao>
+  <app-secao-apresentacao-ocorrencia [formGroup]="apresentacaoOcorrencia" [tipoBo]="tipoBo"></app-secao-apresentacao-ocorrencia>
+  <app-secao-solucao [isCadastroCompleto]="isCadastroCompleto"></app-secao-solucao>
+  <div class="row margin-bottom">
+    <div class="col-1a"></div>
+    <div class="col-11 row space-10 align-left alinhar-btn-left">
+      <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+      <button pButton type="submit" label="Salvar" class="btn-salvar mr-1"></button>
+      <button pButton type="button" label="Cancelar" class="btn-cancelar ui-button-secondary"></button>
+    </div>
+  </div>
+</form>

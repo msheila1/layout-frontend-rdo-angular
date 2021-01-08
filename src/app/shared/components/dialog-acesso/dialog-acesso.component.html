@@ -1,0 +1,14 @@
+<p-dialog header="Acesso" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="600" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+    <div class="row margin-bottom">
+        <div class="col-12 margin-bottom">
+            <h4 class="laranja">Acesso <i class="fa fa-asterisk"></i></h4>
+            <p-dropdown id="rdoSeguranca" [options]="select" [(ngModel)]="selected"></p-dropdown>
+        </div>
+    </div>
+    <p-footer>
+        <button id="btnCancelarVeiculo" type="button" pButton (click)="display=false" label="Cancelar"
+            class="ui-button-secondary"></button>
+        <button id="btnConfirmarVeiculo" type="button" pButton (click)="display=false" icon="fa fa-check"
+            label="Confirmar"></button>
+    </p-footer>
+</p-dialog>

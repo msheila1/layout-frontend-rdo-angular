@@ -1,0 +1,87 @@
+<ng-container [formGroup]="formGroup">
+  <div class="row">
+    <div class="col-xl-3 col-md-6 margin-bottom">
+      <h3 class="laranja space-10"><i class="fa fa-asterisk"></i>Estado</h3>
+      <p-autoComplete id="uf" formControlName="uf" displayErrors [suggestions]="listSuggestionUf" (completeMethod)="loadSuggestionUf($event)" (onSelect)="selectSugestionUf($event)" [minLength]="1" placeholder="Estado" field="id_uf" [dropdown]="true" [forceSelection]="true">
+        <ng-template let-uf pTemplate="item">
+          <div class="ui-helper-clearfix">
+            <div style="float:left;margin:10px 10px 0 0">{{uf.id_uf}}</div>
+          </div>
+        </ng-template>
+      </p-autoComplete>
+    </div>
+    <div class="col-xl-3 col-md-6 margin-bottom">
+      <h3 class="laranja"><i class="fa fa-asterisk"></i>Cidade</h3>
+      <p-autoComplete id="municipio" formControlName="municipio" displayErrors [suggestions]="listSuggestionMunicipio" (completeMethod)="loadSuggestionMunicipio($event)" (onSelect)="selectSugestionMunicipio($event)" [minLength]="1" placeholder="Cidade" field="nome_ibge" [dropdown]="true" [forceSelection]="true">
+        <ng-template let-municipio pTemplate="item">
+          <div class="ui-helper-clearfix">
+            <div style="float:left;margin:10px 10px 0 0">{{municipio.nome_ibge}}</div>
+          </div>
+        </ng-template>
+      </p-autoComplete>
+    </div>
+  </div>
+  <div class="col-12">
+    <h3 class="laranja"><i class="fa fa-asterisk"></i>Logradouro<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+  </div>
+
+  <div class="row" >
+    <div class="col-12">
+      <p-autoComplete id="endereco" formControlName="endereco" delay=500 displayErrors [suggestions]="listSuggestionLogradouro" (completeMethod)="loadSuggestionsLogradouro($event)" (onSelect)="selectSugestionLogradouro($event)" placeholder="Digite seu local" field="logradouroFullName" [minLength]="3"  [style]="{'width':'100%'}" ></p-autoComplete>
+    </div>
+  </div>
+  <div class="row" >
+    <div class="col-xl-4 col-md-6 mt-3">
+      <h4>Endereço</h4>
+      <input pInputText id="logradouro" formControlName="logradouro"/>
+    </div>
+    <div class="col-xl-1 col-md-2 mt-3">
+      <h4>Nº</h4>
+      <input id="numeroLogradouro" type="text" pInputText formControlName="numeroLogradouro"/>
+    </div>
+    <div class="col-xl-3 col-md-4 mt-3">
+      <h4>Complemento</h4>
+      <input id="complemento" type="text" pInputText formControlName="complemento" />
+    </div>
+    <div class="col-xl-2 col-md-6 mt-3">
+      <h4>Bairro</h4>
+      <input id="bairro" type="text" pInputText formControlName="bairro" />
+    </div>
+    <div class="col-xl-2 col-md-6 margin-bottom mt-3">
+      <h4>CEP</h4>
+      <input id="cep" type="text" pInputText formControlName="cep"/>
+    </div>
+  </div>
+
+  <div class="row" [hidden]="hiddenMapaButton">
+      <div class="col-12">
+        <button pButton type="button" label="Mapa" (click)="onClickMapa()" class="btn-salvar mr-1"></button>
+      </div>
+  </div>
+
+  <div class="row" [hidden]="hiddenMapa">
+    <div class="col-12">
+      <input ngx-google-places-autocomplete pInputText #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+  
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClick($event)">
+        <agm-marker [latitude]="latMarker" [longitude]="lgnMarker" (markerClick)="makerClick($event)"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+  <div class="row" [hidden]="hiddenMapa">
+    <div class="col-12">
+        <p-table [value]="listLogradouroMapa" selectionMode="single" (onRowSelect) ="onRowSelectMapa($event.data)">
+            <ng-template pTemplate="header">
+                <tr>
+                  <th>Logradouro</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-logradouro>
+                <tr [pSelectableRow]="logradouro">
+                  <td>{{logradouro.logradouroFullName}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+  </div>
+</ng-container>

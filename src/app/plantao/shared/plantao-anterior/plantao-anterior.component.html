@@ -1,0 +1,27 @@
+<div class="col-md-12">
+    <div class="col-md-6">
+        Abertura: <b>{{ plantao?.dataHorarioAbertura }} </b>
+    </div>
+    <div class="col-md-6">
+        Fechamento: <b>{{ plantao?.dataHorarioFechamento }}</b>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <p-table [value]="plantonista" selectionMode="single" [(selection)]="selectedModel" (onRowSelect)="onRowSelect($event)">
+        <ng-template pTemplate="header">
+            <tr>
+            <th style="width: 40%; font-weight: bold">Usuário</th>
+            <th style="width: 30%; font-weight: bold">Entrada</th>
+            <th style="width: 30%; font-weight: bold">Saída</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-model>
+            <tr  [pSelectableRow]="model">
+            <td>{{ model.usuario.nome }}</td>
+            <td>{{ model.dataHoraEntrada }}</td>
+            <td>{{ model.dataHoraSaida }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

@@ -1,0 +1,26 @@
+
+<div class="row margin-bottom" [ngClass]="{'d-block': show, 'd-none': !show }">
+  <div id="seta" [ngClass]="{'d-block': seta, 'd-none': !seta }" [class]="icone"></div>
+  <div class="col-md-12">
+    <p-table [value]="value" selectionMode="single" [(selection)]="selectedModel" (onRowSelect)="onRowSelect($event)" dataKey="id">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 33%; font-weight: bold">Delegacia</th>
+          <th style="width: 7%; font-weight: bold">Ano</th>
+          <th style="width: 10%; font-weight: bold">Número</th>
+          <th style="width: 20%; font-weight: bold">RG Delegado</th>
+          <th style="width: 20%; font-weight: bold;">RG Escrivão</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-model>
+        <tr [pSelectableRow]="model">
+          <td>{{ model.delegacia }}</td>
+          <td>{{ model.ano }}</td>
+          <td>{{ model.numero }}</td>
+          <td>{{ model.delegado }}</td>
+          <td>{{ model.escrivao }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>        
+</div>

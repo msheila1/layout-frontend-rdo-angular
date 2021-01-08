@@ -1,0 +1,44 @@
+<ng-container [formGroup]="formGroup">
+  <div class="row margin-bottom" data-step="5" data-intro="Lorem Ipsum.">
+    <div class="col-1a numeracao-tracking" title="Mais detalhes para ajudar na investigação">
+      <h1>4</h1>
+    </div>
+    <div class="col-10 row">
+      <div class="col-3">
+        <h4 class="laranja">Circunscrição</h4>
+        <input type="text" pInputText disabled="disabled" />
+      </div>
+      <div class="col-3 margin-bottom" [hidden]="!isCadastroCompleto">
+        <h4 class="laranja">Luminosidade<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <input id="txtLuminosidade" type="text" pInputText />
+      </div>
+
+      <div class="col-3" [hidden]="!isCadastroCompleto">
+        <h4 class="laranja">Providências Tomadas</h4>
+        <p-dropdown id="tipoProvidencias" [options]="dropdownTipoProvidencias" formControlName="tipoProvidencias" placeholder="Selecione"></p-dropdown>
+      </div>
+      <div class="col-3 margin-bottom" [hidden]="!isCadastroCompleto">
+        <h4 class="laranja">Número da Mensagem<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <input id="txtNumeroMensagem" type="text" pInputText />
+      </div>
+
+      <div class="col-3" [hidden]="!isCadastroCompleto">
+        <h4 class="laranja">Exames Requisitados</h4>
+        <p-dropdown id="tipoExameRequisitado" [options]="dropdownTipoExamesRequisitados" formControlName="tipoExameRequisitado" placeholder="Selecione"></p-dropdown>
+      </div>
+      <div class="col-3 margin-bottom" [hidden]="!isCadastroCompleto">
+        <h4 class="laranja">Provas Colhidas<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <input id="txtProvasColhidas" type="text" pInputText />
+      </div>
+
+      <div class="col-3">
+        <h4 class="laranja"><i class="fa fa-asterisk"></i>Solução</h4>
+        <p-dropdown id="tipoSolucao" [options]="dropdownTipoSolucao" formControlName="tipoSolucao" placeholder="Selecione" displayErrors></p-dropdown>
+      </div>
+      <div class="col-3" [hidden]="!isCadastroCompleto">
+        <h4 class="laranja">Número do Ofício<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <input id="txtNumeroOficio" type="text" pInputText />
+      </div>
+    </div>
+  </div>
+</ng-container>

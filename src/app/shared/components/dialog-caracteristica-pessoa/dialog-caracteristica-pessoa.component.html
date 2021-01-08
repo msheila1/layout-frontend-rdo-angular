@@ -1,0 +1,20 @@
+<p-dialog header="Característica Pessoais" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="600" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="1000">
+  <div class="row margin-bottom">
+    <div class="col-6 margin-bottom">
+      <h4 class="laranja">Tipo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboTipoCaracteristicas" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-6 margin-bottom">
+      <h4 class="laranja">Local do Corpo<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-dropdown id="cboLocalCorpoCaracteristicas" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-12">
+      <h4 class="laranja">Descrição<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="txtDescricaoCaracteristicas" type="text" pInputText />
+    </div>
+  </div>
+  <p-footer>
+    <button id="btnCancelarCaracteristicas" type="button" pButton (click)="displayCaracteristicasPessoa = false" label="Cancelar" class="ui-button-secondary" (click)="display = false"></button>
+    <button id="btnConfirmarCaracteristicas" type="button" pButton (click)="displayCaracteristicasPessoa = false" icon="fa fa-check" (click)="display = false" label="Confirmar"></button>
+  </p-footer>
+</p-dialog>

@@ -1,0 +1,79 @@
+<div class="col-5">
+  <h2>Buscar Pessoas<a class="btn btn-outline-warning btn-lg ml-2" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-question-circle fa-2x"></i></a>
+  </h2>
+  <!--Breadcrumb-->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/cadastro-bo-rapido" id="lnkCadastroRapido"><i class="pi pi-home"></i>Home</a>
+      </li>
+      <li class="breadcrumb-item active">Buscar Pessoas</li>
+    </ol>
+  </nav>
+</div>
+<div class="card margin-bottom">
+  <div class="row mt-5">
+    <div class="col-3 margin-bottom" data-step="1" data-intro="Clique na lupa para buscar um plantonista.">
+      <h4 class="laranja">RG</h4>
+      <input id="txtRgPessoas" type="text" pInputText />
+    </div>
+    <div class="col-2 margin-bottom" data-step="2" data-intro="Clique na lupa para buscar um plantonista.">
+      <h4 class="laranja">Estado</h4>
+      <p-dropdown id="cboEstadoPessoas"></p-dropdown>
+    </div>
+    <div class="col-12 mt-2">
+      <div class="col-12 p-2 btn-buscar"></div>
+      <div class="btn-buscar">
+        <button id="btnBuscar" type="button" pButton label="Buscar" class="ui-button-secondary"></button>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
+
+<div class="card margin-bottom">
+  <div class="col-12 margin-bottom">
+    <h4 class="laranja mt-4">Busca efetuada em:</h4>
+    <p-checkbox name="groupname" value="val1" [(ngModel)]="selectedValues" label="RDO"></p-checkbox>
+    <p-checkbox class="ml-2" name="groupname" value="val2" [(ngModel)]="selectedValues" label="CIVIL"></p-checkbox>
+    <p-checkbox class="ml-2" name="groupname" value="val3" [(ngModel)]="selectedValues" label="CRIMINAL"></p-checkbox>
+  </div>
+</div>
+
+<div class="margin-bottom">
+  <div class="card-header header-elements-inline">
+    <h6 class="card-title">Resultado da Pesquisa</h6>
+  </div>
+  <p-table [value]="buscarPessoa" selectionMode="single">
+    <ng-template pTemplate="header">
+      <tr [pSelectableRow]="buscarPessoa">
+        <th style="width: 3%; font-weight: bold">Foto</th>
+        <th style="width: 7%; font-weight: bold">Origem</th>
+        <th style="width: 10%; font-weight: bold">Delegacia</th>
+        <th style="width: 5%; font-weight: bold">Ano</th>
+        <th style="width: 5%; font-weight: bold">Nº</th>
+        <th style="width: 10%; font-weight: bold">Tipo Pessoa</th>
+        <th style="width: 12%; font-weight: bold">Nome</th>
+        <th style="width: 12%; font-weight: bold">Situação</th>
+        <th class="text-center" style="width: 8%; font-weight: bold">Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body">
+      <tr>
+        <td>
+          <img src="../../assets/img/avatar-user2.png" class="rounded-circle mr-2" height="30px" margin-top="15px" alt=""/>
+        </td>
+        <td>{{ origem }}</td>
+        <td>{{ delegacia }}</td>
+        <td>{{ ano }}</td>
+        <td>{{ numero }}</td>
+        <td>{{ tipo }}</td>
+        <td>{{ nome }}</td>
+        <td>{{ situacao }}</td>
+        <td class="text-center">
+          <p-splitButton icon="pi pi-bars" (onClick)="save('info')" [model]="items" styleClass="ui-button-warning"></p-splitButton>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

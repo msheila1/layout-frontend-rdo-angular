@@ -1,0 +1,89 @@
+<div class="row margin-div">
+  <app-carga-table></app-carga-table>
+  <div class="col-12 text-right mt-5">
+     <button id="btnPlantao" type="button" pButton icon="fa fa-plus" (click)="showCarga = true;" label="Novo" style="width: 100px;"></button>
+  </div>
+
+  <!--Panel Carga-->
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="col-12 mt-5">
+      <p-panel header="Carga" [toggleable]="true" [hidden]="!showCarga">
+        <div class="row">
+          <app-carga-novo [formGroup]="carga"></app-carga-novo>
+            <!-- <app-carga-form [formGroup]="formGroup" [listTipoCarga]="listTipoCarga$ | async" 
+            [listModoCarga]="listModoCarga$ | async" 
+            [listUnidadeCarga]="listUnidadeCarga$ | async">
+            </app-carga-form> -->
+          <!--app-carga-registro [formGroup]="carga"></app-carga-registro-->
+      
+          <!--div class="col-12 mt-5">
+                  <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+                  <p-panel header="Informe o Destino" [toggleable]="true">
+                    <div class="col">
+                      <app-carga-destino></app-carga-destino>
+                    </div>
+                  </p-panel>
+                </div-->
+      
+        </div>
+      
+        <div class="row">
+          <div class="col-12 text-right mt-5">
+            <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+            <button pButton type="submit" label="Salvar" icon="fa fa-save" class="btn-salvar mr-1"></button>
+            <button pButton type="button" label="Cancelar" class="btn-cancelar ui-button-secondary" (click)="clearForm()"></button>
+          </div>
+        </div>
+      </p-panel>
+  </div>
+</form>
+</div>
+
+<!--Panel Carga-->
+<!--form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+<div class="row" *ngIf="showCarga">
+  <div class="col-12 mt-5">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+    <p-panel header="Carga" [toggleable]="true">
+      <div class="col">
+        <app-carga-registro [formGroup]="origemCarga"></app-carga-registro>
+      </div>
+    </p-panel>
+  </div>
+
+  <div class="col-12 mt-5">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+    <p-panel header="Informe o Destino" [toggleable]="true">
+      <div class="col">
+       <app-carga-destino></app-carga-destino>
+      </div>
+    </p-panel>
+  </div>
+
+  <div class="col-12 mt-5">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+    <p-panel header="Informe a Origem" [toggleable]="true">
+      <div class="col">
+        <app-carga-origem></app-carga-origem>
+      </div>
+    </p-panel>
+  </div>
+
+
+  <div class="col-12 mt-5">
+    <i class="fa fa-fw fa-arrow-circle-o-down position-icon"></i>
+    <p-panel header="Informe o Local de Recuperação" [toggleable]="true">
+      <div class="col">
+        <app-carga-local></app-carga-local>
+      </div>
+    </p-panel>
+  </div>
+</div>
+<div class="row margin-bottom">
+  <div class="col-12 text-right mt-5">
+    <p-toast [style]="{ marginTop: '80px' }"></p-toast>
+    <button pButton type="button" label="Salvar" class="btn-salvar mr-1"></button>
+    <button pButton type="button" label="Cancelar" class="btn-cancelar ui-button-secondary"></button>
+  </div>
+</div>
+</form-->

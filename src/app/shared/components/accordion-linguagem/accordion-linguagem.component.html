@@ -1,0 +1,39 @@
+<p-accordionTab header="Linguagem">
+  <div class="row margin-bottom">
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Velocidade</h4>
+      <p-dropdown id="cboVelocidade" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Volume</h4>
+      <p-dropdown id="cboVolume" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Fraseologia</h4>
+      <p-dropdown id="cboFraseologia" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Distorção</h4>
+      <p-dropdown id="cboDistorcao" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Acento</h4>
+      <p-dropdown id="cboAcento" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4 margin-bottom">
+      <h4 class="laranja">Ressonância</h4>
+      <p-dropdown id="cboRessonancia" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-4">
+      <h4 class="laranja">Voz</h4>
+      <p-dropdown id="cboVoz" [options]="select" [(ngModel)]="selected"></p-dropdown>
+    </div>
+    <div class="col-md-8"></div>
+  </div>
+  <div class="row margin-bottom">
+    <div class="col-12 row alinhar-btn-footer">
+      <p-button id="btnSalvarLguagem" label="Salvar" class="btn-salvar"></p-button>
+      <p-button id="btnCancelarLinguagem" label="Cancelar" class="btn-salvar btn-secundario"></p-button>
+    </div>
+  </div>
+</p-accordionTab>

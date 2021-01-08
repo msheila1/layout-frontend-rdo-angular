@@ -1,0 +1,29 @@
+<p-table [value]="telefonePessoa" selectionMode="single" [(selection)]="selecionaTelefonePessoa" dataKey="telefonePessoa">
+  <ng-template pTemplate="header">
+    <tr [pSelectableRow]="telefonePessoa">
+      <th style="width: 15%; font-weight: bold">Operadora</th>
+      <th style="width: 50%; font-weight: bold">Logradouro</th>
+      <th style="width: 15%; font-weight: bold">Nº</th>
+      <th style="width: 10%; font-weight: bold">Ramal</th>
+      <th class="text-center" style="width: 7%; font-weight: bold">Excluir</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body">
+    <tr>
+      <td>{{ operadoraTel }}</td>
+      <td>{{ dddTel }}</td>
+      <td>{{ numeroTel }}</td>
+      <td>{{ ramalTel }}</td>
+      <td class="text-center">
+        <button id="btnExcluirTelefone01" pButton icon="fa fa-close"></button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary" let-rowData>
+    <div style="text-align:left">
+      <button id="btnNovoTelefone01" type="button" pButton icon="fa fa-plus" (click)="displayDialogTelefone = true;" label="Novo" style="width: 100px;"></button>
+    </div>
+  </ng-template>
+</p-table>
+<!--Dialog-->
+<!--app-dialog-telefone-pessoa [display]="displayDialogTelefone" (displayChange)="displayDialogTelefone = false;"></app-dialog-telefone-pessoa-->

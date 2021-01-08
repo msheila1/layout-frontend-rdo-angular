@@ -1,0 +1,36 @@
+<div class="row margin-div">
+  <div class="col-12">
+    <i class="fa fa-fw fa-table position-icon-table"></i>
+    <p-panel header="Armas e Acessórios" [toggleable]="true">
+    <p-table [value]="armas" selectionMode="single" [(selection)]="selecionaArma" dataKey="armas">
+      <ng-template pTemplate="header">
+        <tr [pSelectableRow]="armas">
+          <th style="width: 15%; font-weight: bold">Nº</th>
+          <th style="width: 15%; font-weight: bold">Marca</th>
+          <th style="width: 15%; font-weight: bold">Calibre</th>
+          <th style="width: 15%; font-weight: bold">Tipo</th>
+          <th class="text-center" style="width: 15%; font-weight: bold">Ações</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <tr>
+          <td>{{ numeroArma }}</td>
+          <td>{{ marcaArma }}</td>
+          <td>{{ calibreArma }}</td>
+          <td>{{ tipoArma }}</td>
+          <td class="text-center">
+            <p-splitButton id="acoesArmas" icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:right">
+          <button id="btnNovoArmas01" type="button" pButton icon="fa fa-plus" (click)="displayDialogArmas = true;" label="Novo" style="width: 100px;"></button>
+        </div>
+      </ng-template>
+    </p-table>
+    </p-panel>
+  </div>
+</div>
+<!--Dialog-->
+<app-dialog-armas-acessorios [display]="displayDialogArmas" (displayChange)="displayDialogArmas = false;"></app-dialog-armas-acessorios>

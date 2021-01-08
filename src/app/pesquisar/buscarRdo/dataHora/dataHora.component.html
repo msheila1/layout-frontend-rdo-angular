@@ -1,0 +1,32 @@
+<div class="row mt-5">
+  <div class="col-6 margin-bottom">
+    <h4 class="laranja">Delegacia<i class="fa fa-asterisk"></i></h4>
+    <input type="text" pInputText />
+  </div>
+  <div class="col-2 margin-bottom">
+    <h4 class="laranja">Data Inicial<i class="fa fa-asterisk"></i></h4>
+    <p-calendar [(ngModel)]="date3" [showIcon]="true"></p-calendar>
+  </div>
+  <div class="col-2 margin-bottom">
+    <h4 class="laranja">Hora Inicial<i class="fa fa-asterisk"></i></h4>
+    <p-calendar [(ngModel)]="date8" [timeOnly]="true"></p-calendar>
+  </div>
+  <div class="col-2 margin-bottom">
+    <h4 class="laranja">Data final</h4>
+    <p-calendar [(ngModel)]="date3" [showIcon]="true"></p-calendar>
+  </div>
+  <div class="col-2 margin-bottom">
+    <h4 class="laranja">Hora Final</h4>
+    <p-calendar [(ngModel)]="date8" [timeOnly]="true"></p-calendar>
+  </div>
+  <div class="col-2 margin-bottom">
+    <h4 class="laranja">Período</h4>
+    <p-dropdown [options]="cities1" [(ngModel)]="selectedCity1"></p-dropdown>
+  </div>
+  <div class="col-12 mt-2">
+    <div class="col-12 p-2 btn-buscar"></div>
+    <div class="btn-buscar">
+      <button id="btnBuscarNumeroRdo" type="button" pButton label="Buscar" class="ui-button-secondary"></button>
+    </div>
+  </div>
+</div>

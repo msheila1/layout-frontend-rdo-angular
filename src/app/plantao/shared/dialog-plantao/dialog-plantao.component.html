@@ -1,0 +1,23 @@
+<!--p-dialog header="Outros Plantões em Aberto" [(visible)]="display" (onHide)="onClose()" [modal]="true" [responsive]="true" [width]="750" [minWidth]="600" [minY]="70" [maximizable]="true" [baseZIndex]="10000"-->    
+    <div class="row margin-bottom">      
+        <div class="col-md-12">
+            <p-table [value]="userPlantao" selectionMode="single" [(selection)]="selectedModel" (onRowSelect)="onRowSelect($event)" dataKey="id">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 50%; font-weight: bold">Delegado</th>
+                        <th style="width: 50%; font-weight: bold">Data/Hora de Abertura</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-model>
+                    <tr  [pSelectableRow]="model">
+                        <td>{{ model.delegado }}</td>
+                        <td>{{ model.hora }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+    <!--p-footer>
+      <button id="btnFecharPlantao" type="button" pButton (click)="displayPlantao = false" icon="fa fa-close" (click)="display = false" label="Fechar"></button>
+    </p-footer>
+  </p-dialog-->

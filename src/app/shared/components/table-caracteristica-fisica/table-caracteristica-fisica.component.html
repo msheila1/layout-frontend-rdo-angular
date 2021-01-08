@@ -1,0 +1,91 @@
+<ng-container [formGroup]="formGroup">
+<div class="row margin-bottom">
+    <div class="col-8 margin-bottom">
+      <h4>Características físicas<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="caracteristicaPessoa" type="text" pInputText placeholder="Digite a características físicas da pessoa">
+    </div>
+    <div class="col-2">
+      <h4>Peso<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-spinner inputId="peso" type="number" [max]="100" [(ngModel)]="val3" [step]="0.25"></p-spinner>
+    </div>
+    <div class="col-2">
+      <h4>Altura<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <p-spinner inputId="altura" type="number" [max]="100" [(ngModel)]="val1" [step]="0.25"></p-spinner>
+    </div>
+  </div>
+  <div class="row margin-bottom">
+    <div class="col-12">
+      <i class="fa fa-fw fa-table position-icon-table"></i>
+      <p-panel header="Lista de características físicas" [toggleable]="true">
+      <p-table [value]="VestuariosPessoa" selectionMode="single" dataKey="vestuariosPessoa">
+        <ng-template pTemplate="header">
+          <tr [pSelectableRow]="VestuariosPessoa">
+            <th style="width: 30%; font-weight: bold">Tipo</th>
+            <th style="width: 60%; font-weight: bold">Descrição</th>
+            <th class="text-center" style="width: 10%; font-weight: bold">Ações</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body">
+          <tr>
+            <td>{{ tipoVest }}</td>
+            <td>{{ descricaoVest }}</td>
+            <td class="text-center">
+            <p-splitButton id="AcoesVestuario" icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-panel>
+    </div>
+    <div class="col-6 mt-5">
+      <p-fieldset legend="Possui Vestuários?" [toggleable]="true">
+        <p-header class="ml-2">
+            <p-radioButton name="groupEsteveOutroLugar" formControlName="outroLugarApresentacao" value="true" label="Sim" class="ml-4"></p-radioButton>
+            <p-radioButton name="groupEsteveOutroLugar" formControlName="outroLugarApresentacao" value="false" label="Não" class="ml-4"></p-radioButton>
+        </p-header>
+        <div class="row space-10" [hidden]="!showLocalAntes">
+            <div class="col-12">
+              <div>Informe a quantidade de Vestuários</div>
+                <p-table [value]="VestuariosPessoa" selectionMode="single" dataKey="vestuariosPessoa" id="formaApresentacao">
+                  <ng-template pTemplate="header">
+                    <tr [pSelectableRow]="VestuariosPessoa">
+                      <th style="width: 30%; font-weight: bold">Tipo</th>
+                      <th style="width: 50%; font-weight: bold">Descrição</th>
+                      <th style="width: 10%; font-weight: bold">Ações</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body">
+                    <tr>
+                      <td><input type="text" pInputText /></td>
+                      <td><input type="text" pInputText /></td>
+                      <td class="text-center">
+                      <p-splitButton id="AcoesVestuario" icon="pi pi-bars" [model]="items" styleClass="ui-button-actions"></p-splitButton>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+
+          <!--div class="col-xl-4 col-md-6 margin-bottom">
+            <h3 class="laranja altura-bottom"><i class="fa fa-asterisk"></i>Forma de Apresentação<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+            <p-radioButton name="groupFormaApresentacao" formControlName="formaApresentacao" value="E" label="Espontânea"></p-radioButton>
+            <p-radioButton name="groupFormaApresentacao" formControlName="formaApresentacao" value="C" label="Conduzida" displayErrors></p-radioButton>
+          </div-->
+        </div>
+    </p-fieldset>
+  </div>
+  <div class="col-6 mt-5">
+    <p-fieldset legend="Possui Adornos?" [toggleable]="true" [transitionOptions]="'20ms'">
+      <p-header>
+        <p-radioButton name="groupPossuiAdornos" formControlName="possuiAdornos" value="true" label="Sim" class="ml-4"></p-radioButton>
+        <p-radioButton name="groupPossuiAdornos" formControlName="possuiAdornos" value="false" label="Não" class="ml-4"></p-radioButton>
+      </p-header>
+      <div class="row space-10" [hidden]="!showteste">
+        <div class="col-xl-4 col-md-6 margin-bottom">
+          <div id="teste">Content </div>
+        </div>
+    </div>
+    </p-fieldset>
+  </div>
+</div>
+</ng-container>

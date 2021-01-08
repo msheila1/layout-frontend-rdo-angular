@@ -1,0 +1,5 @@
+/**Responsivo 1366**/
+@media(width: 1024px){
+  .numeracao-tracking {border-right: 1px solid #cccccc; padding-right: 30px; cursor: pointer;} 
+  .col-2 {flex: 3 0 16.666667%; max-width: 22.666667%;} 
+  .col-3 {flex: 0 0 25%; max-width: 42%;}}

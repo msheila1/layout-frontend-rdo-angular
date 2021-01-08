@@ -1,0 +1,88 @@
+<ng-container [formGroup]="formGroup">
+  <div class="row margin-bottom" data-step="2" data-intro="Lorem Ipsum.">
+    <div class="col-1a numeracao-tracking" title="Dados importantes como data, hora e comunicação da ocorrência.">
+      <h1>1</h1>
+    </div>
+    <div class="col-10 row">
+      <div class="col-12 space-10">
+        <h3 class="laranja">Identificação do RDO</h3>
+      </div>
+      <div class="col-xl-5">
+        <h4><i class="fa fa-asterisk"></i>Tipo de Documento<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor sit amet." tooltipPosition="top" placeholder="Top"></i></h4>
+        <p-radioButton name="groupTipoBo" value="5" label="Termo Circunstanciado" inputId="tipoBo1" formControlName="tipoBo"></p-radioButton>&nbsp;&nbsp;&nbsp;
+        <p-radioButton name="groupTipoBo" value="7" label="Boletim de ocorrência" inputId="tipoBo2" formControlName="tipoBo" displayErrors></p-radioButton>
+      </div>
+      <div class="col-2 margin-bottom">
+        <h4>Ano<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <input id="txtAno01" type="text" pInputText disabled="disabled" />
+      </div>
+      <div class="col-2">
+        <h4>Número<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+        <input id="txtNumero01" type="text" pInputText disabled="disabled" />
+      </div>
+      <div class="col-12 space-10" [hidden]="!isCadastroCompleto">
+        <h3 class="laranja">RDO Principal<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+      </div>
+      <div class="col-3 margin-bottom" [hidden]="!isCadastroCompleto">
+        <h4><i class="fa fa-asterisk"></i>Delegacia</h4>
+        <input id="txtDelegacia" type="text" pInputText disabled="disabled" formControlName="delegacia" />
+      </div>
+      <div class="col-2" [hidden]="!isCadastroCompleto">
+        <h4>Ano</h4>
+        <input id="txtAno01" type="text" pInputText disabled="disabled" formControlName="anoBo" />
+      </div>
+      <div class="col-2" [hidden]="!isCadastroCompleto">
+        <h4>Número</h4>
+        <input id="txtNumero01" type="text" pInputText disabled="disabled" formControlName="numeroBo" />
+      </div>
+      <div class="col-12 space-10">
+        <h3 class="laranja">
+            <i class="fa fa-asterisk"></i> Data da Ocorrência
+          </h3>
+      </div>
+      <div class="col-2">
+        <h4>Data</h4>
+        <p-calendar [showIcon]="true" dateFormat="dd/mm/yy" formControlName="dataOcorrencia" displayErrors [errorMsgs]="errorMsgs['dataOcorrencia']"></p-calendar>
+      </div>
+      <div>
+        <h4>ou</h4>
+      </div>
+      <div class="col-2">
+        <h4>Data Inicial</h4>
+        <p-calendar [showIcon]="true" dateFormat="dd/mm/yy" formControlName="dataOcorrenciaInicial" displayErrors [errorMsgs]="errorMsgs['dataOcorrenciaInicial']"></p-calendar>
+      </div>
+      <div class="col-2 margin-bottom">
+        <h4>Data Final</h4>
+        <p-calendar [showIcon]="true" dateFormat="dd/mm/yy" formControlName="dataOcorrenciaFinal" displayErrors [errorMsgs]="errorMsgs['dataOcorrenciaInicial']"></p-calendar>
+      </div>
+      <div class="col-12 space-10">
+        <h3 class="laranja">
+          <i class="fa fa-asterisk"></i>Hora da Ocorrência
+        </h3>
+      </div>
+      <div class="col-2">
+        <h4>Hora</h4>
+        <p-calendar id="timHora01" [timeOnly]="true" formControlName="horaOcorrencia" displayErrors [errorMsgs]="errorMsgs['horaOcorrencia']"></p-calendar>
+      </div>
+      <div>
+        <h4>ou</h4>
+      </div>
+      <div class="col-2 margin-bottom">
+        <h4>Período</h4>
+        <p-dropdown id="boPeriodo01" [options]="dropdownPeriodo" formControlName="periodoOcorrencia" optionLabel="descricao" placeholder="Selecione" displayErrors></p-dropdown>
+      </div>
+      <div class="col-12 space-10">
+        <h3 class="laranja"><i class="fa fa-asterisk"></i>Comunicação<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+      </div>
+      <div class="col-2">
+        <h4>Data</h4>
+        <p-calendar id="calData02" [showIcon]="true" dateFormat="dd/mm/yy" formControlName="dataComunicacao" displayErrors [errorMsgs]="errorMsgs['dataComunicacao']"></p-calendar>
+      </div>
+      <div class="col-1a"></div>
+      <div class="col-2">
+        <h4>Hora</h4>
+        <p-calendar id="timHora02" [timeOnly]="true" dateFormat="dd/mm/yy" formControlName="horaComunicacao" displayErrors [errorMsgs]="errorMsgs['horaComunicacao']"></p-calendar>
+      </div>
+    </div>
+  </div>
+</ng-container>

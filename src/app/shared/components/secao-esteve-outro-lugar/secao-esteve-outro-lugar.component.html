@@ -1,0 +1,36 @@
+<ng-container [formGroup]="formGroup">
+  <div class="row">
+    <div class="col-12 margin-bottom">
+      <h3 class="laranja altura-bottom"><i class="fa fa-asterisk"></i>Esteve em outro lugar antes de se apresentar?</h3>
+      <p-radioButton name="groupEsteveOutroLugar" formControlName="outroLugarApresentacao" value="true" label="Sim"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton name="groupEsteveOutroLugar" formControlName="outroLugarApresentacao" value="false" label="Não" displayErrors></p-radioButton>
+    </div>
+  </div>
+  
+  <div class="row space-10" [hidden]="!showLocalAntes">
+    <div class="col-xl-4 col-md-6 margin-bottom">
+      <h3 class="laranja altura-bottom"><i class="fa fa-asterisk"></i>Forma de Apresentação<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+      <p-radioButton name="groupFormaApresentacao" formControlName="formaApresentacao" value="E" label="Espontânea"></p-radioButton>&nbsp;&nbsp;&nbsp;
+      <p-radioButton name="groupFormaApresentacao" formControlName="formaApresentacao" value="C" label="Conduzida" displayErrors></p-radioButton>
+    </div>
+    <div class="col-xl-4 col-md-6 no-label">
+      <h4><i class="fa fa-asterisk"></i>Local que se apresentou antes<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h4>
+      <input id="localApresentacaoAntes" type="text" pInputText formControlName="localApresentacaoAntes" displayErrors/>
+    </div>
+    <div class="col-xl-3 col-md-8">
+      <h3 class="laranja altura-bottom">Tempo de permanência no local<i class="pi pi-question-circle" pTooltip="Lorem ipsum dolor" tooltipPosition="top" placeholder="Top"></i></h3>
+      <div class="row">
+        <div class="col-6">
+          <h4><i class="fa fa-asterisk"></i>Horas</h4>
+          <input id="tempoPermanenciaHoras" type="number" min="0" pInputText formControlName="tempoPermanenciaHoras" displayErrors/>
+        </div>
+        <div class="col-6">
+          <h4><i class="fa fa-asterisk"></i>Min</h4>
+          <input id="tempoPermanenciaMin" type="number" min="0" max="59" pInputText formControlName="tempoPermanenciaMin" displayErrors/>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+
